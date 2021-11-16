@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct WelcomeScreen: View {
+    @AppStorage("UserDefault_FirstRun") var showFirstRun = true
+    @AppStorage("UserDefault_ShowTerms") var showTerms = true
+
     var body: some View {
         ZStack {
             Color("Background")
@@ -18,22 +21,27 @@ struct WelcomeScreen: View {
                     .frame(width: 145, height: 145, alignment: .center)
                     .aspectRatio(contentMode: .fit)
                 Group {
-                Text("Home Repair Navigator")
-                    .font(.title)
-                    .bold()
-                    .padding(.bottom)
-                Text("Welcome to the Home Repair Navigator! This app will walk you through the process of dealing with contractors to help you avoid being ripped off or losing your hard earned money.")
-                    .padding()
-                Text("The app is very easy to use.")
-                    .padding()
-                Text("This app is brought to you by the National Alliance Against Home Repair Fraud, a 501(c)(3) nonprofit whose mission is to help protect homeowners from becoming victims of home repair fraud and scams.")
-                    .padding()
-                Button(action: {}) {
-                    ButtonTextView(text: "Continue")
-                        .padding(.horizontal)
-                }
+                    Text("Home Repair Navigator")
+                        .font(.title)
+                        .bold()
+                        .padding(.bottom)
+                    Text("Welcome to the Home Repair Navigator! This app will walk you through the process of dealing with contractors to help you avoid being ripped off or losing your hard earned money.")
+                        .padding()
+                    Text("The app is very easy to use.")
+                        .padding()
+                    Text("This app is brought to you by the National Alliance Against Home Repair Fraud, a 501(c)(3) nonprofit whose mission is to help protect homeowners from becoming victims of home repair fraud and scams.")
+                        .padding()
+                    Button(action: {
+                        showFirstRun = false
+                    }) {
+                        ButtonTextView(text: "Continue")
+                            .padding(.horizontal)
+                    }
                 }
             }
+            .fullScreenCover(isPresented: $showTerms,
+                onDismiss: { print("dismissed!") },
+                             content: { AgreementView() })
         }
     }
 }

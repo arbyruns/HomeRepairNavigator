@@ -13,6 +13,8 @@
 		540B80B2274430E200414BE6 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 540B80B1274430E200414BE6 /* Lottie */; };
 		540B80B5274430FD00414BE6 /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 540B80B4274430FD00414BE6 /* LottieView.swift */; };
 		540B80B72744319000414BE6 /* 11202-information.json in Resources */ = {isa = PBXBuildFile; fileRef = 540B80B62744319000414BE6 /* 11202-information.json */; };
+		540B80B92744325100414BE6 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 540B80B82744325100414BE6 /* TabBar.swift */; };
+		540B80BB274439B300414BE6 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 540B80BA274439B300414BE6 /* Settings.swift */; };
 		54F9AE6D2742F73C00F09248 /* HomeRepairNavigatorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F9AE6C2742F73C00F09248 /* HomeRepairNavigatorApp.swift */; };
 		54F9AE6F2742F73C00F09248 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F9AE6E2742F73C00F09248 /* ContentView.swift */; };
 		54F9AE712742F73F00F09248 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 54F9AE702742F73F00F09248 /* Assets.xcassets */; };
@@ -31,6 +33,8 @@
 		540B80AE27442BA500414BE6 /* InfoSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoSheet.swift; sourceTree = "<group>"; };
 		540B80B4274430FD00414BE6 /* LottieView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
 		540B80B62744319000414BE6 /* 11202-information.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "11202-information.json"; sourceTree = "<group>"; };
+		540B80B82744325100414BE6 /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
+		540B80BA274439B300414BE6 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		54F9AE692742F73C00F09248 /* HomeRepairNavigator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HomeRepairNavigator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		54F9AE6C2742F73C00F09248 /* HomeRepairNavigatorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRepairNavigatorApp.swift; sourceTree = "<group>"; };
 		54F9AE6E2742F73C00F09248 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -100,6 +104,7 @@
 		54F9AE6B2742F73C00F09248 /* HomeRepairNavigator */ = {
 			isa = PBXGroup;
 			children = (
+				540B80BA274439B300414BE6 /* Settings.swift */,
 				540B80B3274430EA00414BE6 /* Lottie */,
 				540B80AB2743E87C00414BE6 /* AfterProject */,
 				540B80A82743E77400414BE6 /* DuringProject */,
@@ -110,6 +115,7 @@
 				54F9AE6E2742F73C00F09248 /* ContentView.swift */,
 				54F9AE702742F73F00F09248 /* Assets.xcassets */,
 				54F9AE722742F73F00F09248 /* Preview Content */,
+				540B80B82744325100414BE6 /* TabBar.swift */,
 			);
 			path = HomeRepairNavigator;
 			sourceTree = "<group>";
@@ -231,11 +237,13 @@
 				540B80AA2743E78200414BE6 /* DuringProject.swift in Sources */,
 				54F9AE7B2742F79900F09248 /* WelcomeScreen.swift in Sources */,
 				54F9AE6F2742F73C00F09248 /* ContentView.swift in Sources */,
+				540B80BB274439B300414BE6 /* Settings.swift in Sources */,
 				54F9AE8827435BE400F09248 /* InfoOverLay.swift in Sources */,
 				540B80AD2743E89700414BE6 /* AfterProject.swift in Sources */,
 				54F9AE832742FBAB00F09248 /* BeforeProject.swift in Sources */,
 				54F9AE6D2742F73C00F09248 /* HomeRepairNavigatorApp.swift in Sources */,
 				54F9AE86274359C600F09248 /* ProjectRowView.swift in Sources */,
+				540B80B92744325100414BE6 /* TabBar.swift in Sources */,
 				54F9AE812742FA1C00F09248 /* AgreementView.swift in Sources */,
 				54F9AE7E2742F97F00F09248 /* Buttons.swift in Sources */,
 				540B80B5274430FD00414BE6 /* LottieView.swift in Sources */,

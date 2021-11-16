@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct AgreementView: View {
+    @AppStorage("UserDefault_FirstRun") var showFirstRun = true
+    @AppStorage("UserDefault_ShowTerms") var showTerms = true
+
     var body: some View {
         ZStack {
             Color("Background")
@@ -25,7 +28,9 @@ struct AgreementView: View {
                     .padding()
                 Text("The general information contained herein may not be suitable for every situation. State laws vary, so we highly recommend you contact a licensed legal professional in your state for any professional or legal advice regarding your home repair project, especially before you sign any documentation or enter into any agreements with home repair service providers.")
                     .padding()
-                Button(action: {}) {
+                Button(action: {
+                    showTerms = false
+                }) {
                     ButtonTextView(text: "I Accept")
                         .padding(.horizontal)
                 }
