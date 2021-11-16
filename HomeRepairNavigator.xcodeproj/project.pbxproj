@@ -15,6 +15,8 @@
 		54F9AE7E2742F97F00F09248 /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F9AE7D2742F97F00F09248 /* Buttons.swift */; };
 		54F9AE812742FA1C00F09248 /* AgreementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F9AE802742FA1C00F09248 /* AgreementView.swift */; };
 		54F9AE832742FBAB00F09248 /* BeforeProject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F9AE822742FBAB00F09248 /* BeforeProject.swift */; };
+		54F9AE86274359C600F09248 /* BeforeRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F9AE85274359C600F09248 /* BeforeRowView.swift */; };
+		54F9AE8827435BE400F09248 /* InfoOverLay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F9AE8727435BE400F09248 /* InfoOverLay.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +29,8 @@
 		54F9AE7D2742F97F00F09248 /* Buttons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buttons.swift; sourceTree = "<group>"; };
 		54F9AE802742FA1C00F09248 /* AgreementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgreementView.swift; sourceTree = "<group>"; };
 		54F9AE822742FBAB00F09248 /* BeforeProject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeforeProject.swift; sourceTree = "<group>"; };
+		54F9AE85274359C600F09248 /* BeforeRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeforeRowView.swift; sourceTree = "<group>"; };
+		54F9AE8727435BE400F09248 /* InfoOverLay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoOverLay.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,11 +63,11 @@
 		54F9AE6B2742F73C00F09248 /* HomeRepairNavigator */ = {
 			isa = PBXGroup;
 			children = (
+				54F9AE84274359B500F09248 /* BeforeProject */,
 				54F9AE7F2742F9F100F09248 /* LoadingScreens */,
 				54F9AE7C2742F97500F09248 /* HelperViews */,
 				54F9AE6C2742F73C00F09248 /* HomeRepairNavigatorApp.swift */,
 				54F9AE6E2742F73C00F09248 /* ContentView.swift */,
-				54F9AE822742FBAB00F09248 /* BeforeProject.swift */,
 				54F9AE702742F73F00F09248 /* Assets.xcassets */,
 				54F9AE722742F73F00F09248 /* Preview Content */,
 			);
@@ -82,6 +86,7 @@
 			isa = PBXGroup;
 			children = (
 				54F9AE7D2742F97F00F09248 /* Buttons.swift */,
+				54F9AE8727435BE400F09248 /* InfoOverLay.swift */,
 			);
 			path = HelperViews;
 			sourceTree = "<group>";
@@ -93,6 +98,15 @@
 				54F9AE802742FA1C00F09248 /* AgreementView.swift */,
 			);
 			path = LoadingScreens;
+			sourceTree = "<group>";
+		};
+		54F9AE84274359B500F09248 /* BeforeProject */ = {
+			isa = PBXGroup;
+			children = (
+				54F9AE822742FBAB00F09248 /* BeforeProject.swift */,
+				54F9AE85274359C600F09248 /* BeforeRowView.swift */,
+			);
+			path = BeforeProject;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -167,8 +181,10 @@
 			files = (
 				54F9AE7B2742F79900F09248 /* WelcomeScreen.swift in Sources */,
 				54F9AE6F2742F73C00F09248 /* ContentView.swift in Sources */,
+				54F9AE8827435BE400F09248 /* InfoOverLay.swift in Sources */,
 				54F9AE832742FBAB00F09248 /* BeforeProject.swift in Sources */,
 				54F9AE6D2742F73C00F09248 /* HomeRepairNavigatorApp.swift in Sources */,
+				54F9AE86274359C600F09248 /* BeforeRowView.swift in Sources */,
 				54F9AE812742FA1C00F09248 /* AgreementView.swift in Sources */,
 				54F9AE7E2742F97F00F09248 /* Buttons.swift in Sources */,
 			);
