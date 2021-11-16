@@ -37,7 +37,7 @@ struct TabBar: View {
             }
             .fullScreenCover(isPresented: $showFirstRun,
                 onDismiss: { print("dismissed!") },
-                             content: { WelcomeScreen() })
+                             content: { WelcomeScreen(showWelcomeScreen: .constant(false)) })
         }
     }
 }

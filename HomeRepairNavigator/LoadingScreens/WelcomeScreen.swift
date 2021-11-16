@@ -11,6 +11,8 @@ struct WelcomeScreen: View {
     @AppStorage("UserDefault_FirstRun") var showFirstRun = true
     @AppStorage("UserDefault_ShowTerms") var showTerms = true
 
+    @Binding var showWelcomeScreen: Bool
+
     var body: some View {
         ZStack {
             Color("Background")
@@ -33,6 +35,7 @@ struct WelcomeScreen: View {
                         .padding()
                     Button(action: {
                         showFirstRun = false
+                        showWelcomeScreen = false
                     }) {
                         ButtonTextView(text: "Continue")
                             .padding(.horizontal)
@@ -41,15 +44,15 @@ struct WelcomeScreen: View {
             }
             .fullScreenCover(isPresented: $showTerms,
                 onDismiss: { print("dismissed!") },
-                             content: { AgreementView() })
+                             content: { AgreementView(agreement: .constant(false)) })
         }
     }
 }
 
 struct WelcomeScreen_Previews: PreviewProvider {
     static var previews: some View {
-        WelcomeScreen()
-        WelcomeScreen()
+        WelcomeScreen(showWelcomeScreen: .constant(false))
+        WelcomeScreen(showWelcomeScreen: .constant(false))
             .colorScheme(.dark)
     }
 }

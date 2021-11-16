@@ -10,6 +10,7 @@ import SwiftUI
 struct AgreementView: View {
     @AppStorage("UserDefault_FirstRun") var showFirstRun = true
     @AppStorage("UserDefault_ShowTerms") var showTerms = true
+    @Binding var agreement: Bool
 
     var body: some View {
         ZStack {
@@ -30,6 +31,7 @@ struct AgreementView: View {
                     .padding()
                 Button(action: {
                     showTerms = false
+                    agreement = false
                 }) {
                     ButtonTextView(text: "I Accept")
                         .padding(.horizontal)
@@ -41,8 +43,8 @@ struct AgreementView: View {
 
 struct AgreementView_Previews: PreviewProvider {
     static var previews: some View {
-        AgreementView()
-        AgreementView()
+        AgreementView(agreement: .constant(false))
+        AgreementView(agreement: .constant(false))
             .colorScheme(.dark)
     }
 }

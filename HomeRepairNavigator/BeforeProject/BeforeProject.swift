@@ -16,34 +16,32 @@ struct BeforeProject: View {
     @Binding var completed: Bool
 
     var body: some View {
-        ZStack {
-            Color("Background")
-                .edgesIgnoringSafeArea(.all)
-            VStack {
-                Text("Before Project")
-                    .bold()
-                    .foregroundColor(Color("FontColor"))
-                    .textCase(.uppercase)
-                    .font(.largeTitle)
-                ScrollView {
-                    VStack(spacing: 20) {
-                        ForEach(beforeProjectData) { data in
-                            ProjectRowView(infoOverLayInfo: infoOverLayInfo,
-                                           showInfo: $showInfo,
-                                           title: data.title,
-                                           question: data.title,
-                                           info: data.description,
-                                           completedID: data.trackingID)
-                                .disabled(showInfo ? true : false)
+        NavigationView {
+            ZStack {
+                Color("Background")
+                    .edgesIgnoringSafeArea(.all)
+                VStack {
+                    ScrollView {
+                        VStack(spacing: 20) {
+                            ForEach(beforeProjectData) { data in
+                                ProjectRowView(infoOverLayInfo: infoOverLayInfo,
+                                               showInfo: $showInfo,
+                                               title: data.title,
+                                               question: data.title,
+                                               info: data.description,
+                                               completedID: data.trackingID)
+                                    .disabled(showInfo ? true : false)
+                            }
                         }
                     }
                 }
+                .sheet(isPresented: $showInfo,
+                       onDismiss:  { self.showButtons = false },
+                       content: {
+                    InfoSheet(infoOverlay: infoOverLayInfo, showInfo: $showInfo)
+                })
             }
-            .sheet(isPresented: $showInfo,
-                   onDismiss:  { self.showButtons = false },
-                   content: {
-                InfoSheet(infoOverlay: infoOverLayInfo, showInfo: $showInfo)
-            })
+            .navigationTitle("Before Project")
         }
     }
 }

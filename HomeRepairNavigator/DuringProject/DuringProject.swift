@@ -16,33 +16,32 @@ struct DuringProject: View {
     @Binding var completed: Bool
 
     var body: some View {
-        ZStack {
-            Color("Background")
-                .edgesIgnoringSafeArea(.all)
-            VStack {
-                Text("During Project")
-                    .bold()
-                    .textCase(.uppercase)
-                    .font(.largeTitle)
-                ScrollView {
-                    VStack(spacing: 20) {
-                        ForEach(duringProjectData) { data in
-                            ProjectRowView(infoOverLayInfo: infoOverLayInfo,
-                                           showInfo: $showInfo,
-                                           title: data.title,
-                                           question: data.title,
-                                           info: data.description,
-                                           completedID: 1)
-                                .disabled(showInfo ? true : false)
+        NavigationView {
+            ZStack {
+                Color("Background")
+                    .edgesIgnoringSafeArea(.all)
+                VStack {
+                    ScrollView {
+                        VStack(spacing: 20) {
+                            ForEach(duringProjectData) { data in
+                                ProjectRowView(infoOverLayInfo: infoOverLayInfo,
+                                               showInfo: $showInfo,
+                                               title: data.title,
+                                               question: data.title,
+                                               info: data.description,
+                                               completedID: 1)
+                                    .disabled(showInfo ? true : false)
+                            }
                         }
                     }
                 }
+                .sheet(isPresented: $showInfo,
+                       onDismiss:  { self.showButtons = false },
+                       content: {
+                    InfoSheet(infoOverlay: infoOverLayInfo, showInfo: $showInfo)
+                })
             }
-            .sheet(isPresented: $showInfo,
-                   onDismiss:  { self.showButtons = false },
-                   content: {
-                InfoSheet(infoOverlay: infoOverLayInfo, showInfo: $showInfo)
-            })
+            .navigationTitle("During Project")
         }
     }
 }
