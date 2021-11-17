@@ -16,10 +16,8 @@ struct DuringProject: View {
     @Binding var completed: Bool
 
     var body: some View {
-        NavigationView {
             ZStack {
-                Color("Background")
-                    .edgesIgnoringSafeArea(.all)
+                NavigationView {
                 VStack {
                     ScrollView {
                         VStack(spacing: 20) {
@@ -35,14 +33,16 @@ struct DuringProject: View {
                         }
                     }
                 }
+                .background(Color("Background"))
                 .sheet(isPresented: $showInfo,
                        onDismiss:  { self.showButtons = false },
                        content: {
                     InfoSheet(infoOverlay: infoOverLayInfo, showInfo: $showInfo)
                 })
+                .navigationTitle("During Project")
             }
-            .navigationTitle("During Project")
         }
+        .navigationViewStyle(StackNavigationViewStyle())
     }
 }
 

@@ -9,7 +9,8 @@ import SwiftUI
 
 struct Settings: View {
     @Environment(\.openURL) var openURL
-    var settingItems = ["Welcome Screen", "Agreement", "Share", "Donate", "Contact", "Version"]
+    @AppStorage("UserDefault_FirstRun") var showFirstRun = true
+    @AppStorage("UserDefault_ShowTerms") var showTerms = true
 
     @State var showWelcomeScreen = false
     @State var agreement = false
@@ -65,6 +66,13 @@ struct Settings: View {
                             }
                             .buttonStyle(PlainButtonStyle())
                             Button(action: {
+                                showFirstRun = true
+                                showTerms = true
+                            }) {
+                                IconView(image: "exclamationmark.arrow.circlepath", color: "SettingColor3", text: "Reset")
+                            }
+                            .buttonStyle(PlainButtonStyle())
+                            Button(action: {
                                 Link("(404) 941-6832", destination: URL(string: "tel:4049416832")!)
                             }) {
                                 IconView(image: "phone", color: "SettingColor2", text: "Contact")
@@ -85,6 +93,7 @@ struct Settings: View {
                     AgreementView(agreement: $agreement)
                 })
             }
+            .navigationViewStyle(StackNavigationViewStyle())
         }
     }
 }

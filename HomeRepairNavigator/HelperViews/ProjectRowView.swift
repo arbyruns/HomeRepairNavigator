@@ -21,6 +21,7 @@ struct ProjectRowView: View {
     let question: String
     let info: String
     let completedID: Int
+//    let showCheckmark: Bool
     
     var body: some View {
         ZStack {
@@ -28,6 +29,9 @@ struct ProjectRowView: View {
                 .edgesIgnoringSafeArea(.all)
             VStack {
                 HStack {
+//                    if completedArray.contains(completedID) {
+//                        Image(systemName: "checkmark")
+//                    }
                     Text(title)
                         .foregroundColor(Color("FontColor"))
                         .padding()
@@ -43,12 +47,18 @@ struct ProjectRowView: View {
                     }
                     Spacer()
                 }
+                .onTapGesture {
+                    withAnimation {
+                        showButtons.toggle()
+                    }
+                }
                 if showButtons {
                     HStack {
                         Button(action: {
                             withAnimation {
+                                completed = true
+                                showButtons = false
                                 completedTaskModel.addItem(completedTask: completedID)
-                            completed = true
                             }
                         }) {
                             ButtonTextView(text: "Yes")
@@ -56,6 +66,7 @@ struct ProjectRowView: View {
                         Button(action: {
                             withAnimation {
                                 showInfo = true
+                                showButtons = false
                                 infoOverLayInfo.title = title
                                 infoOverLayInfo.description = info
                                 completed = false
@@ -63,13 +74,14 @@ struct ProjectRowView: View {
                         }) {
                             ButtonTextView(text: "No")
                         }
-                        Button(action: {
-                            withAnimation {
-                            completed = false
-                            }
-                        }) {
-                            ButtonTextView(text: "Don't Know")
-                        }
+                        //Unsure what Don't know should do.
+//                        Button(action: {
+//                            withAnimation {
+//                            completed = false
+//                            }
+//                        }) {
+//                            ButtonTextView(text: "Don't Know")
+//                        }
                     }
                     .padding()
                 }
@@ -96,9 +108,18 @@ class CompletedTasksModel: ObservableObject {
    @Published var completedItems = [Int]()
 
     func addItem(completedTask: Int){
-        UserDefaults.standard.set(self.completedItems, forKey: "completedItems")
+        var array: [Int] = []
+        array.append(completedTask)
 
-       completedItems.append(completedTask)
+//      Setting userDefaults
+        let userDefaults = UserDefaults.standard
+        userDefaults.set(array, forKey: "userDefault-completedItems")
+//      Read userDefaults
+        let userDefaultArray = userDefaults.array(forKey: "userDefault-completedItems") as? [Int] ?? [Int]()
+        print("added items read from userdefaults \(userDefaultArray)")
+        for item in userDefaultArray {
+            print(item)
+        }
    }
 
     func isCompletedTask(existingTask: Int) -> Bool {

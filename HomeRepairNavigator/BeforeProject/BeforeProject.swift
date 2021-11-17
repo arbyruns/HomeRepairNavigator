@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Foundation
 
 struct BeforeProject: View {
     @Environment(\.colorScheme) var colorScheme
@@ -15,34 +16,42 @@ struct BeforeProject: View {
     @Binding var showButtons: Bool
     @Binding var completed: Bool
 
+    let completedTasks: [Int] = [1,2,3,4]
+
+    let completedArray = UserDefaults.standard.object(forKey: "userDefault-completedItems") as? [Int] ?? [Int]()
+
+
     var body: some View {
-        NavigationView {
             ZStack {
-                Color("Background")
-                    .edgesIgnoringSafeArea(.all)
+                NavigationView {
                 VStack {
                     ScrollView {
                         VStack(spacing: 20) {
-                            ForEach(beforeProjectData) { data in
-                                ProjectRowView(infoOverLayInfo: infoOverLayInfo,
-                                               showInfo: $showInfo,
-                                               title: data.title,
-                                               question: data.title,
-                                               info: data.description,
-                                               completedID: data.trackingID)
-                                    .disabled(showInfo ? true : false)
+//                            ForEach(completedArray, id: \.self) { index in
+                                ForEach(beforeProjectData) { data in
+                                    ProjectRowView(infoOverLayInfo: infoOverLayInfo,
+                                                   showInfo: $showInfo,
+                                                   title: data.title,
+                                                   question: data.title,
+                                                   info: data.description,
+                                                   completedID: data.trackingID
+                                                   )
+                                        .disabled(showInfo ? true : false)
+//                                }
                             }
                         }
                     }
                 }
+                .background(Color("Background"))
                 .sheet(isPresented: $showInfo,
                        onDismiss:  { self.showButtons = false },
                        content: {
                     InfoSheet(infoOverlay: infoOverLayInfo, showInfo: $showInfo)
                 })
+                .navigationTitle("Before Project")
             }
-            .navigationTitle("Before Project")
         }
+        .navigationViewStyle(StackNavigationViewStyle())
     }
 }
 
