@@ -25,7 +25,7 @@ struct TabBar: View {
                     Text("During Project")
                 }
                 AfterProject(infoOverLayInfo: OverLayInfo(), showButtons: .constant(false), completed: .constant(false)).tabItem {
-                    Image(systemName: "clock.badge.checkmark")
+                    Image(systemName: "clock.fill")
                         .font(.system(size: 24, weight: .semibold))
                     Text("After Project")
                 }
@@ -33,6 +33,7 @@ struct TabBar: View {
                     Image(systemName: "gear")
                         .font(.system(size: 24, weight: .semibold))
                     Text("Settings")
+
                 }
             }
             .fullScreenCover(isPresented: $showFirstRun,
