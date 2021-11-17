@@ -93,7 +93,7 @@ struct ProjectRowView: View {
             }
             .overlay(
                 RoundedRectangle(cornerRadius: 8)
-                    .stroke(lineWidth: 1)
+                    .stroke(Color.gray, lineWidth: 1)
             )
             .padding(.horizontal)
         }

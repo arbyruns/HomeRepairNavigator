@@ -21,6 +21,8 @@ struct BeforeProject: View {
 
     var body: some View {
             ZStack {
+                Color("Background")
+
                 NavigationView {
                 VStack {
                     ScrollView {
