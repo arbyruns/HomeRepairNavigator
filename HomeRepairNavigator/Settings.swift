@@ -42,7 +42,7 @@ struct Settings: View {
                         }
                         .buttonStyle(PlainButtonStyle())
                         Button(action: {
-                            let mailtoString = "mailto:https://naahrf.org/?subject=Home Repair Navigator Feedback ".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
+                            let mailtoString = "mailto:info@naahrf.org?subject=Home Repair Navigator Feedback ".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
                             let mailtoUrl = URL(string: mailtoString!)!
                             if UIApplication.shared.canOpenURL(mailtoUrl) {
                                     UIApplication.shared.open(mailtoUrl, options: [:])
@@ -72,12 +72,10 @@ struct Settings: View {
                                 IconView(image: "exclamationmark.arrow.circlepath", color: "SettingColor3", text: "Reset")
                             }
                             .buttonStyle(PlainButtonStyle())
-                            Button(action: {
-                                Link("(404) 941-6832", destination: URL(string: "tel:4049416832")!)
-                            }) {
+                            HStack {
                                 IconView(image: "phone", color: "SettingColor2", text: "Contact")
+                                Link("", destination: URL(string: "tel:4049416832")!)
                             }
-                            .buttonStyle(PlainButtonStyle())
                         }
                         Text("Version: \(getAppVersion())")
                     }

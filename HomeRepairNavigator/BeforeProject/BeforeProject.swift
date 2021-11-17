@@ -13,11 +13,9 @@ struct BeforeProject: View {
     @ObservedObject var infoOverLayInfo: OverLayInfo
 
     @State var showInfo = false
+
     @Binding var showButtons: Bool
     @Binding var completed: Bool
-
-    let completedTasks: [Int] = [1,2,3,4]
-
     let completedArray = UserDefaults.standard.object(forKey: "userDefault-completedItems") as? [Int] ?? [Int]()
 
 

@@ -14,6 +14,7 @@ struct ProjectRowView: View {
 
     @State var showButtons = false
     @State var completed = false
+    @State var trimVal: CGFloat = 0
 
     @Binding var showInfo: Bool
     
@@ -21,7 +22,7 @@ struct ProjectRowView: View {
     let question: String
     let info: String
     let completedID: Int
-//    let showCheckmark: Bool
+    //    let showCheckmark: Bool
     
     var body: some View {
         ZStack {
@@ -29,9 +30,10 @@ struct ProjectRowView: View {
                 .edgesIgnoringSafeArea(.all)
             VStack {
                 HStack {
-//                    if completedArray.contains(completedID) {
-//                        Image(systemName: "checkmark")
-//                    }
+                        if completedTaskModel.isCompletedTask(completedTask: completedID) {
+                            CheckMarkView(checked: .constant(true), trimValue: .constant(1))
+                                .padding(.leading)
+                    }
                     Text(title)
                         .foregroundColor(Color("FontColor"))
                         .padding()
@@ -56,6 +58,7 @@ struct ProjectRowView: View {
                     HStack {
                         Button(action: {
                             withAnimation {
+                                self.trimVal = 1
                                 completed = true
                                 showButtons = false
                                 completedTaskModel.addItem(completedTask: completedID)
@@ -65,30 +68,32 @@ struct ProjectRowView: View {
                         }
                         Button(action: {
                             withAnimation {
+                                self.trimVal = 0
                                 showInfo = true
                                 showButtons = false
                                 infoOverLayInfo.title = title
                                 infoOverLayInfo.description = info
                                 completed = false
+                                completedTaskModel.removeItem(completedTask: completedID)
                             }
                         }) {
                             ButtonTextView(text: "No")
                         }
                         //Unsure what Don't know should do.
-//                        Button(action: {
-//                            withAnimation {
-//                            completed = false
-//                            }
-//                        }) {
-//                            ButtonTextView(text: "Don't Know")
-//                        }
+                        //                        Button(action: {
+                        //                            withAnimation {
+                        //                            completed = false
+                        //                            }
+                        //                        }) {
+                        //                            ButtonTextView(text: "Don't Know")
+                        //                        }
                     }
                     .padding()
                 }
             }
             .overlay(
                 RoundedRectangle(cornerRadius: 8)
-                    .stroke(.secondary, lineWidth: 1)
+                    .stroke(lineWidth: 1)
             )
             .padding(.horizontal)
         }
@@ -105,26 +110,46 @@ struct BeforeRowView_Previews: PreviewProvider {
 
 class CompletedTasksModel: ObservableObject {
 
-   @Published var completedItems = [Int]()
+    @Published var completedItems = [Int]()
+
+    private let kUserDefaultsCompletedItems = "userDefault-completedItems"
+
 
     func addItem(completedTask: Int){
-        var array: [Int] = []
-        array.append(completedTask)
-
-//      Setting userDefaults
         let userDefaults = UserDefaults.standard
-        userDefaults.set(array, forKey: "userDefault-completedItems")
-//      Read userDefaults
-        let userDefaultArray = userDefaults.array(forKey: "userDefault-completedItems") as? [Int] ?? [Int]()
-        print("added items read from userdefaults \(userDefaultArray)")
-        for item in userDefaultArray {
-            print(item)
+
+        var array: [Int] = userDefaults.array(forKey: kUserDefaultsCompletedItems) as? [Int] ?? []
+        if array.contains(completedTask) {
+            print("Completed Task already completed")
+        } else {
+            array.append(completedTask)
         }
-   }
+        //      Setting userDefaults
+        userDefaults.set(array, forKey: kUserDefaultsCompletedItems)
+        //      Read userDefaults
+        let userDefaultArray = userDefaults.array(forKey: kUserDefaultsCompletedItems) as? [Int] ?? []
+        print("added items read from userdefaults \(userDefaultArray)")
+    }
 
-    func isCompletedTask(existingTask: Int) -> Bool {
+    func removeItem(completedTask: Int) {
+        let userDefaults = UserDefaults.standard
+        var array: [Int] = userDefaults.array(forKey: kUserDefaultsCompletedItems) as? [Int] ?? []
 
-        if completedItems.contains(existingTask) {
+        if array.contains(completedTask) {
+            print("removeItem remove task \(completedTask)")
+            if let index = array.firstIndex(of: completedTask) {
+                array.remove(at: index)
+            }
+        }
+        userDefaults.set(array, forKey: kUserDefaultsCompletedItems)
+
+    }
+
+    func isCompletedTask(completedTask: Int) -> Bool {
+        let userDefaults = UserDefaults.standard
+        var array: [Int] = userDefaults.array(forKey: kUserDefaultsCompletedItems) as? [Int] ?? []
+
+        if array.contains(completedTask) {
             return true
         } else {
             return false

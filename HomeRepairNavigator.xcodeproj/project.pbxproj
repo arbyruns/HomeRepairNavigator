@@ -17,6 +17,7 @@
 		540B80BB274439B300414BE6 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 540B80BA274439B300414BE6 /* Settings.swift */; };
 		540B80C427444A4400414BE6 /* ProjectScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 540B80C327444A4400414BE6 /* ProjectScreen.swift */; };
 		540B80C627444E8900414BE6 /* IconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 540B80C527444E8900414BE6 /* IconView.swift */; };
+		5474DBA12745436500A897AC /* CheckMarkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5474DBA02745436500A897AC /* CheckMarkView.swift */; };
 		54F9AE6D2742F73C00F09248 /* HomeRepairNavigatorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F9AE6C2742F73C00F09248 /* HomeRepairNavigatorApp.swift */; };
 		54F9AE6F2742F73C00F09248 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F9AE6E2742F73C00F09248 /* ContentView.swift */; };
 		54F9AE712742F73F00F09248 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 54F9AE702742F73F00F09248 /* Assets.xcassets */; };
@@ -39,6 +40,7 @@
 		540B80BA274439B300414BE6 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		540B80C327444A4400414BE6 /* ProjectScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectScreen.swift; sourceTree = "<group>"; };
 		540B80C527444E8900414BE6 /* IconView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IconView.swift; sourceTree = "<group>"; };
+		5474DBA02745436500A897AC /* CheckMarkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckMarkView.swift; sourceTree = "<group>"; };
 		54F9AE692742F73C00F09248 /* HomeRepairNavigator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HomeRepairNavigator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		54F9AE6C2742F73C00F09248 /* HomeRepairNavigatorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRepairNavigatorApp.swift; sourceTree = "<group>"; };
 		54F9AE6E2742F73C00F09248 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 				540B80C527444E8900414BE6 /* IconView.swift */,
 				54F9AE8727435BE400F09248 /* InfoOverLay.swift */,
 				540B80AE27442BA500414BE6 /* InfoSheet.swift */,
+				5474DBA02745436500A897AC /* CheckMarkView.swift */,
 			);
 			path = HelperViews;
 			sourceTree = "<group>";
@@ -244,6 +247,7 @@
 				54F9AE7B2742F79900F09248 /* WelcomeScreen.swift in Sources */,
 				54F9AE6F2742F73C00F09248 /* ContentView.swift in Sources */,
 				540B80BB274439B300414BE6 /* Settings.swift in Sources */,
+				5474DBA12745436500A897AC /* CheckMarkView.swift in Sources */,
 				54F9AE8827435BE400F09248 /* InfoOverLay.swift in Sources */,
 				540B80AD2743E89700414BE6 /* AfterProject.swift in Sources */,
 				54F9AE832742FBAB00F09248 /* BeforeProject.swift in Sources */,
