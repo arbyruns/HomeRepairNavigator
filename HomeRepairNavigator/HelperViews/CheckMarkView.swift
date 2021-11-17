@@ -23,10 +23,10 @@ struct CheckMarkView: View {
                 .trim(from: 0, to: trimValue)
                 .stroke(style: StrokeStyle(lineWidth: 2))
                 .frame(width: 35, height: 35)
-                .foregroundColor(checked ? Color.blue : Color.gray.opacity(0.2))
+                .foregroundColor(checked ? Color("buttonColorRed") : Color.gray.opacity(0.2))
             Circle()
                 .trim(from: 0, to: 1)
-                .fill(checked ? Color.blue : Color.gray.opacity(0.2))
+                .fill(checked ? Color("buttonColorRed") : Color.gray.opacity(0.2))
                 .frame(width: 25, height: 25)
             if checked {
                 Image(systemName: "checkmark")

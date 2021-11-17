@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftUINavigationBarStyling
 
 struct DuringProject: View {
     @Environment(\.colorScheme) var colorScheme
@@ -31,6 +32,7 @@ struct DuringProject: View {
                                     .disabled(showInfo ? true : false)
                             }
                         }
+                        .padding(.top)
                     }
                 }
                 .background(Color("Background"))
@@ -40,6 +42,7 @@ struct DuringProject: View {
                     InfoSheet(infoOverlay: infoOverLayInfo, showInfo: $showInfo)
                 })
                 .navigationTitle("During Project")
+                .navigationBarColor(colorScheme == .dark ? UIColor(Color("borderColor")) : UIColor(Color("buttonColorRed")), textColor: UIColor(Color("FontColor")))
             }
         }
         .navigationViewStyle(StackNavigationViewStyle())

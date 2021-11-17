@@ -15,7 +15,7 @@ struct ButtonTextView: View {
             .foregroundColor(.white)
             .frame(height: 55)
             .frame(maxWidth: .infinity )
-            .background(Color.blue)
+            .background(Color("buttonColorPurple"))
             .cornerRadius(10)
     }
 }

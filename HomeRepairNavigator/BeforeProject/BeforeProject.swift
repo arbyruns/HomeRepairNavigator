@@ -7,6 +7,7 @@
 
 import SwiftUI
 import Foundation
+import SwiftUINavigationBarStyling
 
 struct BeforeProject: View {
     @Environment(\.colorScheme) var colorScheme
@@ -27,7 +28,6 @@ struct BeforeProject: View {
                 VStack {
                     ScrollView {
                         VStack(spacing: 20) {
-//                            ForEach(completedArray, id: \.self) { index in
                                 ForEach(beforeProjectData) { data in
                                     ProjectRowView(infoOverLayInfo: infoOverLayInfo,
                                                    showInfo: $showInfo,
@@ -37,9 +37,9 @@ struct BeforeProject: View {
                                                    completedID: data.trackingID
                                                    )
                                         .disabled(showInfo ? true : false)
-//                                }
                             }
                         }
+                        .padding(.top)
                     }
                 }
                 .background(Color("Background"))
@@ -49,6 +49,7 @@ struct BeforeProject: View {
                     InfoSheet(infoOverlay: infoOverLayInfo, showInfo: $showInfo)
                 })
                 .navigationTitle("Before Project")
+                .navigationBarColor(colorScheme == .dark ? UIColor(Color("borderColor")) : UIColor(Color("buttonColorRed")), textColor: UIColor(Color("FontColor")))
             }
         }
         .navigationViewStyle(StackNavigationViewStyle())

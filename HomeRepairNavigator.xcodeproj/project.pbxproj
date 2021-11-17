@@ -18,6 +18,7 @@
 		540B80C427444A4400414BE6 /* ProjectScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 540B80C327444A4400414BE6 /* ProjectScreen.swift */; };
 		540B80C627444E8900414BE6 /* IconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 540B80C527444E8900414BE6 /* IconView.swift */; };
 		5474DBA12745436500A897AC /* CheckMarkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5474DBA02745436500A897AC /* CheckMarkView.swift */; };
+		5474DBA427456E5100A897AC /* SwiftUINavigationBarStyling in Frameworks */ = {isa = PBXBuildFile; productRef = 5474DBA327456E5100A897AC /* SwiftUINavigationBarStyling */; };
 		54F9AE6D2742F73C00F09248 /* HomeRepairNavigatorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F9AE6C2742F73C00F09248 /* HomeRepairNavigatorApp.swift */; };
 		54F9AE6F2742F73C00F09248 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F9AE6E2742F73C00F09248 /* ContentView.swift */; };
 		54F9AE712742F73F00F09248 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 54F9AE702742F73F00F09248 /* Assets.xcassets */; };
@@ -60,6 +61,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				540B80B2274430E200414BE6 /* Lottie in Frameworks */,
+				5474DBA427456E5100A897AC /* SwiftUINavigationBarStyling in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -183,6 +185,7 @@
 			name = HomeRepairNavigator;
 			packageProductDependencies = (
 				540B80B1274430E200414BE6 /* Lottie */,
+				5474DBA327456E5100A897AC /* SwiftUINavigationBarStyling */,
 			);
 			productName = HomeRepairNavigator;
 			productReference = 54F9AE692742F73C00F09248 /* HomeRepairNavigator.app */;
@@ -214,6 +217,7 @@
 			mainGroup = 54F9AE602742F73C00F09248;
 			packageReferences = (
 				540B80B0274430E200414BE6 /* XCRemoteSwiftPackageReference "lottie-ios" */,
+				5474DBA227456E5100A897AC /* XCRemoteSwiftPackageReference "swiftui-navigation-bar-styling" */,
 			);
 			productRefGroup = 54F9AE6A2742F73C00F09248 /* Products */;
 			projectDirPath = "";
@@ -471,6 +475,14 @@
 				kind = branch;
 			};
 		};
+		5474DBA227456E5100A897AC /* XCRemoteSwiftPackageReference "swiftui-navigation-bar-styling" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/globulus/swiftui-navigation-bar-styling.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -478,6 +490,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 540B80B0274430E200414BE6 /* XCRemoteSwiftPackageReference "lottie-ios" */;
 			productName = Lottie;
+		};
+		5474DBA327456E5100A897AC /* SwiftUINavigationBarStyling */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5474DBA227456E5100A897AC /* XCRemoteSwiftPackageReference "swiftui-navigation-bar-styling" */;
+			productName = SwiftUINavigationBarStyling;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

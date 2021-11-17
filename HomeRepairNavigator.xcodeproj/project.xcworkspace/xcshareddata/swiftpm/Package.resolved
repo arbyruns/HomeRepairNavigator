@@ -9,6 +9,15 @@
           "revision": "e9c52fa3e2f962febb6fcc27a94eff15292130b2",
           "version": null
         }
+      },
+      {
+        "package": "SwiftUINavigationBarStyling",
+        "repositoryURL": "https://github.com/globulus/swiftui-navigation-bar-styling.git",
+        "state": {
+          "branch": null,
+          "revision": "c5fead346c79f64d3ad7e4e7f7b243647d8645f7",
+          "version": "1.0.0"
+        }
       }
     ]
   },
