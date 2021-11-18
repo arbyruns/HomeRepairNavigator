@@ -79,7 +79,7 @@ struct Settings: View {
                             }
                         }
                         Toggle(isOn: $useCompletedTasks) {
-                            Text("Use New Task Completed")
+                            Text("Use Square Completion Style")
                         }
                         Text("Version: \(getAppVersion())")
                     }
