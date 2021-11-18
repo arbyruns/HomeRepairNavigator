@@ -12,6 +12,7 @@ struct Settings: View {
     @AppStorage("UserDefault_FirstRun") var showFirstRun = true
     @AppStorage("UserDefault_ShowTerms") var showTerms = true
 
+    @AppStorage("UserDefault_CompleteTasks") var useCompletedTasks = false
     @State var showWelcomeScreen = false
     @State var agreement = false
 
@@ -76,6 +77,9 @@ struct Settings: View {
                                 IconView(image: "phone", color: "SettingColor2", text: "Contact")
                                 Link("", destination: URL(string: "tel:4049416832")!)
                             }
+                        }
+                        Toggle(isOn: $useCompletedTasks) {
+                            Text("Use New Task Completed")
                         }
                         Text("Version: \(getAppVersion())")
                     }

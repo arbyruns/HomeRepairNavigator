@@ -9,6 +9,8 @@ import SwiftUI
 
 
 struct ProjectRowView: View {
+    @AppStorage("UserDefault_CompleteTasks") var useCompletedTasks = false
+
     @ObservedObject var infoOverLayInfo: OverLayInfo
     @ObservedObject var completedTaskModel = CompletedTasksModel()
 
@@ -30,13 +32,18 @@ struct ProjectRowView: View {
                 .edgesIgnoringSafeArea(.all)
             VStack {
                 HStack {
-                    if completedTaskModel.isCompletedTask(completedTask: completedID) {
+                    if completedTaskModel.isCompletedTask(completedTask: completedID) && useCompletedTasks == false {
                         CheckMarkView(checked: .constant(true), trimValue: .constant(1))
+                            .padding(.leading)
+                    }
+                    if completedTaskModel.isCompletedTask(completedTask: completedID) && useCompletedTasks == true {
+                        CompletedView(checked: .constant(true), trimValue: .constant(1))
                             .padding(.leading)
                     }
                     Text(title)
                         .strikethrough(completedTaskModel.isCompletedTask(completedTask: completedID) ? true : false)
                         .foregroundColor(completedTaskModel.isCompletedTask(completedTask: completedID)  ? .gray : Color("FontColor"))
+                        .font(.callout)
                         .padding()
                     Spacer()
                     Button(action: {
