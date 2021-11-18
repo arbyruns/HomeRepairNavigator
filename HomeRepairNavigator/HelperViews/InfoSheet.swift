@@ -38,7 +38,7 @@ struct InfoSheet: View {
                             showInfo = false
                         }
                     }) {
-                        ButtonTextView(text: "OK")
+                        ButtonTextView(smallButton: false, text: "OK")
                             .padding()
                     }
                 }

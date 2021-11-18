@@ -23,7 +23,6 @@ struct BeforeProject: View {
     var body: some View {
             ZStack {
                 Color("Background")
-
                 NavigationView {
                 VStack {
                     ScrollView {
@@ -49,7 +48,7 @@ struct BeforeProject: View {
                     InfoSheet(infoOverlay: infoOverLayInfo, showInfo: $showInfo)
                 })
                 .navigationTitle("Before Project")
-                .navigationBarColor(colorScheme == .dark ? UIColor(Color("borderColor")) : UIColor(Color("buttonColorRed")), textColor: UIColor(Color("FontColor")))
+                .navigationBarColor(colorScheme == .dark ? UIColor(Color("borderColor")) : UIColor(Color("buttonColorCyan")), textColor: UIColor(Color("FontColor")))
             }
         }
         .navigationViewStyle(StackNavigationViewStyle())

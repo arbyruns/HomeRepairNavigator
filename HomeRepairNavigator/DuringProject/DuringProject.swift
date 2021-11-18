@@ -42,7 +42,8 @@ struct DuringProject: View {
                     InfoSheet(infoOverlay: infoOverLayInfo, showInfo: $showInfo)
                 })
                 .navigationTitle("During Project")
-                .navigationBarColor(colorScheme == .dark ? UIColor(Color("borderColor")) : UIColor(Color("buttonColorRed")), textColor: UIColor(Color("FontColor")))
+                .navigationBarTitleDisplayMode(.inline)
+                .navigationBarColor(colorScheme == .dark ? UIColor(Color("borderColor")) : UIColor(Color("buttonColorGray")), textColor: UIColor(Color("FontColor")))
             }
         }
         .navigationViewStyle(StackNavigationViewStyle())

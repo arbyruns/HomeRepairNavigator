@@ -33,7 +33,7 @@ struct AgreementView: View {
                     showTerms = false
                     agreement = false
                 }) {
-                    ButtonTextView(text: "I Accept")
+                    ButtonTextView(smallButton: false, text: "I Accept")
                         .padding(.horizontal)
                 }
             }

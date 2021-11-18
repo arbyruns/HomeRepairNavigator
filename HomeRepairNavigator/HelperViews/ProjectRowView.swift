@@ -30,14 +30,15 @@ struct ProjectRowView: View {
                 .edgesIgnoringSafeArea(.all)
             VStack {
                 HStack {
-                        if completedTaskModel.isCompletedTask(completedTask: completedID) {
-                            CheckMarkView(checked: .constant(true), trimValue: .constant(1))
-                                .padding(.leading)
+                    if completedTaskModel.isCompletedTask(completedTask: completedID) {
+                        CheckMarkView(checked: .constant(true), trimValue: .constant(1))
+                            .padding(.leading)
                     }
                     Text(title)
-                        .foregroundColor(Color("FontColor"))
+                        .strikethrough(completedTaskModel.isCompletedTask(completedTask: completedID) ? true : false)
+                        .foregroundColor(completedTaskModel.isCompletedTask(completedTask: completedID)  ? .gray : Color("FontColor"))
                         .padding()
-                        .frame(maxWidth: .infinity)
+                    Spacer()
                     Button(action: {
                         withAnimation {
                             showButtons.toggle()
@@ -47,7 +48,7 @@ struct ProjectRowView: View {
                             .foregroundColor(Color("FontColor"))
                             .padding(.trailing,8)
                     }
-                    Spacer()
+//                    Spacer()
                 }
                 .onTapGesture {
                     withAnimation {
@@ -64,7 +65,7 @@ struct ProjectRowView: View {
                                 completedTaskModel.addItem(completedTask: completedID)
                             }
                         }) {
-                            ButtonTextView(text: "Yes")
+                            ButtonTextView(smallButton: true, text: "Yes")
                         }
                         Button(action: {
                             withAnimation {
@@ -77,7 +78,7 @@ struct ProjectRowView: View {
                                 completedTaskModel.removeItem(completedTask: completedID)
                             }
                         }) {
-                            ButtonTextView(text: "No")
+                            ButtonTextView(smallButton: true, text: "No")
                         }
                         //Unsure what Don't know should do.
                         //                        Button(action: {
@@ -102,8 +103,8 @@ struct ProjectRowView: View {
 
 struct BeforeRowView_Previews: PreviewProvider {
     static var previews: some View {
-        ProjectRowView(infoOverLayInfo: OverLayInfo(), showInfo: .constant(false), title: "Before Project", question: "Question", info: "info", completedID: 1)
-        ProjectRowView(infoOverLayInfo: OverLayInfo(), showInfo: .constant(false), title: "Before Project", question: "Question", info: "info", completedID: 1)
+        ProjectRowView(infoOverLayInfo: OverLayInfo(), showInfo: .constant(false), title: "Have you researched the project", question: "Question", info: "info", completedID: 1)
+        ProjectRowView(infoOverLayInfo: OverLayInfo(), showInfo: .constant(false), title: "Have you researched the project", question: "Question", info: "info", completedID: 1)
             .colorScheme(.dark)
     }
 }

@@ -37,7 +37,7 @@ struct WelcomeScreen: View {
                         showFirstRun = false
                         showWelcomeScreen = false
                     }) {
-                        ButtonTextView(text: "Continue")
+                        ButtonTextView(smallButton: false, text: "Continue")
                             .padding(.horizontal)
                     }
                 }
