@@ -15,17 +15,17 @@ struct TabBar: View {
         VStack {
             TabView {
                 BeforeProject(infoOverLayInfo: OverLayInfo(), showButtons: .constant(false), completed: .constant(false)).tabItem {
-                    Image(systemName: "clock.arrow.circlepath")
+                    Image(systemName: "arrow.clockwise")
                         .font(.system(size: 24, weight: .semibold))
                     Text("Before Project")
                 }
                 DuringProject(infoOverLayInfo: OverLayInfo(), showButtons: .constant(false), completed: .constant(false)).tabItem {
-                    Image(systemName: "clock")
+                    Image(systemName: "arrow.triangle.2.circlepath")
                         .font(.system(size: 24, weight: .semibold))
                     Text("During Project")
                 }
                 AfterProject(infoOverLayInfo: OverLayInfo(), showButtons: .constant(false), completed: .constant(false)).tabItem {
-                    Image(systemName: "clock.fill")
+                    Image(systemName: "arrow.counterclockwise")
                         .font(.system(size: 24, weight: .semibold))
                     Text("After Project")
                 }
