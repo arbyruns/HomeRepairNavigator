@@ -19,6 +19,7 @@
 		540B80C627444E8900414BE6 /* IconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 540B80C527444E8900414BE6 /* IconView.swift */; };
 		5474DBA12745436500A897AC /* CheckMarkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5474DBA02745436500A897AC /* CheckMarkView.swift */; };
 		5474DBA427456E5100A897AC /* SwiftUINavigationBarStyling in Frameworks */ = {isa = PBXBuildFile; productRef = 5474DBA327456E5100A897AC /* SwiftUINavigationBarStyling */; };
+		54CE3B182746B1F300274254 /* CompletedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54CE3B172746B1F300274254 /* CompletedView.swift */; };
 		54F9AE6D2742F73C00F09248 /* HomeRepairNavigatorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F9AE6C2742F73C00F09248 /* HomeRepairNavigatorApp.swift */; };
 		54F9AE6F2742F73C00F09248 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F9AE6E2742F73C00F09248 /* ContentView.swift */; };
 		54F9AE712742F73F00F09248 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 54F9AE702742F73F00F09248 /* Assets.xcassets */; };
@@ -42,6 +43,7 @@
 		540B80C327444A4400414BE6 /* ProjectScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectScreen.swift; sourceTree = "<group>"; };
 		540B80C527444E8900414BE6 /* IconView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IconView.swift; sourceTree = "<group>"; };
 		5474DBA02745436500A897AC /* CheckMarkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckMarkView.swift; sourceTree = "<group>"; };
+		54CE3B172746B1F300274254 /* CompletedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedView.swift; sourceTree = "<group>"; };
 		54F9AE692742F73C00F09248 /* HomeRepairNavigator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HomeRepairNavigator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		54F9AE6C2742F73C00F09248 /* HomeRepairNavigatorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRepairNavigatorApp.swift; sourceTree = "<group>"; };
 		54F9AE6E2742F73C00F09248 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 				54F9AE8727435BE400F09248 /* InfoOverLay.swift */,
 				540B80AE27442BA500414BE6 /* InfoSheet.swift */,
 				5474DBA02745436500A897AC /* CheckMarkView.swift */,
+				54CE3B172746B1F300274254 /* CompletedView.swift */,
 			);
 			path = HelperViews;
 			sourceTree = "<group>";
@@ -260,6 +263,7 @@
 				540B80B92744325100414BE6 /* TabBar.swift in Sources */,
 				54F9AE812742FA1C00F09248 /* AgreementView.swift in Sources */,
 				54F9AE7E2742F97F00F09248 /* Buttons.swift in Sources */,
+				54CE3B182746B1F300274254 /* CompletedView.swift in Sources */,
 				540B80C627444E8900414BE6 /* IconView.swift in Sources */,
 				540B80B5274430FD00414BE6 /* LottieView.swift in Sources */,
 				540B80C427444A4400414BE6 /* ProjectScreen.swift in Sources */,
