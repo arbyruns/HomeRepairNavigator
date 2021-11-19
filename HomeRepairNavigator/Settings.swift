@@ -15,6 +15,7 @@ struct Settings: View {
     @AppStorage("UserDefault_CompleteTasks") var useCompletedTasks = false
     @State var showWelcomeScreen = false
     @State var agreement = false
+    @State var showProject = false
 
     var body: some View {
         ZStack {
@@ -36,6 +37,12 @@ struct Settings: View {
                             IconView(image: "book", color: "SettingColor2", text: "Terms")
                         }
                         .buttonStyle(PlainButtonStyle())
+                            Button(action: {
+                                showProject = true
+                            }) {
+                                IconView(image: "rectangle.and.pencil.and.ellipsis", color: "SettingColor3", text: "Project Onboard")
+                            }
+                            .buttonStyle(PlainButtonStyle())
                         Button(action: {
                             openURL(URL(string: "https://www.paypal.com/fundraiser/charity/1381672")!)
                         }) {
@@ -94,6 +101,9 @@ struct Settings: View {
                        content: {
                     AgreementView(agreement: $agreement)
                 })
+                .sheet(isPresented: $showProject, content: {
+                    ProjectOnboard()
+                })
             }
             .navigationViewStyle(StackNavigationViewStyle())
         }
@@ -103,6 +113,8 @@ struct Settings: View {
 struct Settings_Previews: PreviewProvider {
     static var previews: some View {
         Settings()
+        Settings()
+            .colorScheme(.dark)
     }
 }
 
