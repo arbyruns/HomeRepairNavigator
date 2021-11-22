@@ -101,8 +101,8 @@ struct Settings: View {
                        content: {
                     AgreementView(agreement: $agreement)
                 })
-                .sheet(isPresented: $showProject, content: {
-                    ProjectOnboard()
+                .fullScreenCover(isPresented: $showProject, content: {
+                    ProjectOnboard(showProject: $showProject)
                 })
             }
             .navigationViewStyle(StackNavigationViewStyle())

@@ -11,6 +11,7 @@ struct ProjectScreen: View {
     @Environment(\.colorScheme) var colorScheme
 
     @State var selections = ""
+    @Binding var userProject: String
 
     let columns = [
         GridItem(.flexible()),
@@ -26,7 +27,7 @@ struct ProjectScreen: View {
                 Text("Please indicate what type of project you need.")
                     LazyVGrid(columns: columns, spacing: 20) {
                         ForEach(projectItems) { item in
-                            ItemView(selection: $selections, text: item.item, image: item.image)
+                            ItemView(selection: $userProject, text: item.item, image: item.image)
                         }
                     }
                     .padding(.top)
@@ -82,6 +83,7 @@ struct ItemView: View {
                 }
             )
             .onTapGesture {
+                playHaptic(style: "light")
                 withAnimation {
                     if selection == text {
                         selection = ""
@@ -111,8 +113,8 @@ var projectItems = [
 
 struct ProjectScreen_Previews: PreviewProvider {
     static var previews: some View {
-        ProjectScreen()
-        ProjectScreen()
+        ProjectScreen(userProject: .constant("nil"))
+        ProjectScreen(userProject: .constant("nil"))
             .colorScheme(.dark)
     }
 }

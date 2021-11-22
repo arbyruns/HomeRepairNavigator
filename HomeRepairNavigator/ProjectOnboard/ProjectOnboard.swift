@@ -8,19 +8,43 @@
 import SwiftUI
 
 struct ProjectOnboard: View {
+    @StateObject var telemtryData = TelemetryData()
+
+    @State var zipCode = ""
+    @State var userProject = ""
+    @State var userBudget = ""
+    @State var showProjectHelp = false
     @State var currentIndex = 0
+    @State var showConfirmation = false
+
+    @Binding var showProject: Bool
+    
 
     var body: some View {
         ZStack {
             Color("Background")
                 .edgesIgnoringSafeArea(.all)
             VStack {
+                HStack {
+                    Text(zipCode)
+                    Text(userProject)
+                    Text(userBudget)
+                    Spacer()
+                    Button(action: {
+                        playHaptic(style: "medium")
+                        showProjectHelp = true
+                    }) {
+                        Image(systemName: "questionmark.circle")
+                            .font(.title2)
+                            .padding(.trailing)
+                    }
+                }
                 TabView(selection: $currentIndex) {
-                    ProfileScreenView()
+                    ProfileScreenView(zipCode: $zipCode)
                         .tag(0)
-                    ProjectScreen()
+                    ProjectScreen(userProject: $userProject)
                         .tag(1)
-                    BudgetView()
+                    BudgetView(userBudget: $userBudget)
                         .tag(2)
                 }
                 .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .never))
@@ -28,29 +52,65 @@ struct ProjectOnboard: View {
                 Button(action: {
                     withAnimation {
                         if currentIndex != 2 {
+                            playHaptic(style: "light")
                             currentIndex += 1
                         } else {
-                            currentIndex = 0
+                            withAnimation {
+                            playHaptic(style: "medium")
+                            showConfirmation = true
+                            }
                         }
                     }
                 }) {
-                    if currentIndex != 2 {
-                    ButtonTextView(smallButton: false, text: "Next")
+                        ButtonTextView(smallButton: false, text: buttonText(index: currentIndex))
                         .padding()
-                    } else {
-                        ButtonTextView(smallButton: false, text: "OK")
-                            .padding()
-                    }
+                        .opacity(showConfirmation ? 0 : 1)
+                }
+                Button(action: {
+                    showProject = false
+                    playHaptic(style: "heavy")
+                }) {
+                    SecondaryButtonTextView(smallButton: false, text: "Cancel")
+                        .padding(.bottom)
+                        .opacity(showConfirmation ? 0 : 1)
                 }
             }
+            if showConfirmation {
+                ConfirmationScreen(showProject: $showProject,
+                                   showConfirmation: $showConfirmation,
+                                   zipCode: $zipCode,
+                                   userProject: $userProject, userBudget: $userBudget)
+            }
         }
+        .sheet(isPresented: $showProjectHelp,
+               content: {
+            About(showProjectHelp: $showProjectHelp)
+                .animation(.easeInOut)
+                .transition(.opacity)
+        })
     }
 }
 
 struct ProjectOnboard_Previews: PreviewProvider {
     static var previews: some View {
-        ProjectOnboard()
-        ProjectOnboard()
+        ProjectOnboard(showProject: .constant(false))
+        ProjectOnboard(showProject: .constant(false))
             .colorScheme(.dark)
+    }
+}
+
+func verifyZip(zip: String) -> Bool {
+    if zip.count != 5 {
+        return true
+    } else {
+        return false
+    }
+}
+
+func buttonText(index: Int) -> String {
+    if index != 2 {
+        return "Next"
+    } else {
+        return "OK"
     }
 }

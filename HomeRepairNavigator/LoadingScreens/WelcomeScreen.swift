@@ -36,6 +36,7 @@ struct WelcomeScreen: View {
                     Button(action: {
                         showFirstRun = false
                         showWelcomeScreen = false
+                        playHaptic(style: "medium")
                     }) {
                         ButtonTextView(smallButton: false, text: "Continue")
                             .padding(.horizontal)

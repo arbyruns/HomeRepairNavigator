@@ -48,6 +48,7 @@ struct ProjectRowView: View {
                     Spacer()
                     Button(action: {
                         withAnimation {
+                            playHaptic(style: "light")
                             showButtons.toggle()
                         }
                     }) {
@@ -65,6 +66,7 @@ struct ProjectRowView: View {
                 if showButtons {
                     HStack {
                         Button(action: {
+                            playHaptic(style: "medium")
                             withAnimation {
                                 self.trimVal = 1
                                 completed = true
@@ -75,6 +77,7 @@ struct ProjectRowView: View {
                             ButtonTextView(smallButton: true, text: "Yes")
                         }
                         Button(action: {
+                            playHaptic(style: "medium")
                             withAnimation {
                                 self.trimVal = 0
                                 showInfo = true

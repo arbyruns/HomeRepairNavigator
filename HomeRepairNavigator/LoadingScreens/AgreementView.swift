@@ -32,6 +32,7 @@ struct AgreementView: View {
                 Button(action: {
                     showTerms = false
                     agreement = false
+                    playHaptic(style: "medium")
                 }) {
                     ButtonTextView(smallButton: false, text: "I Accept")
                         .padding(.horizontal)

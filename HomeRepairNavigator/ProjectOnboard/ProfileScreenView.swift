@@ -8,19 +8,20 @@
 import SwiftUI
 
 struct ProfileScreenView: View {
-    @State var profileName = ""
-    @State var profileZip = ""
-    @State var profileEmail = ""
+//TODO: Convert this data to AppStorage. Improve zipcode box to be more front and center.
+
+    @Binding var zipCode: String
+
 
     var body: some View {
         VStack(alignment: .leading) {
-            Text("Profile Information")
+            Text("Project Information")
                 .bold()
                 .textCase(.uppercase)
                 .font(.title)
             VStack(alignment: .leading) {
                 Spacer()
-                ProfileTextView(textValue: $profileZip, titleFieldName: "Zip Code", placeHolderText: "12345")
+                ProfileTextView(textValue: $zipCode, titleFieldName: "Zip Code", placeHolderText: "12345")
                 Spacer()
             }
             .padding()
@@ -32,7 +33,7 @@ struct ProfileScreenView: View {
 
 struct ProfileScreenView_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileScreenView()
+        ProfileScreenView(zipCode: .constant("00000"))
     }
 }
 

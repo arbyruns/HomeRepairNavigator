@@ -17,6 +17,12 @@
 		540B80BB274439B300414BE6 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 540B80BA274439B300414BE6 /* Settings.swift */; };
 		540B80C427444A4400414BE6 /* ProjectScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 540B80C327444A4400414BE6 /* ProjectScreen.swift */; };
 		540B80C627444E8900414BE6 /* IconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 540B80C527444E8900414BE6 /* IconView.swift */; };
+		54143B1E274BED050088C0A2 /* TelemetryClient in Frameworks */ = {isa = PBXBuildFile; productRef = 54143B1D274BED050088C0A2 /* TelemetryClient */; };
+		54143B21274BEFCD0088C0A2 /* TelemtryData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54143B20274BEFCD0088C0A2 /* TelemtryData.swift */; };
+		54143B23274C1CA20088C0A2 /* About.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54143B22274C1CA20088C0A2 /* About.swift */; };
+		54143B25274C220C0088C0A2 /* ConfirmationScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54143B24274C220C0088C0A2 /* ConfirmationScreen.swift */; };
+		54143B27274C22640088C0A2 /* 42564-thanks-button.json in Resources */ = {isa = PBXBuildFile; fileRef = 54143B26274C22640088C0A2 /* 42564-thanks-button.json */; };
+		54143B29274C287E0088C0A2 /* Haptics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54143B28274C287E0088C0A2 /* Haptics.swift */; };
 		5474DBA12745436500A897AC /* CheckMarkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5474DBA02745436500A897AC /* CheckMarkView.swift */; };
 		5474DBA427456E5100A897AC /* SwiftUINavigationBarStyling in Frameworks */ = {isa = PBXBuildFile; productRef = 5474DBA327456E5100A897AC /* SwiftUINavigationBarStyling */; };
 		5487294C2747512D0070CC22 /* BudgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5487294B2747512D0070CC22 /* BudgetView.swift */; };
@@ -45,6 +51,11 @@
 		540B80BA274439B300414BE6 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		540B80C327444A4400414BE6 /* ProjectScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectScreen.swift; sourceTree = "<group>"; };
 		540B80C527444E8900414BE6 /* IconView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IconView.swift; sourceTree = "<group>"; };
+		54143B20274BEFCD0088C0A2 /* TelemtryData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelemtryData.swift; sourceTree = "<group>"; };
+		54143B22274C1CA20088C0A2 /* About.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = About.swift; sourceTree = "<group>"; };
+		54143B24274C220C0088C0A2 /* ConfirmationScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationScreen.swift; sourceTree = "<group>"; };
+		54143B26274C22640088C0A2 /* 42564-thanks-button.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "42564-thanks-button.json"; sourceTree = "<group>"; };
+		54143B28274C287E0088C0A2 /* Haptics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Haptics.swift; sourceTree = "<group>"; };
 		5474DBA02745436500A897AC /* CheckMarkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckMarkView.swift; sourceTree = "<group>"; };
 		5487294B2747512D0070CC22 /* BudgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetView.swift; sourceTree = "<group>"; };
 		5487294D274753770070CC22 /* ProjectOnboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectOnboard.swift; sourceTree = "<group>"; };
@@ -69,6 +80,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				540B80B2274430E200414BE6 /* Lottie in Frameworks */,
+				54143B1E274BED050088C0A2 /* TelemetryClient in Frameworks */,
 				5474DBA427456E5100A897AC /* SwiftUINavigationBarStyling in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -95,19 +107,29 @@
 		540B80B3274430EA00414BE6 /* Lottie */ = {
 			isa = PBXGroup;
 			children = (
+				54143B26274C22640088C0A2 /* 42564-thanks-button.json */,
 				540B80B62744319000414BE6 /* 11202-information.json */,
 				540B80B4274430FD00414BE6 /* LottieView.swift */,
 			);
 			path = Lottie;
 			sourceTree = "<group>";
 		};
+		54143B1F274BEF3D0088C0A2 /* Telemetry */ = {
+			isa = PBXGroup;
+			children = (
+				54143B20274BEFCD0088C0A2 /* TelemtryData.swift */,
+			);
+			path = Telemetry;
+			sourceTree = "<group>";
+		};
 		5487294F2747537C0070CC22 /* ProjectOnboard */ = {
 			isa = PBXGroup;
 			children = (
-				540B80C327444A4400414BE6 /* ProjectScreen.swift */,
 				5487294D274753770070CC22 /* ProjectOnboard.swift */,
+				540B80C327444A4400414BE6 /* ProjectScreen.swift */,
 				5487294B2747512D0070CC22 /* BudgetView.swift */,
 				54CE3B192746DA5E00274254 /* ProfileScreenView.swift */,
+				54143B22274C1CA20088C0A2 /* About.swift */,
 			);
 			path = ProjectOnboard;
 			sourceTree = "<group>";
@@ -131,8 +153,10 @@
 		54F9AE6B2742F73C00F09248 /* HomeRepairNavigator */ = {
 			isa = PBXGroup;
 			children = (
+				54143B1F274BEF3D0088C0A2 /* Telemetry */,
 				5487294F2747537C0070CC22 /* ProjectOnboard */,
 				540B80BA274439B300414BE6 /* Settings.swift */,
+				54143B24274C220C0088C0A2 /* ConfirmationScreen.swift */,
 				540B80B3274430EA00414BE6 /* Lottie */,
 				540B80AB2743E87C00414BE6 /* AfterProject */,
 				540B80A82743E77400414BE6 /* DuringProject */,
@@ -144,6 +168,7 @@
 				54F9AE702742F73F00F09248 /* Assets.xcassets */,
 				54F9AE722742F73F00F09248 /* Preview Content */,
 				540B80B82744325100414BE6 /* TabBar.swift */,
+				54143B28274C287E0088C0A2 /* Haptics.swift */,
 			);
 			path = HomeRepairNavigator;
 			sourceTree = "<group>";
@@ -206,6 +231,7 @@
 			packageProductDependencies = (
 				540B80B1274430E200414BE6 /* Lottie */,
 				5474DBA327456E5100A897AC /* SwiftUINavigationBarStyling */,
+				54143B1D274BED050088C0A2 /* TelemetryClient */,
 			);
 			productName = HomeRepairNavigator;
 			productReference = 54F9AE692742F73C00F09248 /* HomeRepairNavigator.app */;
@@ -238,6 +264,7 @@
 			packageReferences = (
 				540B80B0274430E200414BE6 /* XCRemoteSwiftPackageReference "lottie-ios" */,
 				5474DBA227456E5100A897AC /* XCRemoteSwiftPackageReference "swiftui-navigation-bar-styling" */,
+				54143B1C274BED050088C0A2 /* XCRemoteSwiftPackageReference "SwiftClient" */,
 			);
 			productRefGroup = 54F9AE6A2742F73C00F09248 /* Products */;
 			projectDirPath = "";
@@ -253,6 +280,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				54143B27274C22640088C0A2 /* 42564-thanks-button.json in Resources */,
 				540B80B72744319000414BE6 /* 11202-information.json in Resources */,
 				54F9AE742742F73F00F09248 /* Preview Assets.xcassets in Resources */,
 				54F9AE712742F73F00F09248 /* Assets.xcassets in Resources */,
@@ -267,6 +295,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				54CE3B1A2746DA5E00274254 /* ProfileScreenView.swift in Sources */,
+				54143B21274BEFCD0088C0A2 /* TelemtryData.swift in Sources */,
 				540B80AF27442BA500414BE6 /* InfoSheet.swift in Sources */,
 				540B80AA2743E78200414BE6 /* DuringProject.swift in Sources */,
 				54F9AE7B2742F79900F09248 /* WelcomeScreen.swift in Sources */,
@@ -282,9 +311,12 @@
 				54F9AE86274359C600F09248 /* ProjectRowView.swift in Sources */,
 				540B80B92744325100414BE6 /* TabBar.swift in Sources */,
 				54F9AE812742FA1C00F09248 /* AgreementView.swift in Sources */,
+				54143B23274C1CA20088C0A2 /* About.swift in Sources */,
 				54F9AE7E2742F97F00F09248 /* Buttons.swift in Sources */,
 				54CE3B182746B1F300274254 /* CompletedView.swift in Sources */,
+				54143B25274C220C0088C0A2 /* ConfirmationScreen.swift in Sources */,
 				540B80C627444E8900414BE6 /* IconView.swift in Sources */,
+				54143B29274C287E0088C0A2 /* Haptics.swift in Sources */,
 				540B80B5274430FD00414BE6 /* LottieView.swift in Sources */,
 				540B80C427444A4400414BE6 /* ProjectScreen.swift in Sources */,
 			);
@@ -499,6 +531,14 @@
 				kind = branch;
 			};
 		};
+		54143B1C274BED050088C0A2 /* XCRemoteSwiftPackageReference "SwiftClient" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/TelemetryDeck/SwiftClient";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 		5474DBA227456E5100A897AC /* XCRemoteSwiftPackageReference "swiftui-navigation-bar-styling" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/globulus/swiftui-navigation-bar-styling.git";
@@ -514,6 +554,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 540B80B0274430E200414BE6 /* XCRemoteSwiftPackageReference "lottie-ios" */;
 			productName = Lottie;
+		};
+		54143B1D274BED050088C0A2 /* TelemetryClient */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 54143B1C274BED050088C0A2 /* XCRemoteSwiftPackageReference "SwiftClient" */;
+			productName = TelemetryClient;
 		};
 		5474DBA327456E5100A897AC /* SwiftUINavigationBarStyling */ = {
 			isa = XCSwiftPackageProductDependency;

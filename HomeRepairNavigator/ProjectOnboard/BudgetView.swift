@@ -10,7 +10,7 @@ import SwiftUI
 struct BudgetView: View {
     @Environment(\.colorScheme) var colorScheme
 
-    @State var budgetSelection = ""
+    @Binding var userBudget: String
 
     let columns = [
         GridItem(.flexible()),
@@ -24,7 +24,7 @@ struct BudgetView: View {
                 Text("Please indicate your budget.")
                     LazyVGrid(columns: columns, spacing: 20) {
                         ForEach(budgetInfo) { item in
-                            BudgetItemView(budgetSelection: $budgetSelection, text: item.item, image: item.image)
+                            BudgetItemView(budgetSelection: $userBudget, text: item.item, image: item.image)
                         }
                     }
                     .padding(.top)
@@ -60,6 +60,7 @@ struct BudgetItemView: View {
                 }
             )
             .onTapGesture {
+                playHaptic(style: "light")
                 withAnimation {
                     if budgetSelection == text {
                         budgetSelection = ""
@@ -79,15 +80,15 @@ struct BudgetInfo: Identifiable {
 }
 
 var budgetInfo = [
-    BudgetInfo(item: "1000", image: "dollarsign.circle"),
-    BudgetInfo(item: "5000", image: "dollarsign.circle"),
-    BudgetInfo(item: "10,000", image: "dollarsign.circle"),
-    BudgetInfo(item: "20,000", image: "dollarsign.circle"),
-    BudgetInfo(item: "50,000", image: "dollarsign.circle")
+    BudgetInfo(item: "0 - 5,000", image: "dollarsign.circle"),
+    BudgetInfo(item: "5,001 - 10,000", image: "dollarsign.circle"),
+    BudgetInfo(item: "10,001 - 25,000", image: "dollarsign.circle"),
+    BudgetInfo(item: "25,001 - 50,000", image: "dollarsign.circle"),
+    BudgetInfo(item: "50,001 - or more", image: "dollarsign.circle")
 ]
 
 struct BudgetView_Previews: PreviewProvider {
     static var previews: some View {
-        BudgetView()
+        BudgetView(userBudget: .constant("50,000"))
     }
 }

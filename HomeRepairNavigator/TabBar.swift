@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import TelemetryClient
 
 struct TabBar: View {
     @AppStorage("UserDefault_FirstRun") var showFirstRun = true
