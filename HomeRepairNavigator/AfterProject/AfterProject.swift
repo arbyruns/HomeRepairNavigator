@@ -42,6 +42,7 @@ struct AfterProject: View {
                     InfoSheet(infoOverlay: infoOverLayInfo, showInfo: $showInfo)
                 })
                 .navigationTitle("After Project")
+                .navigationBarTitleDisplayMode(.inline)
                 .navigationBarColor(colorScheme == .dark ? UIColor(Color("borderColor")) : UIColor(.white), textColor: UIColor(Color("FontColor")))
             }
         }
