@@ -40,7 +40,7 @@ struct Settings: View {
                             Button(action: {
                                 showProject = true
                             }) {
-                                IconView(image: "rectangle.and.pencil.and.ellipsis", color: "SettingColor3", text: "Project Onboard")
+                                IconView(image: "rectangle.and.pencil.and.ellipsis", color: "SettingColor3", text: "Project Info")
                             }
                             .buttonStyle(PlainButtonStyle())
                         Button(action: {
@@ -85,8 +85,30 @@ struct Settings: View {
                                 Link("", destination: URL(string: "tel:4049416832")!)
                             }
                         }
-                        Toggle(isOn: $useCompletedTasks) {
-                            Text("Use Square Completion Style")
+                        HStack {
+                            Spacer()
+                                Text("Task Completion Style:")
+                                .bold()
+                            Spacer()
+                        }
+                        HStack {
+                            Spacer()
+                            CheckMarkView(checked: .constant(useCompletedTasks ? false : true), trimValue: .constant(1))
+                                .onTapGesture {
+                                    withAnimation {
+                                        playHaptic(style: "medium")
+                                        useCompletedTasks = false
+                                    }
+                                }
+                            Spacer()
+                            CompletedView(checked: .constant(useCompletedTasks ? true : false), trimValue: .constant(1))
+                                .onTapGesture {
+                                    withAnimation {
+                                        playHaptic(style: "medium")
+                                        useCompletedTasks = true
+                                    }
+                                }
+                            Spacer()
                         }
                         Text("Version: \(getAppVersion())")
                     }
