@@ -48,6 +48,7 @@ struct BeforeProject: View {
                     InfoSheet(infoOverlay: infoOverLayInfo, showInfo: $showInfo)
                 })
                 .navigationTitle("Before Project")
+                .navigationBarTitleDisplayMode(.inline)
                 .navigationBarColor(colorScheme == .dark ? UIColor(Color("borderColor")) : UIColor(Color("buttonColorCyan")), textColor: UIColor(Color("FontColor")))
             }
         }
