@@ -118,6 +118,7 @@ struct BeforeRowView_Previews: PreviewProvider {
     }
 }
 
+
 class CompletedTasksModel: ObservableObject {
 
     @Published var completedItems = [Int]()
@@ -125,6 +126,8 @@ class CompletedTasksModel: ObservableObject {
     private let kUserDefaultsCompletedItems = "userDefault-completedItems"
 
 
+    /// adds trackingID for completed items to default settings array
+    /// - Parameter completedTask: Takes trackingID for tracking of completed tasks
     func addItem(completedTask: Int){
         let userDefaults = UserDefaults.standard
 
@@ -141,6 +144,8 @@ class CompletedTasksModel: ObservableObject {
         print("added items read from userdefaults \(userDefaultArray)")
     }
 
+    /// removes trackingID  for completed items to default settings array
+    /// - Parameter completedTask: <#completedTask description#>
     func removeItem(completedTask: Int) {
         let userDefaults = UserDefaults.standard
         var array: [Int] = userDefaults.array(forKey: kUserDefaultsCompletedItems) as? [Int] ?? []
@@ -154,7 +159,8 @@ class CompletedTasksModel: ObservableObject {
         userDefaults.set(array, forKey: kUserDefaultsCompletedItems)
 
     }
-
+    /// Determines if trackingID has been added and returns a bool value
+    /// - Parameter isCompletedTask: Takes trackingID for tracking of completed tasks
     func isCompletedTask(completedTask: Int) -> Bool {
         let userDefaults = UserDefaults.standard
         var array: [Int] = userDefaults.array(forKey: kUserDefaultsCompletedItems) as? [Int] ?? []
@@ -165,6 +171,7 @@ class CompletedTasksModel: ObservableObject {
             return false
         }
     }
+    /// Clears the userDefault array to nil
     func clearCompletedItems() {
         let userDefaults = UserDefaults.standard
         var array: [Int] = []
