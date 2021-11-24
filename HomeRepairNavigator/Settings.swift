@@ -9,6 +9,8 @@ import SwiftUI
 
 struct Settings: View {
     @Environment(\.openURL) var openURL
+    @ObservedObject var completedTaskModel = CompletedTasksModel()
+
     @AppStorage("UserDefault_FirstRun") var showFirstRun = true
     @AppStorage("UserDefault_ShowTerms") var showTerms = true
     @AppStorage("UserDefault_showTutorial") var showTutorial = true
@@ -28,6 +30,31 @@ struct Settings: View {
                 VStack {
                     Form {
                         Section(header: Text("")) {
+                            HStack {
+                                Spacer()
+                                    Text("Task Completion Style:")
+                                    .bold()
+                                Spacer()
+                            }
+                            HStack {
+                                Spacer()
+                                CheckMarkView(checked: .constant(useCompletedTasks ? false : true), trimValue: .constant(1))
+                                    .onTapGesture {
+                                        withAnimation {
+                                            playHaptic(style: "medium")
+                                            useCompletedTasks = false
+                                        }
+                                    }
+                                Spacer()
+                                SquareCompletionView(checked: .constant(useCompletedTasks ? true : false), trimValue: .constant(1))
+                                    .onTapGesture {
+                                        withAnimation {
+                                            playHaptic(style: "medium")
+                                            useCompletedTasks = true
+                                        }
+                                    }
+                                Spacer()
+                            }
                         Button(action: {
                             showSheet = true
                             showWelcomeScreen = true
@@ -72,6 +99,7 @@ struct Settings: View {
                                 showFirstRun = true
                                 showTerms = true
                                 showTutorial = true
+                                completedTaskModel.clearCompletedItems()
                             }) {
                                 IconView(image: "exclamationmark.arrow.circlepath", color: "SettingColor3", text: "Reset")
                             }
@@ -90,31 +118,6 @@ struct Settings: View {
                                 IconView(image: "phone", color: "SettingColor2", text: "Contact")
                                 Link("", destination: URL(string: "tel:4049416832")!)
                             }
-                        }
-                        HStack {
-                            Spacer()
-                                Text("Task Completion Style:")
-                                .bold()
-                            Spacer()
-                        }
-                        HStack {
-                            Spacer()
-                            CheckMarkView(checked: .constant(useCompletedTasks ? false : true), trimValue: .constant(1))
-                                .onTapGesture {
-                                    withAnimation {
-                                        playHaptic(style: "medium")
-                                        useCompletedTasks = false
-                                    }
-                                }
-                            Spacer()
-                            SquareCompletionView(checked: .constant(useCompletedTasks ? true : false), trimValue: .constant(1))
-                                .onTapGesture {
-                                    withAnimation {
-                                        playHaptic(style: "medium")
-                                        useCompletedTasks = true
-                                    }
-                                }
-                            Spacer()
                         }
                         Text("Version: \(getAppVersion())")
                     }
