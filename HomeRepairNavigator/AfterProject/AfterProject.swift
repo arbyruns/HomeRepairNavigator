@@ -13,6 +13,8 @@ struct AfterProject: View {
     @ObservedObject var infoOverLayInfo: OverLayInfo
 
     @State var showInfo = false
+    @State var showSheet = false
+    @State var showCompletedSheet = false
     @Binding var showButtons: Bool
     @Binding var completed: Bool
 
@@ -25,6 +27,8 @@ struct AfterProject: View {
                             ForEach(afterProjectData) { data in
                                 ProjectRowView(infoOverLayInfo: infoOverLayInfo,
                                                showInfo: $showInfo,
+                                               showSheet: $showSheet,
+                                               showCompletedSheet: $showCompletedSheet,
                                                title: data.title,
                                                question: data.title,
                                                info: data.description,
@@ -39,8 +43,14 @@ struct AfterProject: View {
                 .sheet(isPresented: $showInfo,
                        onDismiss:  { self.showButtons = false },
                        content: {
-                    InfoSheet(infoOverlay: infoOverLayInfo, showInfo: $showInfo)
+                        InfoSheet(infoOverlay: infoOverLayInfo, showInfo: $showInfo)
                 })
+                .sheet(isPresented: $showCompletedSheet,
+                       onDismiss:  { self.showButtons = false },
+                       content: {
+                        CompletionView()
+                })
+
                 .navigationTitle("After Project")
                 .navigationBarTitleDisplayMode(.inline)
                 .navigationBarColor(colorScheme == .dark ? UIColor(Color("borderColor")) : UIColor(.white), textColor: UIColor(Color("FontColor")))
