@@ -23,6 +23,7 @@
 		54143B25274C220C0088C0A2 /* ConfirmationScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54143B24274C220C0088C0A2 /* ConfirmationScreen.swift */; };
 		54143B27274C22640088C0A2 /* 42564-thanks-button.json in Resources */ = {isa = PBXBuildFile; fileRef = 54143B26274C22640088C0A2 /* 42564-thanks-button.json */; };
 		54143B29274C287E0088C0A2 /* Haptics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54143B28274C287E0088C0A2 /* Haptics.swift */; };
+		543B55CD274ECD8A0068F804 /* FooterImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543B55CC274ECD8A0068F804 /* FooterImage.swift */; };
 		5474DBA12745436500A897AC /* CheckMarkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5474DBA02745436500A897AC /* CheckMarkView.swift */; };
 		5474DBA427456E5100A897AC /* SwiftUINavigationBarStyling in Frameworks */ = {isa = PBXBuildFile; productRef = 5474DBA327456E5100A897AC /* SwiftUINavigationBarStyling */; };
 		5487294C2747512D0070CC22 /* BudgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5487294B2747512D0070CC22 /* BudgetView.swift */; };
@@ -58,6 +59,8 @@
 		54143B24274C220C0088C0A2 /* ConfirmationScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationScreen.swift; sourceTree = "<group>"; };
 		54143B26274C22640088C0A2 /* 42564-thanks-button.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "42564-thanks-button.json"; sourceTree = "<group>"; };
 		54143B28274C287E0088C0A2 /* Haptics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Haptics.swift; sourceTree = "<group>"; };
+		543B55CB274ECC6C0068F804 /* ReadMe.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = ReadMe.md; sourceTree = "<group>"; };
+		543B55CC274ECD8A0068F804 /* FooterImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterImage.swift; sourceTree = "<group>"; };
 		5474DBA02745436500A897AC /* CheckMarkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckMarkView.swift; sourceTree = "<group>"; };
 		5487294B2747512D0070CC22 /* BudgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetView.swift; sourceTree = "<group>"; };
 		5487294D274753770070CC22 /* ProjectOnboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectOnboard.swift; sourceTree = "<group>"; };
@@ -166,7 +169,6 @@
 		54F9AE6B2742F73C00F09248 /* HomeRepairNavigator */ = {
 			isa = PBXGroup;
 			children = (
-				54D923B9274DEAF60051E83F /* TutorialView.swift */,
 				54D923B6274D839A0051E83F /* CompletionScreens */,
 				54143B1F274BEF3D0088C0A2 /* Telemetry */,
 				5487294F2747537C0070CC22 /* ProjectOnboard */,
@@ -183,6 +185,7 @@
 				54F9AE722742F73F00F09248 /* Preview Content */,
 				540B80B82744325100414BE6 /* TabBar.swift */,
 				54143B28274C287E0088C0A2 /* Haptics.swift */,
+				543B55CB274ECC6C0068F804 /* ReadMe.md */,
 			);
 			path = HomeRepairNavigator;
 			sourceTree = "<group>";
@@ -205,6 +208,7 @@
 				540B80AE27442BA500414BE6 /* InfoSheet.swift */,
 				5474DBA02745436500A897AC /* CheckMarkView.swift */,
 				54CE3B172746B1F300274254 /* SquareCompletionView.swift */,
+				543B55CC274ECD8A0068F804 /* FooterImage.swift */,
 			);
 			path = HelperViews;
 			sourceTree = "<group>";
@@ -212,6 +216,7 @@
 		54F9AE7F2742F9F100F09248 /* LoadingScreens */ = {
 			isa = PBXGroup;
 			children = (
+				54D923B9274DEAF60051E83F /* TutorialView.swift */,
 				54F9AE7A2742F79900F09248 /* WelcomeScreen.swift */,
 				54F9AE802742FA1C00F09248 /* AgreementView.swift */,
 			);
@@ -314,6 +319,7 @@
 				54143B21274BEFCD0088C0A2 /* TelemtryData.swift in Sources */,
 				540B80AF27442BA500414BE6 /* InfoSheet.swift in Sources */,
 				540B80AA2743E78200414BE6 /* DuringProject.swift in Sources */,
+				543B55CD274ECD8A0068F804 /* FooterImage.swift in Sources */,
 				54F9AE7B2742F79900F09248 /* WelcomeScreen.swift in Sources */,
 				54F9AE6F2742F73C00F09248 /* ContentView.swift in Sources */,
 				5487294E274753770070CC22 /* ProjectOnboard.swift in Sources */,
