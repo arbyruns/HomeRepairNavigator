@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CompletedView: View {
+struct SquareCompletionView: View {
     @Binding var checked: Bool
     @Binding var trimValue: CGFloat
 
@@ -31,8 +31,8 @@ struct CompletedView: View {
     }
 }
 
-struct CompletedView_Previews: PreviewProvider {
+struct SquareCompletionView_Previews: PreviewProvider {
     static var previews: some View {
-        CompletedView(checked: .constant(false), trimValue: .constant(1))
+        SquareCompletionView(checked: .constant(false), trimValue: .constant(1))
     }
 }
