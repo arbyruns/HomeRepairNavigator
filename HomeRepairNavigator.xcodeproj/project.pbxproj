@@ -150,7 +150,6 @@
 		54F9AE602742F73C00F09248 = {
 			isa = PBXGroup;
 			children = (
-				54D923B9274DEAF60051E83F /* TutorialView.swift */,
 				54F9AE6B2742F73C00F09248 /* HomeRepairNavigator */,
 				54F9AE6A2742F73C00F09248 /* Products */,
 			);
@@ -167,6 +166,7 @@
 		54F9AE6B2742F73C00F09248 /* HomeRepairNavigator */ = {
 			isa = PBXGroup;
 			children = (
+				54D923B9274DEAF60051E83F /* TutorialView.swift */,
 				54D923B6274D839A0051E83F /* CompletionScreens */,
 				54143B1F274BEF3D0088C0A2 /* Telemetry */,
 				5487294F2747537C0070CC22 /* ProjectOnboard */,
