@@ -10,6 +10,7 @@ import SwiftUI
 struct WelcomeScreen: View {
     @AppStorage("UserDefault_FirstRun") var showFirstRun = true
     @AppStorage("UserDefault_ShowTerms") var showTerms = true
+    @AppStorage("UserDefault_showTutorial") var showTutorial = true
 
     @Binding var showWelcomeScreen: Bool
 
@@ -23,11 +24,11 @@ struct WelcomeScreen: View {
                     .frame(width: 145, height: 145, alignment: .center)
                     .aspectRatio(contentMode: .fit)
                 Group {
-                    Text("Home Repair Navigator")
+                    Text("Home Repair Helper")
                         .font(.title)
                         .bold()
                         .padding(.bottom)
-                    Text("Welcome to the Home Repair Navigator! This app will walk you through the process of dealing with contractors to help you avoid being ripped off or losing your hard earned money.")
+                    Text("Welcome to the Home Repair Helper! This app will walk you through the process of dealing with contractors to help you avoid being ripped off or losing your hard earned money.")
                         .padding()
                     Text("The app is very easy to use.")
                         .padding()

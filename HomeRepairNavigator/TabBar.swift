@@ -11,6 +11,7 @@ import TelemetryClient
 struct TabBar: View {
     @AppStorage("UserDefault_FirstRun") var showFirstRun = true
     @AppStorage("UserDefault_ShowTerms") var showTerms = true
+    @AppStorage("UserDefault_showTutorial") var showTutorial = true
 
     var body: some View {
         VStack {
@@ -37,9 +38,9 @@ struct TabBar: View {
 
                 }
             }
-            .fullScreenCover(isPresented: $showFirstRun,
+            .fullScreenCover(isPresented: $showTutorial,
                 onDismiss: { print("dismissed!") },
-                             content: { WelcomeScreen(showWelcomeScreen: .constant(false)) })
+                             content: { TutorialView() })
         }
     }
 }

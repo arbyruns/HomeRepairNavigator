@@ -10,6 +10,7 @@ import SwiftUI
 struct AgreementView: View {
     @AppStorage("UserDefault_FirstRun") var showFirstRun = true
     @AppStorage("UserDefault_ShowTerms") var showTerms = true
+
     @Binding var agreement: Bool
 
     var body: some View {
@@ -21,7 +22,7 @@ struct AgreementView: View {
                     .resizable()
                     .frame(width: 145, height: 145, alignment: .center)
                     .aspectRatio(contentMode: .fit)
-                Text("Home Repair Navigator")
+                Text("Home Repair Helper")
                     .font(.title)
                     .bold()
                     .padding(.bottom)
