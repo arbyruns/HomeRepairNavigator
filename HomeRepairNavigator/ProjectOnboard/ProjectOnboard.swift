@@ -26,9 +26,6 @@ struct ProjectOnboard: View {
                 .edgesIgnoringSafeArea(.all)
             VStack {
                 HStack {
-                    Text(zipCode)
-                    Text(userProject)
-                    Text(userBudget)
                     Spacer()
                     Button(action: {
                         playHaptic(style: "medium")
