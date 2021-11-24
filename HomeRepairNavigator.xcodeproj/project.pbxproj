@@ -27,8 +27,10 @@
 		5474DBA427456E5100A897AC /* SwiftUINavigationBarStyling in Frameworks */ = {isa = PBXBuildFile; productRef = 5474DBA327456E5100A897AC /* SwiftUINavigationBarStyling */; };
 		5487294C2747512D0070CC22 /* BudgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5487294B2747512D0070CC22 /* BudgetView.swift */; };
 		5487294E274753770070CC22 /* ProjectOnboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5487294D274753770070CC22 /* ProjectOnboard.swift */; };
-		54CE3B182746B1F300274254 /* CompletedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54CE3B172746B1F300274254 /* CompletedView.swift */; };
+		54CE3B182746B1F300274254 /* SquareCompletionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54CE3B172746B1F300274254 /* SquareCompletionView.swift */; };
 		54CE3B1A2746DA5E00274254 /* ProfileScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54CE3B192746DA5E00274254 /* ProfileScreenView.swift */; };
+		54D923B8274D83C60051E83F /* CompletionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D923B7274D83C60051E83F /* CompletionView.swift */; };
+		54D923BA274DEAF60051E83F /* TutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D923B9274DEAF60051E83F /* TutorialView.swift */; };
 		54F9AE6D2742F73C00F09248 /* HomeRepairNavigatorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F9AE6C2742F73C00F09248 /* HomeRepairNavigatorApp.swift */; };
 		54F9AE6F2742F73C00F09248 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F9AE6E2742F73C00F09248 /* ContentView.swift */; };
 		54F9AE712742F73F00F09248 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 54F9AE702742F73F00F09248 /* Assets.xcassets */; };
@@ -59,8 +61,10 @@
 		5474DBA02745436500A897AC /* CheckMarkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckMarkView.swift; sourceTree = "<group>"; };
 		5487294B2747512D0070CC22 /* BudgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetView.swift; sourceTree = "<group>"; };
 		5487294D274753770070CC22 /* ProjectOnboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectOnboard.swift; sourceTree = "<group>"; };
-		54CE3B172746B1F300274254 /* CompletedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedView.swift; sourceTree = "<group>"; };
+		54CE3B172746B1F300274254 /* SquareCompletionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareCompletionView.swift; sourceTree = "<group>"; };
 		54CE3B192746DA5E00274254 /* ProfileScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScreenView.swift; sourceTree = "<group>"; };
+		54D923B7274D83C60051E83F /* CompletionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletionView.swift; sourceTree = "<group>"; };
+		54D923B9274DEAF60051E83F /* TutorialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialView.swift; sourceTree = "<group>"; };
 		54F9AE692742F73C00F09248 /* HomeRepairNavigator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HomeRepairNavigator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		54F9AE6C2742F73C00F09248 /* HomeRepairNavigatorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRepairNavigatorApp.swift; sourceTree = "<group>"; };
 		54F9AE6E2742F73C00F09248 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -134,9 +138,19 @@
 			path = ProjectOnboard;
 			sourceTree = "<group>";
 		};
+		54D923B6274D839A0051E83F /* CompletionScreens */ = {
+			isa = PBXGroup;
+			children = (
+				54143B24274C220C0088C0A2 /* ConfirmationScreen.swift */,
+				54D923B7274D83C60051E83F /* CompletionView.swift */,
+			);
+			path = CompletionScreens;
+			sourceTree = "<group>";
+		};
 		54F9AE602742F73C00F09248 = {
 			isa = PBXGroup;
 			children = (
+				54D923B9274DEAF60051E83F /* TutorialView.swift */,
 				54F9AE6B2742F73C00F09248 /* HomeRepairNavigator */,
 				54F9AE6A2742F73C00F09248 /* Products */,
 			);
@@ -153,10 +167,10 @@
 		54F9AE6B2742F73C00F09248 /* HomeRepairNavigator */ = {
 			isa = PBXGroup;
 			children = (
+				54D923B6274D839A0051E83F /* CompletionScreens */,
 				54143B1F274BEF3D0088C0A2 /* Telemetry */,
 				5487294F2747537C0070CC22 /* ProjectOnboard */,
 				540B80BA274439B300414BE6 /* Settings.swift */,
-				54143B24274C220C0088C0A2 /* ConfirmationScreen.swift */,
 				540B80B3274430EA00414BE6 /* Lottie */,
 				540B80AB2743E87C00414BE6 /* AfterProject */,
 				540B80A82743E77400414BE6 /* DuringProject */,
@@ -190,7 +204,7 @@
 				54F9AE8727435BE400F09248 /* InfoOverLay.swift */,
 				540B80AE27442BA500414BE6 /* InfoSheet.swift */,
 				5474DBA02745436500A897AC /* CheckMarkView.swift */,
-				54CE3B172746B1F300274254 /* CompletedView.swift */,
+				54CE3B172746B1F300274254 /* SquareCompletionView.swift */,
 			);
 			path = HelperViews;
 			sourceTree = "<group>";
@@ -294,7 +308,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				54D923B8274D83C60051E83F /* CompletionView.swift in Sources */,
 				54CE3B1A2746DA5E00274254 /* ProfileScreenView.swift in Sources */,
+				54D923BA274DEAF60051E83F /* TutorialView.swift in Sources */,
 				54143B21274BEFCD0088C0A2 /* TelemtryData.swift in Sources */,
 				540B80AF27442BA500414BE6 /* InfoSheet.swift in Sources */,
 				540B80AA2743E78200414BE6 /* DuringProject.swift in Sources */,
@@ -313,7 +329,7 @@
 				54F9AE812742FA1C00F09248 /* AgreementView.swift in Sources */,
 				54143B23274C1CA20088C0A2 /* About.swift in Sources */,
 				54F9AE7E2742F97F00F09248 /* Buttons.swift in Sources */,
-				54CE3B182746B1F300274254 /* CompletedView.swift in Sources */,
+				54CE3B182746B1F300274254 /* SquareCompletionView.swift in Sources */,
 				54143B25274C220C0088C0A2 /* ConfirmationScreen.swift in Sources */,
 				540B80C627444E8900414BE6 /* IconView.swift in Sources */,
 				54143B29274C287E0088C0A2 /* Haptics.swift in Sources */,
