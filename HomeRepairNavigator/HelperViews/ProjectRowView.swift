@@ -165,4 +165,9 @@ class CompletedTasksModel: ObservableObject {
             return false
         }
     }
+    func clearCompletedItems() {
+        let userDefaults = UserDefaults.standard
+        var array: [Int] = []
+        userDefaults.set(array, forKey: kUserDefaultsCompletedItems)
+    }
 }

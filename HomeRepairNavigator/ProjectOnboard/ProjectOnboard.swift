@@ -25,17 +25,6 @@ struct ProjectOnboard: View {
             Color("Background")
                 .edgesIgnoringSafeArea(.all)
             VStack {
-                HStack {
-                    Spacer()
-                    Button(action: {
-                        playHaptic(style: "medium")
-                        showProjectHelp = true
-                    }) {
-                        Image(systemName: "questionmark.circle")
-                            .font(.title2)
-                            .padding(.trailing)
-                    }
-                }
                 TabView(selection: $currentIndex) {
                     ProfileScreenView(zipCode: $zipCode)
                         .tag(0)

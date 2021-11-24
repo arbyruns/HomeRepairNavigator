@@ -15,6 +15,7 @@ struct BeforeProject: View {
 
     @State var showInfo = false
     @State var showSheet = false
+    @State var showProjectSheet = false
     @Binding var showButtons: Bool
     @Binding var completed: Bool
     let completedArray = UserDefaults.standard.object(forKey: "userDefault-completedItems") as? [Int] ?? [Int]()
@@ -49,8 +50,21 @@ struct BeforeProject: View {
                        content: {
                     InfoSheet(infoOverlay: infoOverLayInfo, showInfo: $showInfo)
                 })
+                .sheet(isPresented: $showProjectSheet,
+                       onDismiss:  { self.showButtons = false },
+                       content: {
+                    ProjectOnboard(showProject: $showProjectSheet)
+                })
                 .navigationTitle("Before Project")
                 .navigationBarTitleDisplayMode(.inline)
+                .navigationBarItems(trailing:
+                                        Button(action: {
+                    showProjectSheet = true
+                    playHaptic(style: "medium")
+                }) {
+                    Image(systemName: "rectangle.and.pencil.and.ellipsis")
+                        .font(.title3)
+                })
                 .navigationBarColor(colorScheme == .dark ? UIColor(Color("borderColor")) : UIColor(Color("buttonColorCyan")), textColor: UIColor(Color("FontColor")))
             }
         }

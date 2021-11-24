@@ -15,6 +15,7 @@ struct AfterProject: View {
     @State var showInfo = false
     @State var showSheet = false
     @State var showCompletedSheet = false
+    @State var showProjectSheet = false
     @Binding var showButtons: Bool
     @Binding var completed: Bool
 
@@ -50,9 +51,21 @@ struct AfterProject: View {
                        content: {
                         CompletionView()
                 })
-
+                .sheet(isPresented: $showProjectSheet,
+                       onDismiss:  { self.showButtons = false },
+                       content: {
+                    ProjectOnboard(showProject: $showProjectSheet)
+                })
                 .navigationTitle("After Project")
                 .navigationBarTitleDisplayMode(.inline)
+                .navigationBarItems(trailing:
+                                        Button(action: {
+                    showProjectSheet = true
+                    playHaptic(style: "medium")
+                }) {
+                    Image(systemName: "rectangle.and.pencil.and.ellipsis")
+                        .font(.title3)
+                })
                 .navigationBarColor(colorScheme == .dark ? UIColor(Color("borderColor")) : UIColor(.white), textColor: UIColor(Color("FontColor")))
             }
         }
