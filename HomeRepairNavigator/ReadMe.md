@@ -6,7 +6,7 @@ This is a summary of the Home Repair Navigator App.
 
 Telemetry is tracked via [TelemetryDeck](https://telemetrydeck.com/).
 
-* The views listed below are only viewed on initial launch.
+* The views listed below are only viewed on initial launch and stored in `@AppStorage`.
 
 1. TutorialView
 2. WelcomeScreen
@@ -16,4 +16,4 @@ Telemetry is tracked via [TelemetryDeck](https://telemetrydeck.com/).
 
 * HelperViews are found in HelperViews
 
-Developer: robert.evansii@gmail.com
+email robert.evansii@gmail.com for questions.
