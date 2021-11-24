@@ -11,11 +11,14 @@ struct Settings: View {
     @Environment(\.openURL) var openURL
     @AppStorage("UserDefault_FirstRun") var showFirstRun = true
     @AppStorage("UserDefault_ShowTerms") var showTerms = true
+    @AppStorage("UserDefault_showTutorial") var showTutorial = true
+
 
     @AppStorage("UserDefault_CompleteTasks") var useCompletedTasks = false
     @State var showWelcomeScreen = false
     @State var agreement = false
     @State var showProject = false
+    @State var showSheet = false
 
     var body: some View {
         ZStack {
@@ -26,12 +29,14 @@ struct Settings: View {
                     Form {
                         Section(header: Text("")) {
                         Button(action: {
+                            showSheet = true
                             showWelcomeScreen = true
                         }) {
                             IconView(image: "hand.wave", color: "SettingColor3", text: "Welcome Info")
                         }
                         .buttonStyle(PlainButtonStyle())
                         Button(action: {
+                            showSheet = true
                             agreement = true
                         }) {
                             IconView(image: "book", color: "SettingColor2", text: "Terms")
@@ -50,19 +55,9 @@ struct Settings: View {
                         }
                         .buttonStyle(PlainButtonStyle())
                         Button(action: {
-                            let mailtoString = "mailto:info@naahrf.org?subject=Home Repair Navigator Feedback ".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
-                            let mailtoUrl = URL(string: mailtoString!)!
-                            if UIApplication.shared.canOpenURL(mailtoUrl) {
-                                    UIApplication.shared.open(mailtoUrl, options: [:])
-                            }
-                        }) {
-                            IconView(image: "mail", color: "SettingColor2", text: "Contact")
-                        }
-                        .buttonStyle(PlainButtonStyle())
-                        Button(action: {
                             HomeRepairNavigator.actionSheet()
                         }) {
-                            IconView(image: "square.and.arrow.up", color: "SettingColor4", text: "Share Home Repair Navigator")
+                            IconView(image: "square.and.arrow.up", color: "SettingColor4", text: "Share Home Helper Navigator")
                         }
                         .buttonStyle(PlainButtonStyle())
                         }
@@ -76,8 +71,19 @@ struct Settings: View {
                             Button(action: {
                                 showFirstRun = true
                                 showTerms = true
+                                showTutorial = true
                             }) {
                                 IconView(image: "exclamationmark.arrow.circlepath", color: "SettingColor3", text: "Reset")
+                            }
+                            .buttonStyle(PlainButtonStyle())
+                            Button(action: {
+                                let mailtoString = "mailto:info@naahrf.org?subject=Home Repair Helper Feedback ".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
+                                let mailtoUrl = URL(string: mailtoString!)!
+                                if UIApplication.shared.canOpenURL(mailtoUrl) {
+                                        UIApplication.shared.open(mailtoUrl, options: [:])
+                                }
+                            }) {
+                                IconView(image: "mail", color: "SettingColor1", text: "Contact")
                             }
                             .buttonStyle(PlainButtonStyle())
                             HStack {
@@ -101,7 +107,7 @@ struct Settings: View {
                                     }
                                 }
                             Spacer()
-                            CompletedView(checked: .constant(useCompletedTasks ? true : false), trimValue: .constant(1))
+                            SquareCompletionView(checked: .constant(useCompletedTasks ? true : false), trimValue: .constant(1))
                                 .onTapGesture {
                                     withAnimation {
                                         playHaptic(style: "medium")
@@ -115,13 +121,14 @@ struct Settings: View {
 
                 }
                 .navigationBarTitle("Settings")
-                .sheet(isPresented: $showWelcomeScreen,
+                .sheet(isPresented: $showSheet,
                        content: {
-                    WelcomeScreen(showWelcomeScreen: $showWelcomeScreen)
-                })
-                .sheet(isPresented: $agreement,
-                       content: {
-                    AgreementView(agreement: $agreement)
+                    if showWelcomeScreen {
+                        WelcomeScreen(showWelcomeScreen: $showWelcomeScreen)
+                    } else if agreement {
+                        AgreementView(agreement: $agreement)
+                    }
+
                 })
                 .fullScreenCover(isPresented: $showProject, content: {
                     ProjectOnboard(showProject: $showProject)
