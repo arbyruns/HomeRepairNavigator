@@ -14,7 +14,7 @@ struct BeforeProject: View {
     @ObservedObject var infoOverLayInfo: OverLayInfo
 
     @State var showInfo = false
-
+    @State var showSheet = false
     @Binding var showButtons: Bool
     @Binding var completed: Bool
     let completedArray = UserDefaults.standard.object(forKey: "userDefault-completedItems") as? [Int] ?? [Int]()
@@ -30,6 +30,8 @@ struct BeforeProject: View {
                                 ForEach(beforeProjectData) { data in
                                     ProjectRowView(infoOverLayInfo: infoOverLayInfo,
                                                    showInfo: $showInfo,
+                                                   showSheet: $showSheet,
+                                                   showCompletedSheet: .constant(false),
                                                    title: data.title,
                                                    question: data.title,
                                                    info: data.description,

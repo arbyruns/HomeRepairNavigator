@@ -13,6 +13,7 @@ struct DuringProject: View {
     @ObservedObject var infoOverLayInfo: OverLayInfo
 
     @State var showInfo = false
+    @State var showSheet = false
     @Binding var showButtons: Bool
     @Binding var completed: Bool
 
@@ -25,6 +26,8 @@ struct DuringProject: View {
                             ForEach(duringProjectData) { data in
                                 ProjectRowView(infoOverLayInfo: infoOverLayInfo,
                                                showInfo: $showInfo,
+                                               showSheet: $showSheet,
+                                               showCompletedSheet: .constant(false),
                                                title: data.title,
                                                question: data.title,
                                                info: data.description,

@@ -19,6 +19,8 @@ struct ProjectRowView: View {
     @State var trimVal: CGFloat = 0
 
     @Binding var showInfo: Bool
+    @Binding var showSheet: Bool
+    @Binding var showCompletedSheet: Bool
     
     let title: String
     let question: String
@@ -37,7 +39,7 @@ struct ProjectRowView: View {
                             .padding(.leading)
                     }
                     if completedTaskModel.isCompletedTask(completedTask: completedID) && useCompletedTasks == true {
-                        CompletedView(checked: .constant(true), trimValue: .constant(1))
+                        SquareCompletionView(checked: .constant(true), trimValue: .constant(1))
                             .padding(.leading)
                     }
                     Text(title)
@@ -72,6 +74,10 @@ struct ProjectRowView: View {
                                 completed = true
                                 showButtons = false
                                 completedTaskModel.addItem(completedTask: completedID)
+                                if completedID == 30 {
+                                    showCompletedSheet = true
+                                    showSheet = true
+                                }
                             }
                         }) {
                             ButtonTextView(smallButton: true, text: "Yes")
@@ -82,6 +88,7 @@ struct ProjectRowView: View {
                                 self.trimVal = 0
                                 showInfo = true
                                 showButtons = false
+                                showSheet = true
                                 infoOverLayInfo.title = title
                                 infoOverLayInfo.description = info
                                 completed = false
@@ -90,14 +97,6 @@ struct ProjectRowView: View {
                         }) {
                             ButtonTextView(smallButton: true, text: "No")
                         }
-                        //Unsure what Don't know should do.
-                        //                        Button(action: {
-                        //                            withAnimation {
-                        //                            completed = false
-                        //                            }
-                        //                        }) {
-                        //                            ButtonTextView(text: "Don't Know")
-                        //                        }
                     }
                     .padding()
                 }
@@ -113,8 +112,8 @@ struct ProjectRowView: View {
 
 struct BeforeRowView_Previews: PreviewProvider {
     static var previews: some View {
-        ProjectRowView(infoOverLayInfo: OverLayInfo(), showInfo: .constant(false), title: "Have you researched the project", question: "Question", info: "info", completedID: 1)
-        ProjectRowView(infoOverLayInfo: OverLayInfo(), showInfo: .constant(false), title: "Have you researched the project", question: "Question", info: "info", completedID: 1)
+        ProjectRowView(infoOverLayInfo: OverLayInfo(), showInfo: .constant(false), showSheet: .constant(false), showCompletedSheet: .constant(false), title: "Have you researched the project", question: "Question", info: "info", completedID: 1)
+        ProjectRowView(infoOverLayInfo: OverLayInfo(), showInfo: .constant(false), showSheet: .constant(false), showCompletedSheet: .constant(false), title: "Have you researched the project", question: "Question", info: "info", completedID: 1)
             .colorScheme(.dark)
     }
 }
