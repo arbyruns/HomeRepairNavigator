@@ -29,7 +29,7 @@ struct TutorialView: View {
                     .bold()
                     .kerning(2)
                     .padding()
-                Text("This App is designed to help you protect yourself from becoming a victim of home repair fraud and scams.  Home Repair Helper provides a checklist of things you can do **Before, During, & After** a project")
+                Text("We have compiled a series of questions for you to consider before, during and after your project to help protect you from a shady contractor and become your own quality control manager. Each question will request a yes or no answer from you, which will either prompt you to a helpful tip or move you forward to the next question. ")
                     .padding(8)
 
                 VStack {
