@@ -15,7 +15,7 @@
 		540B80B72744319000414BE6 /* 11202-information.json in Resources */ = {isa = PBXBuildFile; fileRef = 540B80B62744319000414BE6 /* 11202-information.json */; };
 		540B80B92744325100414BE6 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 540B80B82744325100414BE6 /* TabBar.swift */; };
 		540B80BB274439B300414BE6 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 540B80BA274439B300414BE6 /* Settings.swift */; };
-		540B80C427444A4400414BE6 /* ProjectScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 540B80C327444A4400414BE6 /* ProjectScreen.swift */; };
+		540B80C427444A4400414BE6 /* ProjectTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 540B80C327444A4400414BE6 /* ProjectTypeView.swift */; };
 		540B80C627444E8900414BE6 /* IconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 540B80C527444E8900414BE6 /* IconView.swift */; };
 		54143B1E274BED050088C0A2 /* TelemetryClient in Frameworks */ = {isa = PBXBuildFile; productRef = 54143B1D274BED050088C0A2 /* TelemetryClient */; };
 		54143B21274BEFCD0088C0A2 /* TelemtryData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54143B20274BEFCD0088C0A2 /* TelemtryData.swift */; };
@@ -27,7 +27,7 @@
 		5474DBA12745436500A897AC /* CheckMarkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5474DBA02745436500A897AC /* CheckMarkView.swift */; };
 		5474DBA427456E5100A897AC /* SwiftUINavigationBarStyling in Frameworks */ = {isa = PBXBuildFile; productRef = 5474DBA327456E5100A897AC /* SwiftUINavigationBarStyling */; };
 		5487294C2747512D0070CC22 /* BudgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5487294B2747512D0070CC22 /* BudgetView.swift */; };
-		5487294E274753770070CC22 /* ProjectOnboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5487294D274753770070CC22 /* ProjectOnboard.swift */; };
+		5487294E274753770070CC22 /* ProjectOnboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5487294D274753770070CC22 /* ProjectOnboardView.swift */; };
 		54CE3B182746B1F300274254 /* SquareCompletionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54CE3B172746B1F300274254 /* SquareCompletionView.swift */; };
 		54CE3B1A2746DA5E00274254 /* ProfileScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54CE3B192746DA5E00274254 /* ProfileScreenView.swift */; };
 		54D923B8274D83C60051E83F /* CompletionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D923B7274D83C60051E83F /* CompletionView.swift */; };
@@ -52,7 +52,7 @@
 		540B80B62744319000414BE6 /* 11202-information.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "11202-information.json"; sourceTree = "<group>"; };
 		540B80B82744325100414BE6 /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 		540B80BA274439B300414BE6 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
-		540B80C327444A4400414BE6 /* ProjectScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectScreen.swift; sourceTree = "<group>"; };
+		540B80C327444A4400414BE6 /* ProjectTypeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectTypeView.swift; sourceTree = "<group>"; };
 		540B80C527444E8900414BE6 /* IconView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IconView.swift; sourceTree = "<group>"; };
 		54143B20274BEFCD0088C0A2 /* TelemtryData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelemtryData.swift; sourceTree = "<group>"; };
 		54143B22274C1CA20088C0A2 /* About.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = About.swift; sourceTree = "<group>"; };
@@ -63,7 +63,7 @@
 		543B55CC274ECD8A0068F804 /* FooterImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterImage.swift; sourceTree = "<group>"; };
 		5474DBA02745436500A897AC /* CheckMarkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckMarkView.swift; sourceTree = "<group>"; };
 		5487294B2747512D0070CC22 /* BudgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetView.swift; sourceTree = "<group>"; };
-		5487294D274753770070CC22 /* ProjectOnboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectOnboard.swift; sourceTree = "<group>"; };
+		5487294D274753770070CC22 /* ProjectOnboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectOnboardView.swift; sourceTree = "<group>"; };
 		54CE3B172746B1F300274254 /* SquareCompletionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareCompletionView.swift; sourceTree = "<group>"; };
 		54CE3B192746DA5E00274254 /* ProfileScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScreenView.swift; sourceTree = "<group>"; };
 		54D923B7274D83C60051E83F /* CompletionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletionView.swift; sourceTree = "<group>"; };
@@ -132,8 +132,8 @@
 		5487294F2747537C0070CC22 /* ProjectOnboard */ = {
 			isa = PBXGroup;
 			children = (
-				5487294D274753770070CC22 /* ProjectOnboard.swift */,
-				540B80C327444A4400414BE6 /* ProjectScreen.swift */,
+				5487294D274753770070CC22 /* ProjectOnboardView.swift */,
+				540B80C327444A4400414BE6 /* ProjectTypeView.swift */,
 				5487294B2747512D0070CC22 /* BudgetView.swift */,
 				54CE3B192746DA5E00274254 /* ProfileScreenView.swift */,
 				54143B22274C1CA20088C0A2 /* About.swift */,
@@ -322,7 +322,7 @@
 				543B55CD274ECD8A0068F804 /* FooterImage.swift in Sources */,
 				54F9AE7B2742F79900F09248 /* WelcomeScreen.swift in Sources */,
 				54F9AE6F2742F73C00F09248 /* ContentView.swift in Sources */,
-				5487294E274753770070CC22 /* ProjectOnboard.swift in Sources */,
+				5487294E274753770070CC22 /* ProjectOnboardView.swift in Sources */,
 				540B80BB274439B300414BE6 /* Settings.swift in Sources */,
 				5474DBA12745436500A897AC /* CheckMarkView.swift in Sources */,
 				54F9AE8827435BE400F09248 /* InfoOverLay.swift in Sources */,
@@ -340,7 +340,7 @@
 				540B80C627444E8900414BE6 /* IconView.swift in Sources */,
 				54143B29274C287E0088C0A2 /* Haptics.swift in Sources */,
 				540B80B5274430FD00414BE6 /* LottieView.swift in Sources */,
-				540B80C427444A4400414BE6 /* ProjectScreen.swift in Sources */,
+				540B80C427444A4400414BE6 /* ProjectTypeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

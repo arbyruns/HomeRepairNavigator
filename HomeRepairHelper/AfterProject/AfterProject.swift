@@ -54,7 +54,7 @@ struct AfterProject: View {
                 .sheet(isPresented: $showProjectSheet,
                        onDismiss:  { self.showButtons = false },
                        content: {
-                    ProjectOnboard(showProject: $showProjectSheet)
+                    ProjectOnboardView(showProject: $showProjectSheet)
                 })
                 .navigationTitle("After Project")
                 .navigationBarTitleDisplayMode(.inline)

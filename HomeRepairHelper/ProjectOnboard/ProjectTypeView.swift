@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ProjectScreen: View {
+struct ProjectTypeView: View {
     @Environment(\.colorScheme) var colorScheme
 
     @State var selections = ""
@@ -113,8 +113,8 @@ var projectItems = [
 
 struct ProjectScreen_Previews: PreviewProvider {
     static var previews: some View {
-        ProjectScreen(userProject: .constant("nil"))
-        ProjectScreen(userProject: .constant("nil"))
+        ProjectTypeView(userProject: .constant("nil"))
+        ProjectTypeView(userProject: .constant("nil"))
             .colorScheme(.dark)
     }
 }

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ProjectOnboard: View {
+struct ProjectOnboardView: View {
     @StateObject var telemtryData = TelemetryData()
 
     @State var zipCode = ""
@@ -28,7 +28,7 @@ struct ProjectOnboard: View {
                 TabView(selection: $currentIndex) {
                     ProfileScreenView(zipCode: $zipCode)
                         .tag(0)
-                    ProjectScreen(userProject: $userProject)
+                    ProjectTypeView(userProject: $userProject)
                         .tag(1)
                     BudgetView(userBudget: $userBudget)
                         .tag(2)
@@ -79,8 +79,8 @@ struct ProjectOnboard: View {
 
 struct ProjectOnboard_Previews: PreviewProvider {
     static var previews: some View {
-        ProjectOnboard(showProject: .constant(false))
-        ProjectOnboard(showProject: .constant(false))
+        ProjectOnboardView(showProject: .constant(false))
+        ProjectOnboardView(showProject: .constant(false))
             .colorScheme(.dark)
     }
 }

@@ -134,7 +134,7 @@ struct Settings: View {
 
                 })
                 .fullScreenCover(isPresented: $showProject, content: {
-                    ProjectOnboard(showProject: $showProject)
+                    ProjectOnboardView(showProject: $showProject)
                 })
             }
             .navigationViewStyle(StackNavigationViewStyle())

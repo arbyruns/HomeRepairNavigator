@@ -48,7 +48,7 @@ struct DuringProject: View {
                 .sheet(isPresented: $showProjectSheet,
                        onDismiss:  { self.showButtons = false },
                        content: {
-                    ProjectOnboard(showProject: $showProjectSheet)
+                    ProjectOnboardView(showProject: $showProjectSheet)
                 })
                 .navigationTitle("During Project")
                 .navigationBarTitleDisplayMode(.inline)

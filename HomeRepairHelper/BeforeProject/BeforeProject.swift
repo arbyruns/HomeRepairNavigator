@@ -53,7 +53,7 @@ struct BeforeProject: View {
                 .sheet(isPresented: $showProjectSheet,
                        onDismiss:  { self.showButtons = false },
                        content: {
-                    ProjectOnboard(showProject: $showProjectSheet)
+                    ProjectOnboardView(showProject: $showProjectSheet)
                 })
                 .navigationTitle("Before Project")
                 .navigationBarTitleDisplayMode(.inline)
