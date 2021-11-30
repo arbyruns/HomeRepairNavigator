@@ -17,14 +17,9 @@ struct ProjectOnboardView: View {
     @State var showProjectHelp = false
     @State var currentIndex = 0
     @State var showConfirmation = false
+    @Binding var showProjectSheet: Bool
 
     // Tutorial States
-//    @Binding var tutorialOne: Bool
-//    @Binding var tutorialTwo: Bool
-//    @Binding var tutorialThree: Bool
-//    @Binding var scale: Bool
-
-
     @State var counter = 0
     @State var tutorialOne = false
     @State var tutorialTwo = false
@@ -105,6 +100,13 @@ struct ProjectOnboardView: View {
                                    userProject: $userProject, userBudget: $userBudget)
             }
         }
+        .onAppear{
+            // This is to determine if the view has been called from settings or the navbar icons
+            if showProjectSheet {
+                currentIndex = 3
+            }
+        }
+
         .sheet(isPresented: $showProjectHelp,
                content: {
             AboutView(showProjectHelp: $showProjectHelp)
@@ -116,8 +118,8 @@ struct ProjectOnboardView: View {
 
 struct ProjectOnboard_Previews: PreviewProvider {
     static var previews: some View {
-        ProjectOnboardView()
-        ProjectOnboardView()
+        ProjectOnboardView(showProjectSheet: .constant(false))
+        ProjectOnboardView(showProjectSheet: .constant(false))
             .colorScheme(.dark)
     }
 }

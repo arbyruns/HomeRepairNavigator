@@ -129,7 +129,10 @@ struct Settings: View {
                     } else if agreement {
                         AgreementView()
                     }
-
+                })
+                .sheet(isPresented: $showProject,
+                       content: {
+                    ProjectOnboardView(showProjectSheet: $showProject)
                 })
             }
             .navigationViewStyle(StackNavigationViewStyle())
