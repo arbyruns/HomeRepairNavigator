@@ -22,7 +22,7 @@ struct ProfileScreenView: View {
             VStack(alignment: .leading) {
                 Spacer()
                 ProfileTextView(textValue: $zipCode, titleFieldName: "Zip Code", placeHolderText: "12345")
-                Text("Our app is free for you. To keep it that way, we just need some general information so our donors can see where we are making an impact.")
+                Text("Our app is free for you. To keep it that way, we just need some general information so our donors can see where we are making an impact.  This information is anonymized and does not link back to you as the user.")
                     .font(.callout)
                     .padding()
                 Spacer()
@@ -53,6 +53,7 @@ struct ProfileTextView: View {
                 .font(.title)
             TextField(placeHolderText, text: $textValue)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
+                .keyboardType(.numberPad)
 
         }
     }
