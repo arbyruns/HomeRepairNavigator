@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct About: View {
+struct AboutView: View {
     @Binding var showProjectHelp: Bool
 
     var body: some View {
@@ -26,6 +26,6 @@ struct About: View {
 
 struct About_Previews: PreviewProvider {
     static var previews: some View {
-        About(showProjectHelp: .constant(false))
+        AboutView(showProjectHelp: .constant(false))
     }
 }

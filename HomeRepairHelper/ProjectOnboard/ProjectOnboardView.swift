@@ -70,7 +70,7 @@ struct ProjectOnboardView: View {
         }
         .sheet(isPresented: $showProjectHelp,
                content: {
-            About(showProjectHelp: $showProjectHelp)
+            AboutView(showProjectHelp: $showProjectHelp)
                 .animation(.easeInOut)
                 .transition(.opacity)
         })

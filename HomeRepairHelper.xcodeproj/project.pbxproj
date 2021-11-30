@@ -19,7 +19,7 @@
 		540B80C627444E8900414BE6 /* IconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 540B80C527444E8900414BE6 /* IconView.swift */; };
 		54143B1E274BED050088C0A2 /* TelemetryClient in Frameworks */ = {isa = PBXBuildFile; productRef = 54143B1D274BED050088C0A2 /* TelemetryClient */; };
 		54143B21274BEFCD0088C0A2 /* TelemtryData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54143B20274BEFCD0088C0A2 /* TelemtryData.swift */; };
-		54143B23274C1CA20088C0A2 /* About.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54143B22274C1CA20088C0A2 /* About.swift */; };
+		54143B23274C1CA20088C0A2 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54143B22274C1CA20088C0A2 /* AboutView.swift */; };
 		54143B25274C220C0088C0A2 /* ConfirmationScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54143B24274C220C0088C0A2 /* ConfirmationScreen.swift */; };
 		54143B27274C22640088C0A2 /* 42564-thanks-button.json in Resources */ = {isa = PBXBuildFile; fileRef = 54143B26274C22640088C0A2 /* 42564-thanks-button.json */; };
 		54143B29274C287E0088C0A2 /* Haptics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54143B28274C287E0088C0A2 /* Haptics.swift */; };
@@ -55,7 +55,7 @@
 		540B80C327444A4400414BE6 /* ProjectTypeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectTypeView.swift; sourceTree = "<group>"; };
 		540B80C527444E8900414BE6 /* IconView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IconView.swift; sourceTree = "<group>"; };
 		54143B20274BEFCD0088C0A2 /* TelemtryData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelemtryData.swift; sourceTree = "<group>"; };
-		54143B22274C1CA20088C0A2 /* About.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = About.swift; sourceTree = "<group>"; };
+		54143B22274C1CA20088C0A2 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		54143B24274C220C0088C0A2 /* ConfirmationScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationScreen.swift; sourceTree = "<group>"; };
 		54143B26274C22640088C0A2 /* 42564-thanks-button.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "42564-thanks-button.json"; sourceTree = "<group>"; };
 		54143B28274C287E0088C0A2 /* Haptics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Haptics.swift; sourceTree = "<group>"; };
@@ -136,7 +136,7 @@
 				540B80C327444A4400414BE6 /* ProjectTypeView.swift */,
 				5487294B2747512D0070CC22 /* BudgetView.swift */,
 				54CE3B192746DA5E00274254 /* ProfileScreenView.swift */,
-				54143B22274C1CA20088C0A2 /* About.swift */,
+				54143B22274C1CA20088C0A2 /* AboutView.swift */,
 			);
 			path = ProjectOnboard;
 			sourceTree = "<group>";
@@ -333,7 +333,7 @@
 				54F9AE86274359C600F09248 /* ProjectRowView.swift in Sources */,
 				540B80B92744325100414BE6 /* TabBar.swift in Sources */,
 				54F9AE812742FA1C00F09248 /* AgreementView.swift in Sources */,
-				54143B23274C1CA20088C0A2 /* About.swift in Sources */,
+				54143B23274C1CA20088C0A2 /* AboutView.swift in Sources */,
 				54F9AE7E2742F97F00F09248 /* Buttons.swift in Sources */,
 				54CE3B182746B1F300274254 /* SquareCompletionView.swift in Sources */,
 				54143B25274C220C0088C0A2 /* ConfirmationScreen.swift in Sources */,
