@@ -24,7 +24,7 @@ struct FooterImage: View {
                 case "Visit":
                     openURL(URL(string: "https://naahrf.org/")!)
                 default:
-                    HomeRepairNavigator.actionSheet()
+                    HomeRepairHelper.actionSheet()
                 }
 
             }) {

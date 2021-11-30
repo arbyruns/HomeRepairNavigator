@@ -82,7 +82,7 @@ struct Settings: View {
                         }
                         .buttonStyle(PlainButtonStyle())
                         Button(action: {
-                            HomeRepairNavigator.actionSheet()
+                            HomeRepairHelper.actionSheet()
                         }) {
                             IconView(image: "square.and.arrow.up", color: "SettingColor4", text: "Share Home Helper Helper")
                         }

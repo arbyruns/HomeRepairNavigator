@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:">
+      location = "self:/Volumes/om_dev/HomeRepairNavigator/HomeRepairHelper.xcodeproj">
    </FileRef>
 </Workspace>

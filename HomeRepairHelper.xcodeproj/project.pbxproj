@@ -68,7 +68,7 @@
 		54CE3B192746DA5E00274254 /* ProfileScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScreenView.swift; sourceTree = "<group>"; };
 		54D923B7274D83C60051E83F /* CompletionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletionView.swift; sourceTree = "<group>"; };
 		54D923B9274DEAF60051E83F /* TutorialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialView.swift; sourceTree = "<group>"; };
-		54F9AE692742F73C00F09248 /* HomeRepairNavigator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HomeRepairNavigator.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		54F9AE692742F73C00F09248 /* HomeRepairHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HomeRepairHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		54F9AE6C2742F73C00F09248 /* HomeRepairNavigatorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRepairNavigatorApp.swift; sourceTree = "<group>"; };
 		54F9AE6E2742F73C00F09248 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		54F9AE702742F73F00F09248 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -153,7 +153,7 @@
 		54F9AE602742F73C00F09248 = {
 			isa = PBXGroup;
 			children = (
-				54F9AE6B2742F73C00F09248 /* HomeRepairNavigator */,
+				54F9AE6B2742F73C00F09248 /* HomeRepairHelper */,
 				54F9AE6A2742F73C00F09248 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -161,12 +161,12 @@
 		54F9AE6A2742F73C00F09248 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				54F9AE692742F73C00F09248 /* HomeRepairNavigator.app */,
+				54F9AE692742F73C00F09248 /* HomeRepairHelper.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		54F9AE6B2742F73C00F09248 /* HomeRepairNavigator */ = {
+		54F9AE6B2742F73C00F09248 /* HomeRepairHelper */ = {
 			isa = PBXGroup;
 			children = (
 				54D923B6274D839A0051E83F /* CompletionScreens */,
@@ -187,7 +187,7 @@
 				54143B28274C287E0088C0A2 /* Haptics.swift */,
 				543B55CB274ECC6C0068F804 /* ReadMe.md */,
 			);
-			path = HomeRepairNavigator;
+			path = HomeRepairHelper;
 			sourceTree = "<group>";
 		};
 		54F9AE722742F73F00F09248 /* Preview Content */ = {
@@ -234,9 +234,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		54F9AE682742F73C00F09248 /* HomeRepairNavigator */ = {
+		54F9AE682742F73C00F09248 /* HomeRepairHelper */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 54F9AE772742F73F00F09248 /* Build configuration list for PBXNativeTarget "HomeRepairNavigator" */;
+			buildConfigurationList = 54F9AE772742F73F00F09248 /* Build configuration list for PBXNativeTarget "HomeRepairHelper" */;
 			buildPhases = (
 				54F9AE652742F73C00F09248 /* Sources */,
 				54F9AE662742F73C00F09248 /* Frameworks */,
@@ -246,14 +246,14 @@
 			);
 			dependencies = (
 			);
-			name = HomeRepairNavigator;
+			name = HomeRepairHelper;
 			packageProductDependencies = (
 				540B80B1274430E200414BE6 /* Lottie */,
 				5474DBA327456E5100A897AC /* SwiftUINavigationBarStyling */,
 				54143B1D274BED050088C0A2 /* TelemetryClient */,
 			);
 			productName = HomeRepairNavigator;
-			productReference = 54F9AE692742F73C00F09248 /* HomeRepairNavigator.app */;
+			productReference = 54F9AE692742F73C00F09248 /* HomeRepairHelper.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -271,7 +271,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 54F9AE642742F73C00F09248 /* Build configuration list for PBXProject "HomeRepairNavigator" */;
+			buildConfigurationList = 54F9AE642742F73C00F09248 /* Build configuration list for PBXProject "HomeRepairHelper" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -289,7 +289,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				54F9AE682742F73C00F09248 /* HomeRepairNavigator */,
+				54F9AE682742F73C00F09248 /* HomeRepairHelper */,
 			);
 		};
 /* End PBXProject section */
@@ -398,6 +398,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Home&#x2007;Repair&#x2007;Helper";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -453,6 +454,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Home&#x2007;Repair&#x2007;Helper";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -470,10 +472,11 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"HomeRepairNavigator/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"HomeRepairHelper/Preview Content\"";
 				DEVELOPMENT_TEAM = 9A934JYXT5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Home Repair Helper";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -499,10 +502,11 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"HomeRepairNavigator/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"HomeRepairHelper/Preview Content\"";
 				DEVELOPMENT_TEAM = 9A934JYXT5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Home Repair Helper";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -524,7 +528,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		54F9AE642742F73C00F09248 /* Build configuration list for PBXProject "HomeRepairNavigator" */ = {
+		54F9AE642742F73C00F09248 /* Build configuration list for PBXProject "HomeRepairHelper" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				54F9AE752742F73F00F09248 /* Debug */,
@@ -533,7 +537,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		54F9AE772742F73F00F09248 /* Build configuration list for PBXNativeTarget "HomeRepairNavigator" */ = {
+		54F9AE772742F73F00F09248 /* Build configuration list for PBXNativeTarget "HomeRepairHelper" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				54F9AE782742F73F00F09248 /* Debug */,
