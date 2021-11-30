@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ProjectOnboardView: View {
+    @AppStorage("UserDefault_FirstRun") var showFirstRun = true
     @StateObject var telemtryData = TelemetryData()
 
     @State var zipCode = ""
@@ -17,8 +18,19 @@ struct ProjectOnboardView: View {
     @State var currentIndex = 0
     @State var showConfirmation = false
 
-    @Binding var showProject: Bool
-    
+    // Tutorial States
+//    @Binding var tutorialOne: Bool
+//    @Binding var tutorialTwo: Bool
+//    @Binding var tutorialThree: Bool
+//    @Binding var scale: Bool
+
+
+    @State var counter = 0
+    @State var tutorialOne = false
+    @State var tutorialTwo = false
+    @State var tutorialThree = false
+    @State var scale = false
+    @State var disableButton = false
 
     var body: some View {
         ZStack {
@@ -26,44 +38,69 @@ struct ProjectOnboardView: View {
                 .edgesIgnoringSafeArea(.all)
             VStack {
                 TabView(selection: $currentIndex) {
-                    ProfileScreenView(zipCode: $zipCode)
+                    WelcomeScreen()
                         .tag(0)
-                    ProjectTypeView(userProject: $userProject)
+                    AgreementView()
                         .tag(1)
-                    BudgetView(userBudget: $userBudget)
+                    TutorialView(tutorialOne: $tutorialOne, tutorialTwo: $tutorialTwo, tutorialThree: $tutorialThree, scale: $scale)
                         .tag(2)
+                    ProfileScreenView(zipCode: $zipCode)
+                        .tag(3)
+                    ProjectTypeView(userProject: $userProject)
+                        .tag(4)
+                    BudgetView(userBudget: $userBudget)
+                        .tag(5)
                 }
                 .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .never))
                 .tabViewStyle(PageTabViewStyle())
                 Button(action: {
                     withAnimation {
-                        if currentIndex != 2 {
+                        if currentIndex != 5 {
                             playHaptic(style: "light")
-                            currentIndex += 1
+                            if currentIndex == 2 {
+                                // show first tutorial
+                                tutorialOne = true
+                                DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) {
+                                    withAnimation {
+                                        tutorialTwo = true
+                                        scale = true
+                                        disableButton = true
+                                    }
+                                }
+                                DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                                    withAnimation {
+                                        scale = false
+                                        tutorialTwo = false
+                                        tutorialThree = true
+                                    }
+                                }
+                                DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
+                                    withAnimation {
+                                        currentIndex += 1
+                                        disableButton = false
+                                    }
+                                }
+                            } else if currentIndex == 4 {
+                                currentIndex += 1
+                            } else {
+                                currentIndex += 1
+                            }
                         } else {
                             withAnimation {
-                            playHaptic(style: "medium")
-                            showConfirmation = true
+                                playHaptic(style: "medium")
+                                showConfirmation = true
                             }
                         }
                     }
                 }) {
-                        ButtonTextView(smallButton: false, text: buttonText(index: currentIndex))
+                    ButtonTextView(smallButton: false, text: buttonText(index: currentIndex))
                         .padding()
                         .opacity(showConfirmation ? 0 : 1)
                 }
-                Button(action: {
-                    showProject = false
-                    playHaptic(style: "heavy")
-                }) {
-                    SecondaryButtonTextView(smallButton: false, text: "Cancel")
-                        .padding(.bottom)
-                        .opacity(showConfirmation ? 0 : 1)
-                }
+                .disabled(disableButton)
             }
             if showConfirmation {
-                ConfirmationScreen(showProject: $showProject,
-                                   showConfirmation: $showConfirmation,
+                ConfirmationScreen(showConfirmation: $showConfirmation,
                                    zipCode: $zipCode,
                                    userProject: $userProject, userBudget: $userBudget)
             }
@@ -79,8 +116,8 @@ struct ProjectOnboardView: View {
 
 struct ProjectOnboard_Previews: PreviewProvider {
     static var previews: some View {
-        ProjectOnboardView(showProject: .constant(false))
-        ProjectOnboardView(showProject: .constant(false))
+        ProjectOnboardView()
+        ProjectOnboardView()
             .colorScheme(.dark)
     }
 }
@@ -94,7 +131,7 @@ func verifyZip(zip: String) -> Bool {
 }
 
 func buttonText(index: Int) -> String {
-    if index != 2 {
+    if index != 5 {
         return "Next"
     } else {
         return "OK"

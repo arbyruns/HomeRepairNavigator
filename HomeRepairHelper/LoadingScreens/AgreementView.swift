@@ -11,8 +11,6 @@ struct AgreementView: View {
     @AppStorage("UserDefault_FirstRun") var showFirstRun = true
     @AppStorage("UserDefault_ShowTerms") var showTerms = true
 
-    @Binding var agreement: Bool
-
     var body: some View {
         ZStack {
             Color("Background")
@@ -30,14 +28,6 @@ struct AgreementView: View {
                     .padding()
                 Text("The general information contained herein may not be suitable for every situation. State laws vary, so we highly recommend you contact a licensed legal professional in your state for any professional or legal advice regarding your home repair project, especially before you sign any documentation or enter into any agreements with home repair service providers.")
                     .padding()
-                Button(action: {
-                    showTerms = false
-                    agreement = false
-                    playHaptic(style: "medium")
-                }) {
-                    ButtonTextView(smallButton: false, text: "I Accept")
-                        .padding(.horizontal)
-                }
             }
         }
     }
@@ -45,8 +35,8 @@ struct AgreementView: View {
 
 struct AgreementView_Previews: PreviewProvider {
     static var previews: some View {
-        AgreementView(agreement: .constant(false))
-        AgreementView(agreement: .constant(false))
+        AgreementView()
+        AgreementView()
             .colorScheme(.dark)
     }
 }

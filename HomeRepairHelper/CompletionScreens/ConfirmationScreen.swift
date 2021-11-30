@@ -9,9 +9,10 @@ import SwiftUI
 
 struct ConfirmationScreen: View {
     @Environment(\.colorScheme) var colorScheme
+    @AppStorage("UserDefault_FirstRun") var showFirstRun = true
+
     @StateObject var telemtryData = TelemetryData()
 
-    @Binding var showProject: Bool
     @Binding var showConfirmation: Bool
     @Binding var zipCode: String
     @Binding var userProject: String
@@ -29,24 +30,16 @@ struct ConfirmationScreen: View {
                     Button(action: {
                         playHaptic(style: "medium")
                         withAnimation {
-                            showProject = false
                             telemtryData.sendProject(project: userProject)
                             telemtryData.sendZipCode(zipCode: zipCode)
                             telemtryData.sendBudget(budget: userBudget)
                             telemtryData.sendMeta()
+                            showConfirmation = false
+                            showFirstRun = false
                         }
                     }) {
                         ButtonTextView(smallButton: false, text: "Submit")
                             .padding()
-                    }
-                    Button(action: {
-                        withAnimation {
-                            showConfirmation = false
-                        }
-                        playHaptic(style: "heavy")
-                    }) {
-                        SecondaryButtonTextView(smallButton: false, text: "Cancel")
-                            .padding(.bottom)
                     }
                 }
             }
@@ -60,6 +53,6 @@ struct ConfirmationScreen: View {
 
 struct ConfirmationScreen_Previews: PreviewProvider {
     static var previews: some View {
-        ConfirmationScreen(showProject: .constant(false), showConfirmation: .constant(false), zipCode: .constant("12232"), userProject: .constant("fire"), userBudget: .constant("1313"))
+        ConfirmationScreen(showConfirmation: .constant(false), zipCode: .constant("12232"), userProject: .constant("fire"), userBudget: .constant("1313"))
     }
 }

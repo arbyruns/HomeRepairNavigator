@@ -13,12 +13,17 @@ struct TutorialView: View {
 
 
 
-    @State var counter = 0
-    @State var tutorialOne = false
-    @State var tutorialTwo = false
-    @State var tutorialThree = false
-    @State var scale = false
+//    @State var counter = 0
+//    @State var tutorialOne = false
+//    @State var tutorialTwo = false
+//    @State var tutorialThree = false
+//    @State var scale = false
 
+    @Binding var tutorialOne: Bool
+    @Binding var tutorialTwo: Bool
+    @Binding var tutorialThree: Bool
+    @Binding var scale: Bool
+    
     var body: some View {
         ZStack {
             Color("Background")
@@ -84,39 +89,7 @@ struct TutorialView: View {
                     .multilineTextAlignment(.center)
                     .padding(8)
                 }
-                Button(action: {
-                    withAnimation {
-                        counter += 1
-                        if counter == 1 {
-                            // show first tutorial
-                            tutorialOne = true
-                        }
-                        if counter == 2 {
-                            // show second part of the tutorial
-                            tutorialTwo = true
-                            scale = true
-                            DispatchQueue.main.asyncAfter(deadline: .now() + 1.1) {
-                                withAnimation {
-                                    scale = false
-                                }
-                            }
-                        }
-                        if counter == 3 {
-                            tutorialTwo = false
-                            tutorialThree = true
-                        }
-                        if counter == 4 {
-                            showTutorial = false
-                        }
-                    }
-                }) {
-                    ButtonTextView(smallButton: false, text: tutorialThree ? "Finish" : "Next")
-                        .padding()
-                }
             }
-            .fullScreenCover(isPresented: $showFirstRun,
-                             onDismiss: { print("dismissed!") },
-                             content: { WelcomeScreen(showWelcomeScreen: .constant(false)) })
         }
     }
 }
@@ -131,6 +104,6 @@ func expandButton(enable: Bool) -> Bool {
 
 struct TutorialView_Previews: PreviewProvider {
     static var previews: some View {
-        TutorialView()
+        TutorialView(tutorialOne: .constant(false), tutorialTwo: .constant(false), tutorialThree: .constant(false), scale: .constant(false))
     }
 }

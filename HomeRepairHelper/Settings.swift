@@ -97,8 +97,6 @@ struct Settings: View {
                             .buttonStyle(PlainButtonStyle())
                             Button(action: {
                                 showFirstRun = true
-                                showTerms = true
-                                showTutorial = true
                                 completedTaskModel.clearCompletedItems()
                             }) {
                                 IconView(image: "exclamationmark.arrow.circlepath", color: "SettingColor3", text: "Reset")
@@ -127,14 +125,11 @@ struct Settings: View {
                 .sheet(isPresented: $showSheet,
                        content: {
                     if showWelcomeScreen {
-                        WelcomeScreen(showWelcomeScreen: $showWelcomeScreen)
+                        WelcomeScreen()
                     } else if agreement {
-                        AgreementView(agreement: $agreement)
+                        AgreementView()
                     }
 
-                })
-                .fullScreenCover(isPresented: $showProject, content: {
-                    ProjectOnboardView(showProject: $showProject)
                 })
             }
             .navigationViewStyle(StackNavigationViewStyle())

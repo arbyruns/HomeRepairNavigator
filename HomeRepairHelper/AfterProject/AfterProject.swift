@@ -51,11 +51,11 @@ struct AfterProject: View {
                        content: {
                         CompletionView()
                 })
-                .sheet(isPresented: $showProjectSheet,
-                       onDismiss:  { self.showButtons = false },
-                       content: {
-                    ProjectOnboardView(showProject: $showProjectSheet)
-                })
+//                .sheet(isPresented: $showProjectSheet,
+//                       onDismiss:  { self.showButtons = false },
+//                       content: {
+//                    ProjectOnboardView(showProject: $showProjectSheet)
+//                })
                 .navigationTitle("After Project")
                 .navigationBarTitleDisplayMode(.inline)
                 .navigationBarItems(trailing:

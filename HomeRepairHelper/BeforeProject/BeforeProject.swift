@@ -50,11 +50,11 @@ struct BeforeProject: View {
                        content: {
                     InfoSheet(infoOverlay: infoOverLayInfo, showInfo: $showInfo)
                 })
-                .sheet(isPresented: $showProjectSheet,
-                       onDismiss:  { self.showButtons = false },
-                       content: {
-                    ProjectOnboardView(showProject: $showProjectSheet)
-                })
+//                .sheet(isPresented: $showProjectSheet,
+//                       onDismiss:  { self.showButtons = false },
+//                       content: {
+//                    ProjectOnboardView(showProject: $showProjectSheet)
+//                })
                 .navigationTitle("Before Project")
                 .navigationBarTitleDisplayMode(.inline)
                 .navigationBarItems(trailing:
