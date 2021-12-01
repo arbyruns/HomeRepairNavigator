@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import TelemetryClient
 
 struct ProjectOnboardView: View {
     @AppStorage("UserDefault_FirstRun") var showFirstRun = true

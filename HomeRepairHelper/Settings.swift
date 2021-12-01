@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import TelemetryClient
 
 struct Settings: View {
     @Environment(\.openURL) var openURL
@@ -14,9 +15,9 @@ struct Settings: View {
     @AppStorage("UserDefault_FirstRun") var showFirstRun = true
     @AppStorage("UserDefault_ShowTerms") var showTerms = true
     @AppStorage("UserDefault_showTutorial") var showTutorial = true
-
-
     @AppStorage("UserDefault_CompleteTasks") var useCompletedTasks = false
+    @StateObject var telemtryData = TelemetryData()
+
     @State var showWelcomeScreen = false
     @State var agreement = false
     @State var showProject = false
@@ -76,6 +77,7 @@ struct Settings: View {
                             }
                             .buttonStyle(PlainButtonStyle())
                         Button(action: {
+                            telemtryData.sendScreen(screen: "settingsDonateTape")
                             openURL(URL(string: "https://www.paypal.com/fundraiser/charity/1381672")!)
                         }) {
                             IconView(image: "gift", color: "SettingColor1", text: "Donate")
@@ -83,6 +85,7 @@ struct Settings: View {
                         .buttonStyle(PlainButtonStyle())
                         Button(action: {
                             HomeRepairHelper.actionSheet()
+                            telemtryData.sendScreen(screen: "settingsShareScreenTapped")
                         }) {
                             IconView(image: "square.and.arrow.up", color: "SettingColor4", text: "Share Home Helper Helper")
                         }
@@ -96,6 +99,7 @@ struct Settings: View {
                             }
                             .buttonStyle(PlainButtonStyle())
                             Button(action: {
+                                telemtryData.sendScreen(screen: "settingsResetTapped")
                                 showFirstRun = true
                                 completedTaskModel.clearCompletedItems()
                             }) {
@@ -103,6 +107,7 @@ struct Settings: View {
                             }
                             .buttonStyle(PlainButtonStyle())
                             Button(action: {
+                                telemtryData.sendScreen(screen: "settingsContactMailTapped")
                                 let mailtoString = "mailto:info@naahrf.org?subject=Home Repair Helper Feedback ".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
                                 let mailtoUrl = URL(string: mailtoString!)!
                                 if UIApplication.shared.canOpenURL(mailtoUrl) {

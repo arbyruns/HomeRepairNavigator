@@ -19,32 +19,30 @@ class TelemetryData: ObservableObject {
     
     func sendZipCode(zipCode: String) {
         TelemetryManager.initialize(with: configuration)
-        TelemetryManager.send(zipCode)
-    }
-
-    func sendProject(project: String){
-        TelemetryManager.initialize(with: configuration)
-        TelemetryManager.send(project)
-    }
-
-    func sendBudget(budget: String){
-        TelemetryManager.initialize(with: configuration)
-        TelemetryManager.send(budget)
+        TelemetryManager.send(
+        "onboardZipCode",
+        for: "zipCode user",
+        with: ["zipCode": zipCode])
     }
 
     func sendScreen(screen: String){
         TelemetryManager.initialize(with: configuration)
         TelemetryManager.send(screen)
     }
+    
+    func sendCompletedProject(){
+        TelemetryManager.initialize(with: configuration)
+        TelemetryManager.send("Completed Onboard Info")
+    }
 
-    func sendMeta(){
+    func sendProject(budget: String, project: String){
         TelemetryManager.initialize(with: configuration)
         TelemetryManager.send(
-        "applicationDidFinishLaunching",
-        for: "my very cool user",
+        "onboardInfoCompleted",
+        for: "project & budget user",
         with: [
-            "numberOfTimesPizzaModeHasActivated": "1",
-            "pizzaCheeseMode": "true"])
+            "budget": budget,
+            "project": project])
     }
 }
 
