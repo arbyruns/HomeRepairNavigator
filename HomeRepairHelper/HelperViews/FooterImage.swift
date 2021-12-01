@@ -31,14 +31,16 @@ struct FooterImage: View {
                 ZStack {
                     Color.gray
                         .opacity(0.4)
-                        .frame(width: 65, height: 65, alignment: .center)
+                        .frame(width: 85, height: 65, alignment: .center)
                         .clipShape(RoundedRectangle(cornerRadius: 13))
-                    Image(systemName: image)
-                        .font(.title)
+                    VStack {
+                        Image(systemName: image)
+                            .font(.title2)
+                        Text(text)
+                            .font(.subheadline)
+                    }
                 }
             }
-            Text(text)
-                .fontWeight(.semibold)
         }
     }
 }

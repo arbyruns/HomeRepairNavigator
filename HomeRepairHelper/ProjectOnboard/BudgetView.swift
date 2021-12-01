@@ -21,7 +21,8 @@ struct BudgetView: View {
             Color("Background")
                 .edgesIgnoringSafeArea(.all)
             VStack(spacing: 20) {
-                Text("Please indicate your project estimate.")
+                Text("Please indicate your project estimate:")
+                    .font(.headline)
                     LazyVGrid(columns: columns, spacing: 20) {
                         ForEach(budgetInfo) { item in
                             BudgetItemView(budgetSelection: $userBudget, text: item.item, image: item.image)

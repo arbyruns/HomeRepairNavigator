@@ -24,7 +24,8 @@ struct ProjectTypeView: View {
             Color("Background")
                 .edgesIgnoringSafeArea(.all)
             VStack(spacing: 20) {
-                Text("Please indicate what type of project you need.")
+                Text("Please indicate your project type:")
+                    .font(.headline)
                     LazyVGrid(columns: columns, spacing: 20) {
                         ForEach(projectItems) { item in
                             ItemView(selection: $userProject, text: item.item, image: item.image)
