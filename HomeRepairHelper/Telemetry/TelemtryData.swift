@@ -35,14 +35,15 @@ class TelemetryData: ObservableObject {
         TelemetryManager.send("Completed Onboard Info")
     }
 
-    func sendProject(budget: String, project: String){
+    func sendProject(budget: String, project: String, zipCode: String){
         TelemetryManager.initialize(with: configuration)
         TelemetryManager.send(
         "onboardInfoCompleted",
         for: "project & budget user",
         with: [
             "budget": budget,
-            "project": project])
+            "project": project,
+            "zipCode": zipCode])
     }
 }
 

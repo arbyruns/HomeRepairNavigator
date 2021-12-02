@@ -30,9 +30,8 @@ struct ConfirmationScreen: View {
                     Button(action: {
                         playHaptic(style: "medium")
                         withAnimation {
-                            telemtryData.sendZipCode(zipCode: zipCode)
                             telemtryData.sendCompletedProject()
-                            telemtryData.sendProject(budget: userBudget, project: userProject)
+                            telemtryData.sendProject(budget: userBudget, project: userProject, zipCode: zipCode)
                             showConfirmation = false
                             showFirstRun = false
                         }
