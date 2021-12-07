@@ -109,7 +109,8 @@ var projectItems = [
     ProjectInfo(item: "Hurricane", image: "hurricane"),
     ProjectInfo(item: "Emergency Repair", image: "exclamationmark.octagon"),
     ProjectInfo(item: "Non-Emergency Repair", image: "hammer"),
-    ProjectInfo(item: "Remodel/Improvement", image: "house")
+    ProjectInfo(item: "Remodel/Improvement", image: "house"),
+    ProjectInfo(item: "Other", image: "square.grid.2x2")
 ]
 
 struct ProjectScreen_Previews: PreviewProvider {

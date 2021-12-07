@@ -6,9 +6,11 @@
 //
 
 import SwiftUI
+import TelemetryClient
 
 struct CompletionView: View {
     @Environment(\.colorScheme) var colorScheme
+    @StateObject var telemtryData = TelemetryData()
 
     var body: some View {
             ZStack {
@@ -37,6 +39,9 @@ struct CompletionView: View {
                                 Text("For more information, including how to set up a payment schedule, purchase our step-by-step guidebook **“Don’t Even Think About Ripping Me Off!”** from Amazon or Barnes & Noble for $14.95.")
                                     .font(.callout)
                                 Link("Amazon", destination: URL(string: "https://www.amazon.com/dp/B00SM5GDV0/ref=dp-kindle-redirect?_encoding=UTF8&btkr=1")!)
+                                    .onTapGesture {
+                                        telemtryData.sendScreen(screen: "amazonButtonTapped")
+                                    }
                             }
                         }
                     }

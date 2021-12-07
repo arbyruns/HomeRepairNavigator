@@ -6,9 +6,11 @@
 //
 
 import SwiftUI
+import TelemetryClient
 
 struct FooterImage: View {
     @Environment(\.openURL) var openURL
+    @StateObject var telemtryData = TelemetryData()
 
     let text: String
     let image: String
@@ -19,10 +21,13 @@ struct FooterImage: View {
                 switch text {
                 case "Amazon":
                     openURL(URL(string: "https://www.amazon.com/dp/B00SM5GDV0/ref=dp-kindle-redirect?_encoding=UTF8&btkr=1")!)
+                    telemtryData.sendScreen(screen: "amazonButtonTapped")
                 case "Donate":
                     openURL(URL(string: "https://www.paypal.com/fundraiser/charity/1381672")!)
+                    telemtryData.sendScreen(screen: "donateButtonTapped")
                 case "Visit":
                     openURL(URL(string: "https://naahrf.org/")!)
+                    telemtryData.sendScreen(screen: "visitSiteButtonTapped")
                 default:
                     HomeRepairHelper.actionSheet()
                 }
