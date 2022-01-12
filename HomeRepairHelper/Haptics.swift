@@ -20,5 +20,4 @@ func playHaptic(style: String) {
         let impactMed = UIImpactFeedbackGenerator(style: .light)
         impactMed.impactOccurred()
     }
-
 }

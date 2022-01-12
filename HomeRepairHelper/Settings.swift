@@ -83,13 +83,13 @@ struct Settings: View {
                             IconView(image: "gift", color: "SettingColor1", text: "Donate")
                         }
                         .buttonStyle(PlainButtonStyle())
-                        Button(action: {
-                            HomeRepairHelper.actionSheet()
-                            telemtryData.sendScreen(screen: "settingsShareScreenTapped")
-                        }) {
-                            IconView(image: "square.and.arrow.up", color: "SettingColor4", text: "Share Home Helper Helper")
-                        }
-                        .buttonStyle(PlainButtonStyle())
+//                        Button(action: {
+//                            HomeRepairHelper.actionSheet()
+//                            telemtryData.sendScreen(screen: "settingsShareScreenTapped")
+//                        }) {
+//                            IconView(image: "square.and.arrow.up", color: "SettingColor4", text: "Share Home Helper Helper")
+//                        }
+//                        .buttonStyle(PlainButtonStyle())
                         }
                         Section(header: Text("")) {
                             Button(action: {
@@ -123,8 +123,9 @@ struct Settings: View {
                             }
                         }
                         Text("Version: \(getAppVersion())")
+                        Text("Home Repair Helper ™ - Copyright©2021")
+                            .font(.caption)
                     }
-
                 }
                 .navigationBarTitle("Settings")
                 .sheet(isPresented: $showSheet,

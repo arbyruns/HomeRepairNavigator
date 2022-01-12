@@ -20,7 +20,7 @@ struct AgreementView: View {
                     .resizable()
                     .frame(width: 145, height: 145, alignment: .center)
                     .aspectRatio(contentMode: .fit)
-                Text("Home Repair Helper")
+                Text("Home Repair Helper ™")
                     .font(.title)
                     .bold()
                     .padding(.bottom)
