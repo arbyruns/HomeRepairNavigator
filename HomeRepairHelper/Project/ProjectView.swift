@@ -26,20 +26,32 @@ struct ProjectView: View {
                 Color("Background")
                     .edgesIgnoringSafeArea(.all)
                 VStack {
-                    List {
-                        ForEach(coredataVM.savedEntities) { entity in
-                            ProjectListRowView(name: entity.projectName ?? "nil",
-                                               type: entity.projectType ?? "nil",
-                                               budget: entity.projectBudget ?? "nil")
-                                .onTapGesture {
-                                    withAnimation {
-                                        showProjectView = true
-                                        projectData.projectName = entity.projectName ?? ""
-                                        projectData.projectID = Int(entity.projectUID)
+                    if coredataVM.savedEntities.count != 0 {
+                        List {
+                            ForEach(coredataVM.savedEntities) { entity in
+                                ProjectListRowView(name: entity.projectName ?? "nil",
+                                                   type: entity.projectType ?? "nil",
+                                                   budget: entity.projectBudget ?? "nil")
+                                    .onTapGesture {
+                                        withAnimation {
+                                            showProjectView = true
+                                            projectData.projectName = entity.projectName ?? ""
+                                            projectData.projectID = Int(entity.projectUID)
+                                        }
                                     }
-                                }
+                            }
+                            .onDelete(perform: coredataVM.deleteItem)
                         }
-                        .onDelete(perform: coredataVM.deleteItem)
+                    } else {
+                        VStack {
+                            Spacer()
+                            HStack {
+                                Text("No Projects Currently. Tap")
+                                Image(systemName: "plus.diamond.fill")
+                                Text("To Get Started.")
+                            }
+                            Spacer()
+                        }
                     }
                 }
                 .listStyle(.inset)
@@ -62,6 +74,9 @@ struct ProjectView: View {
                 .sheet(isPresented: $showSettings) {
                     Settings()
                 }
+            }
+            .onAppear {
+                print("core \(coredataVM.savedEntities.count)")
             }
             .navigationBarTitle("Current Projects")
             .toolbar {

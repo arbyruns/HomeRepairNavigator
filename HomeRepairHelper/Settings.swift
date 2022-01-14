@@ -20,7 +20,6 @@ struct Settings: View {
 
     @State var showWelcomeScreen = false
     @State var agreement = false
-    @State var showProject = false
     @State var showSheet = false
 
     var body: some View {
@@ -70,12 +69,6 @@ struct Settings: View {
                             IconView(image: "book", color: "SettingColor2", text: "Terms")
                         }
                         .buttonStyle(PlainButtonStyle())
-                            Button(action: {
-                                showProject = true
-                            }) {
-                                IconView(image: "rectangle.and.pencil.and.ellipsis", color: "SettingColor3", text: "Project Info")
-                            }
-                            .buttonStyle(PlainButtonStyle())
                         Button(action: {
                             telemtryData.sendScreen(screen: "settingsDonateTape")
                             openURL(URL(string: "https://www.paypal.com/fundraiser/charity/1381672")!)
@@ -135,10 +128,6 @@ struct Settings: View {
                     } else if agreement {
                         AgreementView()
                     }
-                })
-                .sheet(isPresented: $showProject,
-                       content: {
-                    ProjectOnboardView(showProjectSheet: $showProject)
                 })
             }
             .navigationViewStyle(StackNavigationViewStyle())
