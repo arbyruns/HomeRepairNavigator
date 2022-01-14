@@ -10,6 +10,8 @@ import SwiftUI
 
 struct ProjectRowView: View {
     @AppStorage("UserDefault_CompleteTasks") var useCompletedTasks = false
+    @StateObject var coredataVM = CoreDataManager()
+    @ObservedObject var projectData: ProjectData
 
     @ObservedObject var infoOverLayInfo: OverLayInfo
     @ObservedObject var completedTaskModel = CompletedTasksModel()
@@ -27,6 +29,8 @@ struct ProjectRowView: View {
     let info: String
     let completedID: Int
     //    let showCheckmark: Bool
+
+    @State var completedItems: [Int] = []
     
     var body: some View {
         ZStack {
@@ -34,17 +38,17 @@ struct ProjectRowView: View {
                 .edgesIgnoringSafeArea(.all)
             VStack {
                 HStack {
-                    if completedTaskModel.isCompletedTask(completedTask: completedID) && useCompletedTasks == false {
+                    if completedItems.contains(completedID)  && useCompletedTasks == false {
                         CheckMarkView(checked: .constant(true), trimValue: .constant(1))
                             .padding(.leading)
                     }
-                    if completedTaskModel.isCompletedTask(completedTask: completedID) && useCompletedTasks == true {
+                    if completedItems.contains(completedID)  && useCompletedTasks == true {
                         SquareCompletionView(checked: .constant(true), trimValue: .constant(1))
                             .padding(.leading)
                     }
                     Text(title)
-                        .strikethrough(completedTaskModel.isCompletedTask(completedTask: completedID) ? true : false)
-                        .foregroundColor(completedTaskModel.isCompletedTask(completedTask: completedID)  ? .gray : Color("FontColor"))
+                        .strikethrough(completedItems.contains(completedID) ? true : false)
+                        .foregroundColor(completedItems.contains(completedID) ? .gray : Color("FontColor"))
                         .font(.callout)
                         .padding()
                     Spacer()
@@ -73,7 +77,14 @@ struct ProjectRowView: View {
                                 self.trimVal = 1
                                 completed = true
                                 showButtons = false
-                                completedTaskModel.addItem(completedTask: completedID)
+                                for entity in coredataVM.savedEntities {
+                                    if entity.projectName == projectData.projectName {
+                                        coredataVM.saveTask(entity, completedID)
+                                        completedItems = coredataVM.getCompletedTasks(entity, projectData.projectName)
+                                    }
+                                }
+
+
                                 if completedID == 30 {
                                     showCompletedSheet = true
                                     showSheet = true
@@ -92,7 +103,13 @@ struct ProjectRowView: View {
                                 infoOverLayInfo.title = title
                                 infoOverLayInfo.description = info
                                 completed = false
-                                completedTaskModel.removeItem(completedTask: completedID)
+                                for entity in coredataVM.savedEntities {
+                                    if entity.projectName == projectData.projectName {
+                                        coredataVM.removeTask(entity, completedID)
+                                        completedItems = coredataVM.getCompletedTasks(entity, projectData.projectName)
+                                    }
+                                }
+//                                completedTaskModel.removeItem(completedTask: completedID)
                             }
                         }) {
                             ButtonTextView(smallButton: true, text: "No")
@@ -106,14 +123,19 @@ struct ProjectRowView: View {
                     .stroke(Color("borderColor"), lineWidth: 1)
             )
             .padding(.horizontal)
+            .onAppear {
+                for entity in coredataVM.savedEntities {
+                    completedItems = coredataVM.getCompletedTasks(entity, projectData.projectName)
+                }
+            }
         }
     }
 }
 
 struct BeforeRowView_Previews: PreviewProvider {
     static var previews: some View {
-        ProjectRowView(infoOverLayInfo: OverLayInfo(), showInfo: .constant(false), showSheet: .constant(false), showCompletedSheet: .constant(false), title: "Have you researched the project", question: "Question", info: "info", completedID: 1)
-        ProjectRowView(infoOverLayInfo: OverLayInfo(), showInfo: .constant(false), showSheet: .constant(false), showCompletedSheet: .constant(false), title: "Have you researched the project", question: "Question", info: "info", completedID: 1)
+        ProjectRowView(projectData: ProjectData(), infoOverLayInfo: OverLayInfo(), showInfo: .constant(false), showSheet: .constant(false), showCompletedSheet: .constant(false), title: "Have you researched the project", question: "Question", info: "info", completedID: 1)
+        ProjectRowView(projectData: ProjectData(), infoOverLayInfo: OverLayInfo(), showInfo: .constant(false), showSheet: .constant(false), showCompletedSheet: .constant(false), title: "Have you researched the project", question: "Question", info: "info", completedID: 1)
             .colorScheme(.dark)
     }
 }

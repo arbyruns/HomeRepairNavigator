@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19574" systemVersion="21C52" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Item" representedClassName="Item" syncable="YES" codeGenerationType="class">
+        <attribute name="completedItem" optional="YES" attributeType="String"/>
+        <attribute name="completedItems" optional="YES" attributeType="Transformable" valueTransformerName="NSSecureUnarchiveFromData" customClassName="[Int]"/>
+        <attribute name="completedTask" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="projectBudget" optional="YES" attributeType="String"/>
+        <attribute name="projectCreatedDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="projectID" optional="YES" attributeType="String"/>
+        <attribute name="projectName" optional="YES" attributeType="String"/>
+        <attribute name="projectType" optional="YES" attributeType="String"/>
+        <attribute name="projectUID" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="projectZip" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+    </entity>
+    <elements>
+        <element name="Item" positionX="-63" positionY="-18" width="128" height="179"/>
+    </elements>
+</model>

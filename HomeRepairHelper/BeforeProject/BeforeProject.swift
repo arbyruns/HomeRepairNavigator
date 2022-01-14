@@ -12,12 +12,17 @@ import SwiftUINavigationBarStyling
 struct BeforeProject: View {
     @Environment(\.colorScheme) var colorScheme
     @ObservedObject var infoOverLayInfo: OverLayInfo
+    @ObservedObject var projectData: ProjectData
+    @StateObject var coredataVM = CoreDataManager()
+
 
     @State var showInfo = false
     @State var showSheet = false
     @State var showProjectSheet = false
     @Binding var showButtons: Bool
     @Binding var completed: Bool
+    @Binding var showProjectView: Bool
+
     let completedArray = UserDefaults.standard.object(forKey: "userDefault-completedItems") as? [Int] ?? [Int]()
 
 
@@ -28,17 +33,19 @@ struct BeforeProject: View {
                 VStack {
                     ScrollView {
                         VStack(spacing: 20) {
-                                ForEach(beforeProjectData) { data in
-                                    ProjectRowView(infoOverLayInfo: infoOverLayInfo,
-                                                   showInfo: $showInfo,
-                                                   showSheet: $showSheet,
-                                                   showCompletedSheet: .constant(false),
-                                                   title: data.title,
-                                                   question: data.title,
-                                                   info: data.description,
-                                                   completedID: data.trackingID
-                                                   )
-                                        .disabled(showInfo ? true : false)
+                            ForEach(beforeProjectData) { data in
+                                ForEach(coredataVM.savedEntities) { entity in
+                                        ProjectRowView(projectData: projectData, infoOverLayInfo: infoOverLayInfo,
+                                                       showInfo: $showInfo,
+                                                       showSheet: $showSheet,
+                                                       showCompletedSheet: .constant(false),
+                                                       title: data.title,
+                                                       question: data.title,
+                                                       info: data.description,
+                                                       completedID: data.trackingID
+                                        )
+                                            .disabled(showInfo ? true : false)
+                                }
                             }
                         }
                         .padding(.top)
@@ -59,10 +66,10 @@ struct BeforeProject: View {
                 .navigationBarTitleDisplayMode(.inline)
                 .navigationBarItems(trailing:
                                         Button(action: {
-                    showProjectSheet = true
+                    showProjectView = false
                     playHaptic(style: "medium")
                 }) {
-                    Image(systemName: "rectangle.and.pencil.and.ellipsis")
+                    Image(systemName: "xmark.circle")
                         .font(.title3)
                 })
                 .navigationBarColor(colorScheme == .dark ? UIColor(Color("borderColor")) : UIColor(Color("buttonColorCyan")), textColor: UIColor(Color("FontColor")))
@@ -74,8 +81,8 @@ struct BeforeProject: View {
 
 struct BeforeProject_Previews: PreviewProvider {
     static var previews: some View {
-        BeforeProject(infoOverLayInfo: OverLayInfo(), showButtons: .constant(false), completed: .constant(false))
-        BeforeProject(infoOverLayInfo: OverLayInfo(), showButtons: .constant(false), completed: .constant(false))
+        BeforeProject(infoOverLayInfo: OverLayInfo(), projectData: ProjectData(), showButtons: .constant(false), completed: .constant(false), showProjectView: .constant(false))
+        BeforeProject(infoOverLayInfo: OverLayInfo(), projectData: ProjectData(), showButtons: .constant(false), completed: .constant(false), showProjectView: .constant(false))
             .colorScheme(.dark)
     }
 }

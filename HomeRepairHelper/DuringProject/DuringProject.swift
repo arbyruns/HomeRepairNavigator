@@ -11,12 +11,15 @@ import SwiftUINavigationBarStyling
 struct DuringProject: View {
     @Environment(\.colorScheme) var colorScheme
     @ObservedObject var infoOverLayInfo: OverLayInfo
+    @ObservedObject var projectData: ProjectData
 
     @State var showInfo = false
     @State var showSheet = false
     @State var showProjectSheet = false
     @Binding var showButtons: Bool
     @Binding var completed: Bool
+    @Binding var showProjectView: Bool
+
 
     var body: some View {
             ZStack {
@@ -25,7 +28,8 @@ struct DuringProject: View {
                     ScrollView {
                         VStack(spacing: 20) {
                             ForEach(duringProjectData) { data in
-                                ProjectRowView(infoOverLayInfo: infoOverLayInfo,
+                                ProjectRowView(projectData: projectData,
+                                               infoOverLayInfo: infoOverLayInfo,
                                                showInfo: $showInfo,
                                                showSheet: $showSheet,
                                                showCompletedSheet: .constant(false),
@@ -54,10 +58,10 @@ struct DuringProject: View {
                 .navigationBarTitleDisplayMode(.inline)
                 .navigationBarItems(trailing:
                                         Button(action: {
-                    showProjectSheet = true
+                    showProjectView = false
                     playHaptic(style: "medium")
                 }) {
-                    Image(systemName: "rectangle.and.pencil.and.ellipsis")
+                    Image(systemName: "xmark.circle")
                         .font(.title3)
                 })
                 .navigationBarColor(colorScheme == .dark ? UIColor(Color("borderColor")) : UIColor(Color("buttonColorGray")), textColor: UIColor(Color("FontColor")))
@@ -69,8 +73,8 @@ struct DuringProject: View {
 
 struct DuringProject_Previews: PreviewProvider {
     static var previews: some View {
-        DuringProject(infoOverLayInfo: OverLayInfo(), showButtons: .constant(false), completed: .constant(false))
-        DuringProject(infoOverLayInfo: OverLayInfo(), showButtons: .constant(false), completed: .constant(false))
+        DuringProject(infoOverLayInfo: OverLayInfo(), projectData: ProjectData(), showButtons: .constant(false), completed: .constant(false), showProjectView: .constant(false))
+        DuringProject(infoOverLayInfo: OverLayInfo(), projectData: ProjectData(), showButtons: .constant(false), completed: .constant(false), showProjectView: .constant(false))
             .colorScheme(.dark)
     }
 }

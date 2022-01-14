@@ -10,30 +10,27 @@ import TelemetryClient
 
 struct TabBar: View {
     @AppStorage("UserDefault_FirstRun") var showFirstRun = true
+    @ObservedObject var projectData: ProjectData
+
+    @Binding var showProjectView: Bool
 
     var body: some View {
         VStack {
             TabView {
-                BeforeProject(infoOverLayInfo: OverLayInfo(), showButtons: .constant(false), completed: .constant(false)).tabItem {
+                BeforeProject(infoOverLayInfo: OverLayInfo(), projectData: projectData, showButtons: .constant(false), completed: .constant(false), showProjectView: $showProjectView).tabItem {
                     Image(systemName: "arrow.clockwise")
                         .font(.system(size: 24, weight: .semibold))
                     Text("Before Project")
                 }
-                DuringProject(infoOverLayInfo: OverLayInfo(), showButtons: .constant(false), completed: .constant(false)).tabItem {
+                DuringProject(infoOverLayInfo: OverLayInfo(), projectData: projectData, showButtons: .constant(false), completed: .constant(false), showProjectView: $showProjectView).tabItem {
                     Image(systemName: "arrow.triangle.2.circlepath")
                         .font(.system(size: 24, weight: .semibold))
                     Text("During Project")
                 }
-                AfterProject(infoOverLayInfo: OverLayInfo(), showButtons: .constant(false), completed: .constant(false)).tabItem {
+                AfterProject(infoOverLayInfo: OverLayInfo(), projectData: projectData, showButtons: .constant(false), completed: .constant(false), showProjectView: $showProjectView).tabItem {
                     Image(systemName: "arrow.counterclockwise")
                         .font(.system(size: 24, weight: .semibold))
                     Text("After Project")
-                }
-                Settings().tabItem {
-                    Image(systemName: "gear")
-                        .font(.system(size: 24, weight: .semibold))
-                    Text("Settings")
-
                 }
             }
             .fullScreenCover(isPresented: $showFirstRun,
@@ -45,8 +42,8 @@ struct TabBar: View {
 
 struct TabBar_Previews: PreviewProvider {
     static var previews: some View {
-        TabBar()
-        TabBar()
+        TabBar(projectData: ProjectData(), showProjectView: .constant(false))
+        TabBar(projectData: ProjectData(), showProjectView: .constant(false))
             .colorScheme(.dark)
     }
 }

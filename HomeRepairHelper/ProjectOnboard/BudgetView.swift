@@ -81,6 +81,7 @@ struct BudgetInfo: Identifiable {
 }
 
 var budgetInfo = [
+    BudgetInfo(item: "-", image: "dollarsign.circle"),
     BudgetInfo(item: "0 - 5,000", image: "dollarsign.circle"),
     BudgetInfo(item: "5,001 - 10,000", image: "dollarsign.circle"),
     BudgetInfo(item: "10,001 - 25,000", image: "dollarsign.circle"),

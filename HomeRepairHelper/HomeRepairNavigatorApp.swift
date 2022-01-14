@@ -11,9 +11,13 @@ import TelemetryClient
 @main
 struct HomeRepairNavigatorApp: App {
     @StateObject var telemtryData = TelemetryData()
+    let persistenceController = CoreDataManager()
+
     var body: some Scene {
         WindowGroup {
-            TabBar()
+//            TabBar()
+            ProjectView(projectData: ProjectData())
+                .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
     init() {

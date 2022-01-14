@@ -103,6 +103,7 @@ struct ProjectInfo: Identifiable {
 }
 
 var projectItems = [
+    ProjectInfo(item: "-", image: "flame"),
     ProjectInfo(item: "Fire", image: "flame"),
     ProjectInfo(item: "Flood", image: "drop"),
     ProjectInfo(item: "Tornado/Storm", image: "tornado"),
