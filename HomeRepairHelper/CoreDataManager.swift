@@ -73,6 +73,7 @@ class CoreDataManager: ObservableObject {
         newProject.projectUID = generateProjectID()
         newProject.projectCreatedDate = Date()
         newProject.completedItems = []
+        newProject.notes = []
         saveData()
     }
 
@@ -87,6 +88,20 @@ class CoreDataManager: ObservableObject {
         }
         saveData()
         print("Saved Items \(String(describing: entity.completedItems))")
+    }
+
+    func saveUserNotes(_ entity: Item, _ userNote: String) {
+        print("Current notes - \(entity.notes) - \(userNote)")
+        entity.notes?.append(userNote)
+        saveData()
+        print("Notes: \(entity.notes)")
+    }
+
+    func getUserNotes(_ entity: Item, _ projectName: String) -> [String] {
+        var notesArray: [String] = []
+        notesArray = entity.notes ?? [""]
+        print("returnNotes: \(notesArray)")
+        return notesArray
     }
 
     func removeTask(_ entity: Item, _ id: Int) {
@@ -122,9 +137,7 @@ class CoreDataManager: ObservableObject {
         return Int32(newProjectID + 1)
     }
 
-
     func projectDuplicateNameCheck(name: String) -> Bool {
-
         var projectDuplicate = false
 
         for item in savedEntities {
@@ -134,7 +147,6 @@ class CoreDataManager: ObservableObject {
                 projectDuplicate = false
             }
         }
-
         return projectDuplicate
     }
 

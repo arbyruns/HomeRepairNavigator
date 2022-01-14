@@ -32,6 +32,11 @@ struct TabBar: View {
                         .font(.system(size: 24, weight: .semibold))
                     Text("After Project")
                 }
+                NotesList(projectData: projectData, showProjectView: $showProjectView).tabItem {
+                    Image(systemName: "note.text")
+                        .font(.system(size: 24, weight: .semibold))
+                    Text("Notes")
+                }
             }
         }
     }

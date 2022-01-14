@@ -73,6 +73,7 @@ struct AddProjectView: View {
                                     .bold()
                             }
                         }
+                        .pickerStyle(.menu)
                     }
                     .padding()
                     HStack {
@@ -86,7 +87,7 @@ struct AddProjectView: View {
                                     .font(.subheadline)
                             }
                         }
-
+                        .pickerStyle(.menu)
                     }
                     .padding()
                     VStack(alignment: .leading) {

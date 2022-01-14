@@ -37,6 +37,8 @@
 		54E7EE07278FAD0A005C164D /* homerepair.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 54E7EE05278FAD0A005C164D /* homerepair.xcdatamodeld */; };
 		54E7EE09278FAE8E005C164D /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E7EE08278FAE8E005C164D /* CoreDataManager.swift */; };
 		54E7EE0B279065EC005C164D /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E7EE0A279065EC005C164D /* Data.swift */; };
+		54E7EE2C2791A9B6005C164D /* NotesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E7EE2B2791A9B6005C164D /* NotesView.swift */; };
+		54E7EE2F2791ADDC005C164D /* NotesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E7EE2E2791ADDC005C164D /* NotesList.swift */; };
 		54F9AE6D2742F73C00F09248 /* HomeRepairNavigatorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F9AE6C2742F73C00F09248 /* HomeRepairNavigatorApp.swift */; };
 		54F9AE6F2742F73C00F09248 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F9AE6E2742F73C00F09248 /* ContentView.swift */; };
 		54F9AE712742F73F00F09248 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 54F9AE702742F73F00F09248 /* Assets.xcassets */; };
@@ -78,6 +80,8 @@
 		54E7EE06278FAD0A005C164D /* homerepair.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = homerepair.xcdatamodel; sourceTree = "<group>"; };
 		54E7EE08278FAE8E005C164D /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		54E7EE0A279065EC005C164D /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		54E7EE2B2791A9B6005C164D /* NotesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesView.swift; sourceTree = "<group>"; };
+		54E7EE2E2791ADDC005C164D /* NotesList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesList.swift; sourceTree = "<group>"; };
 		54F9AE692742F73C00F09248 /* HomeRepairHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HomeRepairHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		54F9AE6C2742F73C00F09248 /* HomeRepairNavigatorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRepairNavigatorApp.swift; sourceTree = "<group>"; };
 		54F9AE6E2742F73C00F09248 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -170,6 +174,15 @@
 			path = Project;
 			sourceTree = "<group>";
 		};
+		54E7EE2D2791ADB6005C164D /* Notes */ = {
+			isa = PBXGroup;
+			children = (
+				54E7EE2B2791A9B6005C164D /* NotesView.swift */,
+				54E7EE2E2791ADDC005C164D /* NotesList.swift */,
+			);
+			path = Notes;
+			sourceTree = "<group>";
+		};
 		54F9AE602742F73C00F09248 = {
 			isa = PBXGroup;
 			children = (
@@ -189,6 +202,7 @@
 		54F9AE6B2742F73C00F09248 /* HomeRepairHelper */ = {
 			isa = PBXGroup;
 			children = (
+				54E7EE2D2791ADB6005C164D /* Notes */,
 				54E7EE00278F819B005C164D /* Project */,
 				54D923B6274D839A0051E83F /* CompletionScreens */,
 				54143B1F274BEF3D0088C0A2 /* Telemetry */,
@@ -361,9 +375,11 @@
 				54F9AE86274359C600F09248 /* ProjectRowView.swift in Sources */,
 				540B80B92744325100414BE6 /* TabBar.swift in Sources */,
 				54F9AE812742FA1C00F09248 /* AgreementView.swift in Sources */,
+				54E7EE2F2791ADDC005C164D /* NotesList.swift in Sources */,
 				54143B23274C1CA20088C0A2 /* AboutView.swift in Sources */,
 				54F9AE7E2742F97F00F09248 /* Buttons.swift in Sources */,
 				54CE3B182746B1F300274254 /* SquareCompletionView.swift in Sources */,
+				54E7EE2C2791A9B6005C164D /* NotesView.swift in Sources */,
 				54143B25274C220C0088C0A2 /* ConfirmationScreen.swift in Sources */,
 				540B80C627444E8900414BE6 /* IconView.swift in Sources */,
 				54143B29274C287E0088C0A2 /* Haptics.swift in Sources */,
