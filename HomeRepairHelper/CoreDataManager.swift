@@ -103,15 +103,8 @@ class CoreDataManager: ObservableObject {
     }
 
     func getCompletedTasks(_ entity: Item, _ projectName: String) -> [Int] {
-
         var array: [Int] = []
-
-        if entity.projectName == projectName {
-            if entity.completedTask != nil {
-                array = entity.completedItems!
-            }
-        }
-
+        array = entity.completedItems ?? []
         return array
     }
 
@@ -124,7 +117,6 @@ class CoreDataManager: ObservableObject {
                 newProjectID = Int(entity.projectUID)
                 print("newProjectID \(newProjectID)")
             }
-
         }
         saveData()
         return Int32(newProjectID + 1)

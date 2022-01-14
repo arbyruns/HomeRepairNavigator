@@ -30,7 +30,7 @@ struct ProjectRowView: View {
     let completedID: Int
     //    let showCheckmark: Bool
 
-    @State var completedItems: [Int] = []
+    @State var coreCompletedItems: [Int] = []
     
     var body: some View {
         ZStack {
@@ -38,17 +38,17 @@ struct ProjectRowView: View {
                 .edgesIgnoringSafeArea(.all)
             VStack {
                 HStack {
-                    if completedItems.contains(completedID)  && useCompletedTasks == false {
+                    if coreCompletedItems.contains(completedID)  && useCompletedTasks == false {
                         CheckMarkView(checked: .constant(true), trimValue: .constant(1))
                             .padding(.leading)
                     }
-                    if completedItems.contains(completedID)  && useCompletedTasks == true {
+                    if coreCompletedItems.contains(completedID)  && useCompletedTasks == true {
                         SquareCompletionView(checked: .constant(true), trimValue: .constant(1))
                             .padding(.leading)
                     }
                     Text(title)
-                        .strikethrough(completedItems.contains(completedID) ? true : false)
-                        .foregroundColor(completedItems.contains(completedID) ? .gray : Color("FontColor"))
+                        .strikethrough(coreCompletedItems.contains(completedID) ? true : false)
+                        .foregroundColor(coreCompletedItems.contains(completedID) ? .gray : Color("FontColor"))
                         .font(.callout)
                         .padding()
                     Spacer()
@@ -80,7 +80,7 @@ struct ProjectRowView: View {
                                 for entity in coredataVM.savedEntities {
                                     if entity.projectName == projectData.projectName {
                                         coredataVM.saveTask(entity, completedID)
-                                        completedItems = coredataVM.getCompletedTasks(entity, projectData.projectName)
+                                        coreCompletedItems = coredataVM.getCompletedTasks(entity, projectData.projectName)
                                     }
                                 }
                                 if completedID == 30 {
@@ -104,7 +104,7 @@ struct ProjectRowView: View {
                                 for entity in coredataVM.savedEntities {
                                     if entity.projectName == projectData.projectName {
                                         coredataVM.removeTask(entity, completedID)
-                                        completedItems = coredataVM.getCompletedTasks(entity, projectData.projectName)
+                                        coreCompletedItems = coredataVM.getCompletedTasks(entity, projectData.projectName)
                                     }
                                 }
 //                                completedTaskModel.removeItem(completedTask: completedID)
@@ -123,7 +123,10 @@ struct ProjectRowView: View {
             .padding(.horizontal)
             .onAppear {
                 for entity in coredataVM.savedEntities {
-                    completedItems = coredataVM.getCompletedTasks(entity, projectData.projectName)
+                    if entity.projectName == projectData.projectName {
+                        coreCompletedItems = coredataVM.getCompletedTasks(entity, projectData.projectName)
+                        print("Completed items \(coreCompletedItems) - \(projectData.projectName)")
+                    }
                 }
             }
         }
