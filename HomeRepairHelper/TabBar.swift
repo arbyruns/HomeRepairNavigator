@@ -33,9 +33,6 @@ struct TabBar: View {
                     Text("After Project")
                 }
             }
-            .fullScreenCover(isPresented: $showFirstRun,
-                onDismiss: { print("dismissed!") },
-                             content: { ProjectOnboardView(showProjectSheet: .constant(false)) })
         }
     }
 }

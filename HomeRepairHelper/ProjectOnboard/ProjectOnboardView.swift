@@ -40,18 +40,12 @@ struct ProjectOnboardView: View {
                         .tag(1)
                     TutorialView(tutorialOne: $tutorialOne, tutorialTwo: $tutorialTwo, tutorialThree: $tutorialThree, scale: $scale)
                         .tag(2)
-                    ProfileScreenView(zipCode: $zipCode)
-                        .tag(3)
-                    ProjectTypeView(userProject: $userProject)
-                        .tag(4)
-                    BudgetView(userBudget: $userBudget)
-                        .tag(5)
                 }
                 .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .never))
                 .tabViewStyle(PageTabViewStyle())
                 Button(action: {
                     withAnimation {
-                        if currentIndex != 5 {
+                        if currentIndex != 2 {
                             playHaptic(style: "light")
                             if currentIndex == 2 {
                                 // show first tutorial
@@ -76,7 +70,7 @@ struct ProjectOnboardView: View {
                                         disableButton = false
                                     }
                                 }
-                            } else if currentIndex == 4 {
+                            } else if currentIndex == 2 {
                                 currentIndex += 1
                             } else {
                                 currentIndex += 1
@@ -134,7 +128,7 @@ func verifyZip(zip: String) -> Bool {
 }
 
 func buttonText(index: Int) -> String {
-    if index != 5 {
+    if index != 2 {
         return "Next"
     } else {
         return "OK"

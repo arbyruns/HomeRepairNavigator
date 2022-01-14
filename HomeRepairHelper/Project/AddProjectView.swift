@@ -103,6 +103,9 @@ struct AddProjectView: View {
                                     }
                                 }
                         }
+                        Text("*Our app is free for you. To keep it that way, we just need some general information so our donors can see where we are making an impact. This information is anonymized and does not link back to you as the user.*")
+                            .font(.caption)
+                            .padding(.top)
                     }
                     .padding()
                     .navigationBarTitle("Add A New Project")

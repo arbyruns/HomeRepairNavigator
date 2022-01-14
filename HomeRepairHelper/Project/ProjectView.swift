@@ -14,6 +14,8 @@ struct ProjectView: View {
     @StateObject var coredataVM = CoreDataManager()
     @StateObject var telemtryData = TelemetryData()
 
+    @AppStorage("UserDefault_FirstRun") var showFirstRun = true
+
     @State var showProjectView = false
     @State var showSettings = false
     @State var showAddProjectSheet = false
@@ -73,6 +75,9 @@ struct ProjectView: View {
                     }
                 }
             }
+            .fullScreenCover(isPresented: $showFirstRun,
+                onDismiss: { print("dismissed!") },
+                             content: { ProjectOnboardView(showProjectSheet: .constant(false)) })
         }
     }
 }

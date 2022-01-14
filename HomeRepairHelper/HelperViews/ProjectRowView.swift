@@ -83,8 +83,6 @@ struct ProjectRowView: View {
                                         completedItems = coredataVM.getCompletedTasks(entity, projectData.projectName)
                                     }
                                 }
-
-
                                 if completedID == 30 {
                                     showCompletedSheet = true
                                     showSheet = true
