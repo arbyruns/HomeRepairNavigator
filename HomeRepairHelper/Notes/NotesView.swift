@@ -11,7 +11,7 @@ struct NotesView: View {
     @StateObject var coredataVM = CoreDataManager()
     @StateObject var projectData = ProjectData()
 
-    @State var textEditor  = ""
+    @State var textEditor  = "Tap to add a note..."
 
     @Binding var userNote: String
     @Binding var showNotesSheet: Bool
