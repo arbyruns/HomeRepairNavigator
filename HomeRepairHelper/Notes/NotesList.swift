@@ -36,19 +36,29 @@ struct NotesList: View {
                                 }
                             }
                         }
-                    }
-                    .onChange(of: showNotesSheet) { newValue in
-                        for entity in coredataVM.savedEntities {
-                            if entity.projectName == projectData.projectName {
-                                userNotes = coredataVM.getUserNotes(entity, projectData.projectName)
+                        .onDelete(perform: { indexSet in
+                            for entity in coredataVM.savedEntities {
+                                if projectData.projectName == entity.projectName {
+                                    print(indexSet.first)
+                                    entity.notes?.remove(at: indexSet.first!)
+                                    coredataVM.saveData()
+
+                                }
                             }
                         }
+
+                        )
+                    }
+                    .onChange(of: showNotesSheet) { newValue in
+                            coredataVM.fetchData()
                     }
                     .sheet(isPresented: $showUserNote) {
                         NotesView(projectData: projectData, userNote: $userNote, showNotesSheet: $showNotesSheet, showUserNote: $showUserNote)
                     }
                     .fullScreenCover(isPresented: $showNotesSheet,
-                                     onDismiss: {},
+                                     onDismiss: {
+                        coredataVM.fetchData()
+                    },
                                      content: {
                         NotesView(projectData: projectData, userNote: $userNote, showNotesSheet: $showNotesSheet, showUserNote: $showUserNote) })
                 }
