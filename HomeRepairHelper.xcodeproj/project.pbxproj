@@ -114,22 +114,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		540B80A82743E77400414BE6 /* DuringProject */ = {
-			isa = PBXGroup;
-			children = (
-				540B80A92743E78200414BE6 /* DuringProject.swift */,
-			);
-			path = DuringProject;
-			sourceTree = "<group>";
-		};
-		540B80AB2743E87C00414BE6 /* AfterProject */ = {
-			isa = PBXGroup;
-			children = (
-				540B80AC2743E89700414BE6 /* AfterProject.swift */,
-			);
-			path = AfterProject;
-			sourceTree = "<group>";
-		};
 		540B80B3274430EA00414BE6 /* Lottie */ = {
 			isa = PBXGroup;
 			children = (
@@ -138,14 +122,6 @@
 				540B80B4274430FD00414BE6 /* LottieView.swift */,
 			);
 			path = Lottie;
-			sourceTree = "<group>";
-		};
-		54143B1F274BEF3D0088C0A2 /* Telemetry */ = {
-			isa = PBXGroup;
-			children = (
-				54143B20274BEFCD0088C0A2 /* TelemtryData.swift */,
-			);
-			path = Telemetry;
 			sourceTree = "<group>";
 		};
 		5487294F2747537C0070CC22 /* ProjectOnboard */ = {
@@ -158,6 +134,52 @@
 				54143B22274C1CA20088C0A2 /* AboutView.swift */,
 			);
 			path = ProjectOnboard;
+			sourceTree = "<group>";
+		};
+		54A76CC728370B3400474385 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				540B80AC2743E89700414BE6 /* AfterProject.swift */,
+				54F9AE822742FBAB00F09248 /* BeforeProject.swift */,
+				540B80A92743E78200414BE6 /* DuringProject.swift */,
+				540B80B82744325100414BE6 /* TabBar.swift */,
+				540B80BA274439B300414BE6 /* Settings.swift */,
+				54F9AE7C2742F97500F09248 /* HelperViews */,
+				54F9AE7F2742F9F100F09248 /* LoadingScreens */,
+				54D923B6274D839A0051E83F /* CompletionScreens */,
+				54E7EE00278F819B005C164D /* Project */,
+				5487294F2747537C0070CC22 /* ProjectOnboard */,
+				54E7EE2D2791ADB6005C164D /* Notes */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		54A76CC828370B8A00474385 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				54E7EE08278FAE8E005C164D /* CoreDataManager.swift */,
+				54143B28274C287E0088C0A2 /* Haptics.swift */,
+				54143B20274BEFCD0088C0A2 /* TelemtryData.swift */,
+				540B80B3274430EA00414BE6 /* Lottie */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		54A76CC928370B9500474385 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				54E7EE0A279065EC005C164D /* Data.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		54A76CCA28370BA000474385 /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				54BD4D2F27F6632400A2FBB7 /* Localizable.stringsdict */,
+				54BD4D3327F6634900A2FBB7 /* Localizable.strings */,
+			);
+			path = Localization;
 			sourceTree = "<group>";
 		};
 		54D923B6274D839A0051E83F /* CompletionScreens */ = {
@@ -174,7 +196,6 @@
 			children = (
 				54E7EE01278F81FF005C164D /* ProjectView.swift */,
 				54E7EE03278F82EB005C164D /* AddProjectView.swift */,
-				54E7EE0A279065EC005C164D /* Data.swift */,
 			);
 			path = Project;
 			sourceTree = "<group>";
@@ -207,29 +228,16 @@
 		54F9AE6B2742F73C00F09248 /* HomeRepairHelper */ = {
 			isa = PBXGroup;
 			children = (
-				54BD4D2F27F6632400A2FBB7 /* Localizable.stringsdict */,
-				54BD4D3327F6634900A2FBB7 /* Localizable.strings */,
-				54E7EE2D2791ADB6005C164D /* Notes */,
-				54E7EE00278F819B005C164D /* Project */,
-				54D923B6274D839A0051E83F /* CompletionScreens */,
-				54143B1F274BEF3D0088C0A2 /* Telemetry */,
-				5487294F2747537C0070CC22 /* ProjectOnboard */,
-				540B80BA274439B300414BE6 /* Settings.swift */,
-				540B80B3274430EA00414BE6 /* Lottie */,
-				540B80AB2743E87C00414BE6 /* AfterProject */,
-				540B80A82743E77400414BE6 /* DuringProject */,
-				54F9AE84274359B500F09248 /* BeforeProject */,
-				54F9AE7F2742F9F100F09248 /* LoadingScreens */,
-				54F9AE7C2742F97500F09248 /* HelperViews */,
+				54A76CCA28370BA000474385 /* Localization */,
+				54A76CC928370B9500474385 /* Models */,
+				54A76CC828370B8A00474385 /* ViewModel */,
+				54A76CC728370B3400474385 /* Views */,
 				54F9AE6C2742F73C00F09248 /* HomeRepairNavigatorApp.swift */,
 				54F9AE6E2742F73C00F09248 /* ContentView.swift */,
 				54F9AE702742F73F00F09248 /* Assets.xcassets */,
 				54F9AE722742F73F00F09248 /* Preview Content */,
-				540B80B82744325100414BE6 /* TabBar.swift */,
-				54143B28274C287E0088C0A2 /* Haptics.swift */,
 				543B55CB274ECC6C0068F804 /* ReadMe.md */,
 				54E7EE05278FAD0A005C164D /* homerepair.xcdatamodeld */,
-				54E7EE08278FAE8E005C164D /* CoreDataManager.swift */,
 			);
 			path = HomeRepairHelper;
 			sourceTree = "<group>";
@@ -265,14 +273,6 @@
 				54F9AE802742FA1C00F09248 /* AgreementView.swift */,
 			);
 			path = LoadingScreens;
-			sourceTree = "<group>";
-		};
-		54F9AE84274359B500F09248 /* BeforeProject */ = {
-			isa = PBXGroup;
-			children = (
-				54F9AE822742FBAB00F09248 /* BeforeProject.swift */,
-			);
-			path = BeforeProject;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
