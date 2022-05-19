@@ -87,6 +87,7 @@ struct DuringProjectData: Identifiable {
 }
 
 var duringProjectData = [
+
     BeforeProjectData(trackingID: 17, title: "Have you taken pictures before any work begins?", description: "We suggest you take pictures before, during and after the project. We suggest you take pictures before, during and after the project."),
     BeforeProjectData(trackingID: 18, title: "Have you secured your valuables?", description: "We suggest you secure your valuables including any papers you have lying around with your personal information on it."),
     BeforeProjectData(trackingID: 19, title: "Do you have copies of all permits?", description: "We suggest you keep copies of all permits.  The contractor should give you copies.  You can also get copies from your local building & zoning department."),

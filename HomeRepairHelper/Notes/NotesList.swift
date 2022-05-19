@@ -10,6 +10,8 @@ import SwiftUI
 struct NotesList: View {
     @StateObject var coredataVM = CoreDataManager()
     @StateObject var projectData = ProjectData()
+    @StateObject var telemtryData = TelemetryData()
+
     @State var showNotesSheet = false
     @State var showUserNote = false
 
@@ -68,6 +70,7 @@ struct NotesList: View {
                         Button(action: {
                             playHaptic(style: "medium")
                             showNotesSheet = true
+                            telemtryData.sendScreen(screen: "NewNoteTapped")
                         }) {
                             Image(systemName: "plus.square")
                         }

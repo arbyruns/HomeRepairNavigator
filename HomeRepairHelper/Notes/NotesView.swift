@@ -10,6 +10,7 @@ import SwiftUI
 struct NotesView: View {
     @StateObject var coredataVM = CoreDataManager()
     @StateObject var projectData = ProjectData()
+    @StateObject var telemtryData = TelemetryData()
 
     @State var textEditor  = "Tap to add a note..."
 
@@ -47,6 +48,7 @@ struct NotesView: View {
                                 coredataVM.saveUserNotes(entity, textEditor)
                             }
                         }
+                        telemtryData.sendScreen(screen: "User Saved Note")
                         showNotesSheet = false
                     }) {
                         ButtonTextView(smallButton: false, text: "Save")
@@ -55,6 +57,7 @@ struct NotesView: View {
                     Button(action: {
                         playHaptic(style: "medium")
                         showNotesSheet = false
+                        telemtryData.sendScreen(screen: "User Note canceled")
                     }) {
                         ButtonTextView(smallButton: true, text: "Cancel")
                             .padding(.horizontal, 45)
