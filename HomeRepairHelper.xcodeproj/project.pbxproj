@@ -28,6 +28,9 @@
 		5474DBA427456E5100A897AC /* SwiftUINavigationBarStyling in Frameworks */ = {isa = PBXBuildFile; productRef = 5474DBA327456E5100A897AC /* SwiftUINavigationBarStyling */; };
 		5487294C2747512D0070CC22 /* BudgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5487294B2747512D0070CC22 /* BudgetView.swift */; };
 		5487294E274753770070CC22 /* ProjectOnboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5487294D274753770070CC22 /* ProjectOnboardView.swift */; };
+		5498B0CF2837E7CE00FA814D /* PhotoAlbumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5498B0CE2837E7CE00FA814D /* PhotoAlbumView.swift */; };
+		5498B0D12837E88900FA814D /* PhotoPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5498B0D02837E88900FA814D /* PhotoPicker.swift */; };
+		5498B0D42837F4B200FA814D /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 5498B0D32837F4B200FA814D /* SDWebImageSwiftUI */; };
 		54BD4D2D27F6632400A2FBB7 /* Localizable.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = 54BD4D2F27F6632400A2FBB7 /* Localizable.stringsdict */; };
 		54BD4D3127F6634900A2FBB7 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 54BD4D3327F6634900A2FBB7 /* Localizable.strings */; };
 		54CE3B182746B1F300274254 /* SquareCompletionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54CE3B172746B1F300274254 /* SquareCompletionView.swift */; };
@@ -73,6 +76,8 @@
 		5474DBA02745436500A897AC /* CheckMarkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckMarkView.swift; sourceTree = "<group>"; };
 		5487294B2747512D0070CC22 /* BudgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetView.swift; sourceTree = "<group>"; };
 		5487294D274753770070CC22 /* ProjectOnboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectOnboardView.swift; sourceTree = "<group>"; };
+		5498B0CE2837E7CE00FA814D /* PhotoAlbumView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoAlbumView.swift; sourceTree = "<group>"; };
+		5498B0D02837E88900FA814D /* PhotoPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPicker.swift; sourceTree = "<group>"; };
 		54BD4D3027F6633500A2FBB7 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = es; path = es.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
 		54BD4D3227F6634900A2FBB7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		54BD4D3427F6634C00A2FBB7 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -105,6 +110,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5498B0D42837F4B200FA814D /* SDWebImageSwiftUI in Frameworks */,
 				540B80B2274430E200414BE6 /* Lottie in Frameworks */,
 				54143B1E274BED050088C0A2 /* TelemetryClient in Frameworks */,
 				5474DBA427456E5100A897AC /* SwiftUINavigationBarStyling in Frameworks */,
@@ -150,6 +156,8 @@
 				54E7EE00278F819B005C164D /* Project */,
 				5487294F2747537C0070CC22 /* ProjectOnboard */,
 				54E7EE2D2791ADB6005C164D /* Notes */,
+				5498B0CE2837E7CE00FA814D /* PhotoAlbumView.swift */,
+				5498B0D02837E88900FA814D /* PhotoPicker.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -295,6 +303,7 @@
 				540B80B1274430E200414BE6 /* Lottie */,
 				5474DBA327456E5100A897AC /* SwiftUINavigationBarStyling */,
 				54143B1D274BED050088C0A2 /* TelemetryClient */,
+				5498B0D32837F4B200FA814D /* SDWebImageSwiftUI */,
 			);
 			productName = HomeRepairNavigator;
 			productReference = 54F9AE692742F73C00F09248 /* HomeRepairHelper.app */;
@@ -329,6 +338,7 @@
 				540B80B0274430E200414BE6 /* XCRemoteSwiftPackageReference "lottie-ios" */,
 				5474DBA227456E5100A897AC /* XCRemoteSwiftPackageReference "swiftui-navigation-bar-styling" */,
 				54143B1C274BED050088C0A2 /* XCRemoteSwiftPackageReference "SwiftClient" */,
+				5498B0D22837F4B200FA814D /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
 			);
 			productRefGroup = 54F9AE6A2742F73C00F09248 /* Products */;
 			projectDirPath = "";
@@ -377,6 +387,7 @@
 				5474DBA12745436500A897AC /* CheckMarkView.swift in Sources */,
 				54E7EE09278FAE8E005C164D /* CoreDataManager.swift in Sources */,
 				54F9AE8827435BE400F09248 /* InfoOverLay.swift in Sources */,
+				5498B0CF2837E7CE00FA814D /* PhotoAlbumView.swift in Sources */,
 				540B80AD2743E89700414BE6 /* AfterProject.swift in Sources */,
 				54E7EE07278FAD0A005C164D /* homerepair.xcdatamodeld in Sources */,
 				5487294C2747512D0070CC22 /* BudgetView.swift in Sources */,
@@ -394,6 +405,7 @@
 				540B80C627444E8900414BE6 /* IconView.swift in Sources */,
 				54143B29274C287E0088C0A2 /* Haptics.swift in Sources */,
 				540B80B5274430FD00414BE6 /* LottieView.swift in Sources */,
+				5498B0D12837E88900FA814D /* PhotoPicker.swift in Sources */,
 				540B80C427444A4400414BE6 /* ProjectTypeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -649,6 +661,14 @@
 				minimumVersion = 1.0.0;
 			};
 		};
+		5498B0D22837F4B200FA814D /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -666,6 +686,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 5474DBA227456E5100A897AC /* XCRemoteSwiftPackageReference "swiftui-navigation-bar-styling" */;
 			productName = SwiftUINavigationBarStyling;
+		};
+		5498B0D32837F4B200FA814D /* SDWebImageSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5498B0D22837F4B200FA814D /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			productName = SDWebImageSwiftUI;
 		};
 /* End XCSwiftPackageProductDependency section */
 

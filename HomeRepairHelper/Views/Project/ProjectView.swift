@@ -155,7 +155,7 @@ struct AddProjectButtonView: View {
     }
 }
 
-func getBudgetImage(_ type: String) -> String {
+private func getBudgetImage(_ type: String) -> String {
 
     switch type {
 

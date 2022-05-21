@@ -74,6 +74,7 @@ class CoreDataManager: ObservableObject {
         newProject.projectCreatedDate = Date()
         newProject.completedItems = []
         newProject.notes = []
+        newProject.photoURL = []
         saveData()
     }
 
@@ -91,10 +92,30 @@ class CoreDataManager: ObservableObject {
     }
 
     func saveUserNotes(_ entity: Item, _ userNote: String) {
-        print("Current notes - \(entity.notes) - \(userNote)")
         entity.notes?.append(userNote)
         saveData()
-        print("Notes: \(entity.notes)")
+    }
+
+    func deletePhoto(_ entity: Item, _ photoURL: NSURL) {
+        if let index = entity.photoURL?.firstIndex(of: photoURL) {
+            entity.photoURL?.remove(at: index)
+        }
+        saveData()
+    }
+
+    func savePhoto(_ entity: Item, _ photoURL: NSURL) {
+        if entity.photoURL == nil {
+            entity.photoURL = [photoURL]
+        } else {
+            entity.photoURL?.append(photoURL)
+        }
+        saveData()
+    }
+
+    func getPhotos(_ entity: Item, _ projectName: String) -> [NSURL] {
+        var urlPhotos: [NSURL] = []
+        urlPhotos = entity.photoURL ?? []
+        return urlPhotos
     }
 
     func getUserNotes(_ entity: Item, _ projectName: String) -> [String] {
