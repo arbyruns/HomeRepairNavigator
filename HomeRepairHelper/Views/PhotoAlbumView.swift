@@ -41,7 +41,7 @@ struct PhotoAlbumView: View {
                     }
                     } else {
                         Spacer()
-                        Text("Click **Add Photo** to track \nphotos related to your project.")
+                        Text("Click **Add Photo** to add all your before, \nduring, and after photos related to \nyour project.")
                             .font(.title2)
                             .multilineTextAlignment(.center)
                     }
@@ -119,6 +119,7 @@ struct PhotoAlbumView: View {
                 }
 
                 .navigationBarTitle("Project Photos")
+                .navigationBarTitleDisplayMode(.inline)
                 .navigationBarItems(trailing:
                                         Button(action: {
                     showProjectView = false
