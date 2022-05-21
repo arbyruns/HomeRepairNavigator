@@ -37,7 +37,6 @@ struct PhotoPicker: UIViewControllerRepresentable {
 
         func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
             if let image = info[.editedImage] as? UIImage{
-                //we can get the id as well??
                 photoPicker.imageURL.append(info[.imageURL] as! NSURL)
                 guard let data = image.jpegData(compressionQuality: 0.1), let compressedImage = UIImage(data: data) else {
                     print("error")

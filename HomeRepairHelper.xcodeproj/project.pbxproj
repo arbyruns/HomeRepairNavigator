@@ -24,6 +24,7 @@
 		54143B27274C22640088C0A2 /* 42564-thanks-button.json in Resources */ = {isa = PBXBuildFile; fileRef = 54143B26274C22640088C0A2 /* 42564-thanks-button.json */; };
 		54143B29274C287E0088C0A2 /* Haptics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54143B28274C287E0088C0A2 /* Haptics.swift */; };
 		543B55CD274ECD8A0068F804 /* FooterImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543B55CC274ECD8A0068F804 /* FooterImage.swift */; };
+		5473CD362838FCD900F8B7C8 /* ZoomableScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5473CD352838FCD900F8B7C8 /* ZoomableScrollView.swift */; };
 		5474DBA12745436500A897AC /* CheckMarkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5474DBA02745436500A897AC /* CheckMarkView.swift */; };
 		5474DBA427456E5100A897AC /* SwiftUINavigationBarStyling in Frameworks */ = {isa = PBXBuildFile; productRef = 5474DBA327456E5100A897AC /* SwiftUINavigationBarStyling */; };
 		5487294C2747512D0070CC22 /* BudgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5487294B2747512D0070CC22 /* BudgetView.swift */; };
@@ -73,6 +74,7 @@
 		54143B28274C287E0088C0A2 /* Haptics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Haptics.swift; sourceTree = "<group>"; };
 		543B55CB274ECC6C0068F804 /* ReadMe.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = ReadMe.md; sourceTree = "<group>"; };
 		543B55CC274ECD8A0068F804 /* FooterImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterImage.swift; sourceTree = "<group>"; };
+		5473CD352838FCD900F8B7C8 /* ZoomableScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomableScrollView.swift; sourceTree = "<group>"; };
 		5474DBA02745436500A897AC /* CheckMarkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckMarkView.swift; sourceTree = "<group>"; };
 		5487294B2747512D0070CC22 /* BudgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetView.swift; sourceTree = "<group>"; };
 		5487294D274753770070CC22 /* ProjectOnboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectOnboardView.swift; sourceTree = "<group>"; };
@@ -169,6 +171,7 @@
 				54143B28274C287E0088C0A2 /* Haptics.swift */,
 				54143B20274BEFCD0088C0A2 /* TelemtryData.swift */,
 				540B80B3274430EA00414BE6 /* Lottie */,
+				5473CD352838FCD900F8B7C8 /* ZoomableScrollView.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -370,6 +373,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5473CD362838FCD900F8B7C8 /* ZoomableScrollView.swift in Sources */,
 				54E7EE04278F82EB005C164D /* AddProjectView.swift in Sources */,
 				54D923B8274D83C60051E83F /* CompletionView.swift in Sources */,
 				54CE3B1A2746DA5E00274254 /* ProfileScreenView.swift in Sources */,
