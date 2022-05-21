@@ -34,8 +34,8 @@ struct BeforeProject: View {
                     ScrollView {
                         VStack(spacing: 20) {
                             ForEach(beforeProjectData) { data in
-                                ForEach(coredataVM.savedEntities) { entity in
-                                        ProjectRowView(projectData: projectData, infoOverLayInfo: infoOverLayInfo,
+                                        ProjectRowView(projectData: projectData,
+                                                       infoOverLayInfo: infoOverLayInfo,
                                                        showInfo: $showInfo,
                                                        showSheet: $showSheet,
                                                        showCompletedSheet: .constant(false),
@@ -45,7 +45,6 @@ struct BeforeProject: View {
                                                        completedID: data.trackingID
                                         )
                                             .disabled(showInfo ? true : false)
-                                }
                             }
                         }
                         .padding(.top)
