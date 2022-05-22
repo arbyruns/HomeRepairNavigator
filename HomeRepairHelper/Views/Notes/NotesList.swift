@@ -21,10 +21,10 @@ struct NotesList: View {
     @Binding var showProjectView: Bool
 
     var body: some View {
+        NavigationView {
             ZStack {
                 Color("Background")
                     .edgesIgnoringSafeArea(.all)
-                NavigationView {
                 VStack {
                     List {
                         ForEach(coredataVM.savedEntities) { entity in
@@ -47,9 +47,11 @@ struct NotesList: View {
 
                                 }
                             }
-                        }
-
-                        )
+                        })
+                        .listRowBackground(Color.clear)
+                    }
+                    .onAppear {
+                        UITableView.appearance().backgroundColor = .clear
                     }
                     .onChange(of: showNotesSheet) { newValue in
                             coredataVM.fetchData()

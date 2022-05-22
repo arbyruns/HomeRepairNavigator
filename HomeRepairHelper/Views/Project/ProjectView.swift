@@ -41,6 +41,7 @@ struct ProjectView: View {
                                     }
                             }
                             .onDelete(perform: coredataVM.deleteItem)
+                            .listRowBackground(Color.clear)
                         }
                     } else {
                         VStack {
@@ -76,7 +77,7 @@ struct ProjectView: View {
                 }
             }
             .onAppear {
-                print("core \(coredataVM.savedEntities.count)")
+                UITableView.appearance().backgroundColor = .clear
             }
             .navigationBarTitle("Current Projects")
             .toolbar {

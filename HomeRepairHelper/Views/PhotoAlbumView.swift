@@ -21,24 +21,27 @@ struct PhotoAlbumView: View {
     @Binding var showProjectView: Bool
 
     var body: some View {
-        ZStack {
-            Color("Background")
-            NavigationView {
+        NavigationView {
+            ZStack {
+                Color("Background")
+                    .edgesIgnoringSafeArea(.all)
                 VStack {
                     if !imageView.isEmpty {
-                    ZoomableScrollView {
-                        WebImage(url: URL(string: imageView))
-                            .resizable()
-                            .aspectRatio(contentMode: .fill)
-                            .frame(height: fullScreenImage ? nil : 350, alignment: .center)
-                            .clipShape(RoundedRectangle(cornerRadius: 10))
-                            .padding(.bottom)
-                            .onTapGesture {
-                                withAnimation {
-                                    fullScreenImage.toggle()
+                        ZoomableScrollView {
+                            WebImage(url: URL(string: imageView))
+                                .resizable()
+                                .aspectRatio(contentMode: .fill)
+                                .frame(height: fullScreenImage ? nil : 350, alignment: .center)
+                                .clipShape(RoundedRectangle(cornerRadius: 10))
+                                .padding(.bottom)
+                                .background(Color("Background"))
+                                .onTapGesture {
+                                    withAnimation {
+                                        fullScreenImage.toggle()
+                                    }
                                 }
-                            }
-                    }
+                        }
+                        .background(Color("Background"))
                     } else {
                         Spacer()
                         Text("Click **Add Photo** to add all your before, \nduring, and after photos related to \nyour project.")
@@ -46,6 +49,7 @@ struct PhotoAlbumView: View {
                             .multilineTextAlignment(.center)
                     }
                     Spacer()
+                    // MARK: - FullScreen Image
                     if !fullScreenImage {
                         ScrollView(.horizontal, showsIndicators: true) {
                             HStack(spacing: 25) {
@@ -78,6 +82,7 @@ struct PhotoAlbumView: View {
                                                     }
                                                 }
                                                 .onAppear {
+                                                    UITableView.appearance().backgroundColor = .clear
                                                     // setting the first image on appearance
                                                     if let image = entity.photoURL?.first {
                                                         imageView = String(describing: image)
@@ -117,10 +122,9 @@ struct PhotoAlbumView: View {
                         }
                     }
                 }
-
                 .navigationBarTitle("Project Photos")
                 .navigationBarTitleDisplayMode(.inline)
-                .navigationBarItems(trailing:
+                .navigationBarItems(trailing: fullScreenImage ? nil :
                                         Button(action: {
                     showProjectView = false
                     playHaptic(style: "medium")
@@ -136,6 +140,7 @@ struct PhotoAlbumView: View {
 struct PhotoAlbumView_Previews: PreviewProvider {
     static var previews: some View {
         PhotoAlbumView(showProjectView: .constant(false))
+            .colorScheme(.dark)
     }
 }
 

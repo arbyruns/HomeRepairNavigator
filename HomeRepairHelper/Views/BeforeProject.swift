@@ -63,14 +63,25 @@ struct BeforeProject: View {
                 })
                 .navigationTitle("Before Project")
                 .navigationBarTitleDisplayMode(.inline)
-                .navigationBarItems(trailing:
+                .navigationBarItems(leading:
                                         Button(action: {
                     showProjectView = false
                     playHaptic(style: "medium")
                 }) {
                     Image(systemName: "xmark.circle")
                         .font(.title3)
-                })
+                }, trailing:
+                                        Button(action: {
+                    showProjectView = false
+                    playHaptic(style: "medium")
+                }) {
+                    Image(systemName: "photo.on.rectangle.angled")
+                        .font(.title3)
+                }
+
+
+
+                )
                 .navigationBarColor(colorScheme == .dark ? UIColor(Color("borderColor")) : UIColor(Color("buttonColorCyan")), textColor: UIColor(Color("FontColor")))
             }
         }
