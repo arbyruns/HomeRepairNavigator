@@ -11,11 +11,14 @@ import SwiftUINavigationBarStyling
 
 struct BeforeProject: View {
     @Environment(\.colorScheme) var colorScheme
+    @AppStorage("UserDefaults_photoAlbumTabBar") var photoAlbumTabBar = false
+
     @ObservedObject var infoOverLayInfo: OverLayInfo
     @ObservedObject var projectData: ProjectData
     @StateObject var coredataVM = CoreDataManager()
 
     @State var showPhotoAlbumView = false
+    @State var showNotesView = false
     @State var showInfo = false
     @State var showSheet = false
     @State var showProjectSheet = false
@@ -63,6 +66,9 @@ struct BeforeProject: View {
                 .fullScreenCover(isPresented: $showPhotoAlbumView) {
                     PhotoAlbumView(projectData: projectData, showPhotoAlbumView: $showPhotoAlbumView)
                 }
+                .fullScreenCover(isPresented: $showNotesView) {
+                    NotesList(projectData: projectData, showProjectView: $showProjectView, showNotesView: $showNotesView)
+                }
                 .navigationTitle("Before Project")
                 .navigationBarTitleDisplayMode(.inline)
                 .navigationBarItems(leading:
@@ -74,12 +80,17 @@ struct BeforeProject: View {
                         .font(.title3)
                 }, trailing:
                                         Button(action: {
+                    if !photoAlbumTabBar {
                     showPhotoAlbumView = true
+                    } else {
+                        showNotesView = true
+                    }
                     playHaptic(style: "medium")
                 }) {
-                    Image(systemName: "photo.on.rectangle.angled")
+                    Image(systemName: photoAlbumTabBar ? "note.text" : "photo.on.rectangle.angled")
                         .font(.title3)
-                })
+                }
+                )
                 .navigationBarColor(colorScheme == .dark ? UIColor(Color("borderColor")) : UIColor(Color("buttonColorCyan")), textColor: UIColor(Color("FontColor")))
             }
         }

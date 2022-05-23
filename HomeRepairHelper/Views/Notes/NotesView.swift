@@ -36,7 +36,6 @@ struct NotesView: View {
                                 .onTapGesture {
                                     playHaptic(style: "light")
                                 }
-
                         }
                     }
                     Button(action: {

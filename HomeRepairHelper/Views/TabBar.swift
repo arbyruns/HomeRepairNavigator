@@ -10,6 +10,8 @@ import TelemetryClient
 
 struct TabBar: View {
     @AppStorage("UserDefault_FirstRun") var showFirstRun = true
+    @AppStorage("UserDefaults_photoAlbumTabBar") var photoAlbumTabBar = false
+
     @ObservedObject var projectData: ProjectData
 
     @Binding var showProjectView: Bool
@@ -32,16 +34,19 @@ struct TabBar: View {
                         .font(.system(size: 24, weight: .semibold))
                     Text("After Project")
                 }
-                NotesList(projectData: projectData, showProjectView: $showProjectView).tabItem {
-                    Image(systemName: "note.text")
+                if photoAlbumTabBar {
+                    PhotoAlbumView(projectData: projectData, showPhotoAlbumView: .constant(false)).tabItem {
+                    Image(systemName: "photo")
                         .font(.system(size: 24, weight: .semibold))
-                    Text("Notes")
+                    Text("Photo")
                 }
-//                PhotoAlbumView(projectData: projectData, showProjectView: $showProjectView).tabItem {
-//                    Image(systemName: "photo")
-//                        .font(.system(size: 24, weight: .semibold))
-//                    Text("Photo")
-//                }
+                } else {
+                    NotesList(projectData: projectData, showProjectView: $showProjectView, showNotesView: .constant(false)).tabItem {
+                        Image(systemName: "note.text")
+                            .font(.system(size: 24, weight: .semibold))
+                        Text("Notes")
+                    }
+                }
             }
         }
     }

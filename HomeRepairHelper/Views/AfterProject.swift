@@ -10,10 +10,13 @@ import SwiftUINavigationBarStyling
 
 struct AfterProject: View {
     @Environment(\.colorScheme) var colorScheme
+    @AppStorage("UserDefaults_photoAlbumTabBar") var photoAlbumTabBar = false
+
     @ObservedObject var infoOverLayInfo: OverLayInfo
     @ObservedObject var projectData: ProjectData
 
     @State var showPhotoAlbumView = false
+    @State var showNotesView = false
     @State var showInfo = false
     @State var showSheet = false
     @State var showCompletedSheet = false
@@ -73,10 +76,14 @@ struct AfterProject: View {
                         .font(.title3)
                 }, trailing:
                                         Button(action: {
+                    if !photoAlbumTabBar {
                     showPhotoAlbumView = true
+                    } else {
+                        showNotesView = true
+                    }
                     playHaptic(style: "medium")
                 }) {
-                    Image(systemName: "photo.on.rectangle.angled")
+                    Image(systemName: photoAlbumTabBar ? "note.text" : "photo.on.rectangle.angled")
                         .font(.title3)
                 })
                 .navigationBarColor(colorScheme == .dark ? UIColor(Color("borderColor")) : UIColor(.white), textColor: UIColor(Color("FontColor")))

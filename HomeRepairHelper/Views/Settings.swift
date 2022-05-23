@@ -16,6 +16,7 @@ struct Settings: View {
     @AppStorage("UserDefault_ShowTerms") var showTerms = true
     @AppStorage("UserDefault_showTutorial") var showTutorial = true
     @AppStorage("UserDefault_CompleteTasks") var useCompletedTasks = false
+    @AppStorage("UserDefaults_photoAlbumTabBar") var photoAlbumTabBar = false
     @StateObject var telemtryData = TelemetryData()
 
     @State var showWelcomeScreen = false
@@ -54,6 +55,11 @@ struct Settings: View {
                                         }
                                     }
                                 Spacer()
+                            }
+                            Toggle(isOn: $photoAlbumTabBar) {
+                                IconView(image: "photo", color: "SettingColor1", text: "Photo Album in tabbar")
+//                                Text("Photo Album in tabbar")
+//                                    .bold()
                             }
                         Button(action: {
                             showSheet = true

@@ -9,6 +9,8 @@ import SDWebImageSwiftUI
 import SwiftUI
 
 struct PhotoAlbumView: View {
+    @AppStorage("UserDefaults_photoAlbumTabBar") var photoAlbumTabBar = false
+
     @State private var showImagePhotoPicker = false
     @State private var pickedImage = UIImage(named: "placeHolder")! // not currently being used
     @State private var imageURL: [NSURL] = []
@@ -128,7 +130,8 @@ struct PhotoAlbumView: View {
                     showPhotoAlbumView = false
                     playHaptic(style: "medium")
                 }) {
-                    Image(systemName: "xmark.circle")
+                    
+                    Image(systemName: photoAlbumTabBar ? "" : "xmark.circle")
                         .font(.title3)
                 })
             }
