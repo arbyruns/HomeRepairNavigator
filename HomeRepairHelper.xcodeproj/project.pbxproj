@@ -187,8 +187,6 @@
 		54A76CCA28370BA000474385 /* Localization */ = {
 			isa = PBXGroup;
 			children = (
-				54BD4D2F27F6632400A2FBB7 /* Localizable.stringsdict */,
-				54BD4D3327F6634900A2FBB7 /* Localizable.strings */,
 			);
 			path = Localization;
 			sourceTree = "<group>";
@@ -239,6 +237,8 @@
 		54F9AE6B2742F73C00F09248 /* HomeRepairHelper */ = {
 			isa = PBXGroup;
 			children = (
+				54BD4D2F27F6632400A2FBB7 /* Localizable.stringsdict */,
+				54BD4D3327F6634900A2FBB7 /* Localizable.strings */,
 				54A76CCA28370BA000474385 /* Localization */,
 				54A76CC928370B9500474385 /* Models */,
 				54A76CC828370B8A00474385 /* ViewModel */,

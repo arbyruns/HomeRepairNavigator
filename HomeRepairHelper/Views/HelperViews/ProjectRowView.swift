@@ -46,7 +46,7 @@ struct ProjectRowView: View {
                         SquareCompletionView(checked: .constant(true), trimValue: .constant(1))
                             .padding(.leading)
                     }
-                    Text(title)
+                    Text(LocalizedStringKey(title))
                         .strikethrough(coreCompletedItems.contains(completedID) ? true : false)
                         .foregroundColor(coreCompletedItems.contains(completedID) ? .gray : Color("FontColor"))
                         .font(.callout)
