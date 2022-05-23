@@ -30,16 +30,6 @@ struct NotesList: View {
                 Color("Background")
                     .edgesIgnoringSafeArea(.all)
                 VStack {
-                    Button(action: {
-                        withAnimation {
-                            coredataVM.fetchData()
-                        }
-                    })
-                    {
-                        HStack {
-                            Text("Refresh")
-                        }
-                    }
                     switch showEmptyState {
                     case true:
                         Text("Empty View")
@@ -75,14 +65,12 @@ struct NotesList: View {
                 .sheet(isPresented: $showUserNote) {
                     NotesView(projectData: projectData, userNote: $userNote, showNotesSheet: $showNotesSheet, showUserNote: $showUserNote)
                 }
-                .fullScreenCover(isPresented: $showNotesSheet,
+                .sheet(isPresented: $showNotesSheet,
                                  onDismiss: {
-                    coredataVM.fetchData()
                     showEmptyState = false
-                    for entity in coredataVM.savedEntities {
-                        if entity.projectName == projectData.projectName {
-                            coredataVM.getUserNotes(entity, projectData.projectName)
-                        }
+                    coredataVM.savedEntities = []
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                        coredataVM.fetchData()
                     }
                 },
                                  content: {
@@ -96,6 +84,7 @@ struct NotesList: View {
                         Button(action: {
                             playHaptic(style: "medium")
                             showNotesSheet = true
+                            coredataVM.savedEntities = []
                             telemtryData.sendScreen(screen: "NewNoteTapped")
                         }) {
                             Image(systemName: "plus.square")

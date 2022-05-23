@@ -47,6 +47,9 @@ struct NotesView: View {
                                 coredataVM.saveUserNotes(entity, textEditor)
                             }
                         }
+                        coredataVM.savedEntities = []
+                        coredataVM.fetchData()
+                        
                         telemtryData.sendScreen(screen: "User Saved Note")
                         showNotesSheet = false
                     }) {
