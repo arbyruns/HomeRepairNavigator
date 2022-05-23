@@ -19,7 +19,7 @@ struct NotesList: View {
 
     @State var userNotes: [String] = []
     @State var userNote = ""
-    @State var showEmptyState = false
+    @State var showEmptyState = true
 
     @Binding var showProjectView: Bool
     @Binding var showNotesView: Bool
@@ -32,7 +32,14 @@ struct NotesList: View {
                 VStack {
                     switch showEmptyState {
                     case true:
-                        Text("Empty View")
+                        Group {
+                            HStack {
+                                Text("Tap ")
+                                Image(systemName: "plus.square")
+                                Text("To Add a Note")
+                            }
+                        }
+                        .font(.title3)
                     default:
                         List {
                             ForEach(coredataVM.savedEntities) { entity in
@@ -51,7 +58,6 @@ struct NotesList: View {
                                     if projectData.projectName == entity.projectName {
                                         entity.notes?.remove(at: indexSet.first!)
                                         coredataVM.saveData()
-
                                     }
                                 }
                             })
@@ -67,16 +73,29 @@ struct NotesList: View {
                 }
                 .sheet(isPresented: $showNotesSheet,
                                  onDismiss: {
-                    showEmptyState = false
                     coredataVM.savedEntities = []
                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
                         coredataVM.fetchData()
+                        for entity in coredataVM.savedEntities {
+                            if entity.projectName == projectData.projectName {
+                                if entity.notes?.count ?? 0 > 0 {
+                                    showEmptyState = false
+                                }
+                            }
+                        }
                     }
                 },
                                  content: {
                     NotesView(projectData: projectData, userNote: $userNote, showNotesSheet: $showNotesSheet, showUserNote: $showUserNote) })
                 .onAppear {
                     UITableView.appearance().backgroundColor = .clear
+                    for entity in coredataVM.savedEntities {
+                        if entity.projectName == projectData.projectName {
+                            if entity.notes?.count ?? 0 > 0 {
+                                showEmptyState = false
+                            }
+                        }
+                    }
                 }
                 .navigationBarTitle("Project Notes")
                 .toolbar {
