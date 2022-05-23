@@ -15,7 +15,7 @@ struct BeforeProject: View {
     @ObservedObject var projectData: ProjectData
     @StateObject var coredataVM = CoreDataManager()
 
-
+    @State var showPhotoAlbumView = false
     @State var showInfo = false
     @State var showSheet = false
     @State var showProjectSheet = false
@@ -24,7 +24,6 @@ struct BeforeProject: View {
     @Binding var showProjectView: Bool
 
     let completedArray = UserDefaults.standard.object(forKey: "userDefault-completedItems") as? [Int] ?? [Int]()
-
 
     var body: some View {
             ZStack {
@@ -61,6 +60,9 @@ struct BeforeProject: View {
                        content: {
                     ProjectOnboardView(showProjectSheet: $showProjectSheet)
                 })
+                .fullScreenCover(isPresented: $showPhotoAlbumView) {
+                    PhotoAlbumView(projectData: projectData, showPhotoAlbumView: $showPhotoAlbumView)
+                }
                 .navigationTitle("Before Project")
                 .navigationBarTitleDisplayMode(.inline)
                 .navigationBarItems(leading:
@@ -72,16 +74,12 @@ struct BeforeProject: View {
                         .font(.title3)
                 }, trailing:
                                         Button(action: {
-                    showProjectView = false
+                    showPhotoAlbumView = true
                     playHaptic(style: "medium")
                 }) {
                     Image(systemName: "photo.on.rectangle.angled")
                         .font(.title3)
-                }
-
-
-
-                )
+                })
                 .navigationBarColor(colorScheme == .dark ? UIColor(Color("borderColor")) : UIColor(Color("buttonColorCyan")), textColor: UIColor(Color("FontColor")))
             }
         }

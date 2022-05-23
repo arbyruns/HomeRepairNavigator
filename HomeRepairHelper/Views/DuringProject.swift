@@ -13,6 +13,7 @@ struct DuringProject: View {
     @ObservedObject var infoOverLayInfo: OverLayInfo
     @ObservedObject var projectData: ProjectData
 
+    @State var showPhotoAlbumView = false
     @State var showInfo = false
     @State var showSheet = false
     @State var showProjectSheet = false
@@ -44,6 +45,9 @@ struct DuringProject: View {
                     }
                 }
                 .background(Color("Background"))
+                .fullScreenCover(isPresented: $showPhotoAlbumView) {
+                    PhotoAlbumView(projectData: projectData, showPhotoAlbumView: $showPhotoAlbumView)
+                }
                 .sheet(isPresented: $showInfo,
                        onDismiss:  { self.showButtons = false },
                        content: {
@@ -56,12 +60,19 @@ struct DuringProject: View {
                 })
                 .navigationTitle("During Project")
                 .navigationBarTitleDisplayMode(.inline)
-                .navigationBarItems(trailing:
+                .navigationBarItems(leading:
                                         Button(action: {
                     showProjectView = false
                     playHaptic(style: "medium")
                 }) {
                     Image(systemName: "xmark.circle")
+                        .font(.title3)
+                }, trailing:
+                                        Button(action: {
+                    showPhotoAlbumView = true
+                    playHaptic(style: "medium")
+                }) {
+                    Image(systemName: "photo.on.rectangle.angled")
                         .font(.title3)
                 })
                 .navigationBarColor(colorScheme == .dark ? UIColor(Color("borderColor")) : UIColor(Color("buttonColorGray")), textColor: UIColor(Color("FontColor")))

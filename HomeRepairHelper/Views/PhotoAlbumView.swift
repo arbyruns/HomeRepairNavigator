@@ -17,8 +17,7 @@ struct PhotoAlbumView: View {
     @StateObject var coredataVM = CoreDataManager()
     @StateObject var projectData = ProjectData()
 
-
-    @Binding var showProjectView: Bool
+    @Binding var showPhotoAlbumView: Bool
 
     var body: some View {
         NavigationView {
@@ -126,7 +125,7 @@ struct PhotoAlbumView: View {
                 .navigationBarTitleDisplayMode(.inline)
                 .navigationBarItems(trailing: fullScreenImage ? nil :
                                         Button(action: {
-                    showProjectView = false
+                    showPhotoAlbumView = false
                     playHaptic(style: "medium")
                 }) {
                     Image(systemName: "xmark.circle")
@@ -139,7 +138,7 @@ struct PhotoAlbumView: View {
 
 struct PhotoAlbumView_Previews: PreviewProvider {
     static var previews: some View {
-        PhotoAlbumView(showProjectView: .constant(false))
+        PhotoAlbumView(showPhotoAlbumView: .constant(false))
             .colorScheme(.dark)
     }
 }

@@ -13,6 +13,7 @@ struct AfterProject: View {
     @ObservedObject var infoOverLayInfo: OverLayInfo
     @ObservedObject var projectData: ProjectData
 
+    @State var showPhotoAlbumView = false
     @State var showInfo = false
     @State var showSheet = false
     @State var showCompletedSheet = false
@@ -43,6 +44,9 @@ struct AfterProject: View {
                     }
                 }
                 .background(Color("Background"))
+                .fullScreenCover(isPresented: $showPhotoAlbumView) {
+                    PhotoAlbumView(projectData: projectData, showPhotoAlbumView: $showPhotoAlbumView)
+                }
                 .sheet(isPresented: $showInfo,
                        onDismiss:  { self.showButtons = false },
                        content: {
@@ -60,12 +64,19 @@ struct AfterProject: View {
                 })
                 .navigationTitle("After Project")
                 .navigationBarTitleDisplayMode(.inline)
-                .navigationBarItems(trailing:
+                .navigationBarItems(leading:
                                         Button(action: {
                     showProjectView = false
                     playHaptic(style: "medium")
                 }) {
                     Image(systemName: "xmark.circle")
+                        .font(.title3)
+                }, trailing:
+                                        Button(action: {
+                    showPhotoAlbumView = true
+                    playHaptic(style: "medium")
+                }) {
+                    Image(systemName: "photo.on.rectangle.angled")
                         .font(.title3)
                 })
                 .navigationBarColor(colorScheme == .dark ? UIColor(Color("borderColor")) : UIColor(.white), textColor: UIColor(Color("FontColor")))

@@ -37,11 +37,11 @@ struct TabBar: View {
                         .font(.system(size: 24, weight: .semibold))
                     Text("Notes")
                 }
-                PhotoAlbumView(projectData: projectData, showProjectView: $showProjectView).tabItem {
-                    Image(systemName: "photo")
-                        .font(.system(size: 24, weight: .semibold))
-                    Text("Photo")
-                }
+//                PhotoAlbumView(projectData: projectData, showProjectView: $showProjectView).tabItem {
+//                    Image(systemName: "photo")
+//                        .font(.system(size: 24, weight: .semibold))
+//                    Text("Photo")
+//                }
             }
         }
     }
