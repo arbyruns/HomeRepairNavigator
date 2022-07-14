@@ -101,6 +101,7 @@ var stateData = [
     StateData(id: 12, state: "Hawaii", stateURL: "https://mypvl.dcca.hawaii.gov/public-license-search/", stateCode: "hawaii"),
     StateData(id: 13, state: "Mississippi", stateURL: "https://msdh.ms.gov/msdhsite/_static/30,0,82,353.html", stateCode: ""),
     StateData(id: 14, state: "Iowa", stateURL: "https://iowaplb.force.com/LicenseSearchPage",stateCode: "iowa"),
+    StateData(id: 16, state: "California", stateURL: "https://www.cslb.ca.gov/onlineservices/checklicenseII/checklicense.aspx", stateCode: "california"),
     StateData(id: 15, state: "Idaho", stateURL: "https://dopl.idaho.gov", stateCode: "idaho"),
     StateData(id: 17, state: "Delaware", stateURL: "https://delpros.delaware.gov/OH_VerifyLicense", stateCode: "delaware"),
     StateData(id: 18, state: "Kentucky", stateURL: "https://oop.ky.gov", stateCode: "kentucky"),
@@ -120,7 +121,21 @@ var stateData = [
     StateData(id: 32, state: "New Jersey", stateURL: "https://newjersey.mylicense.com/verification/Search.aspx?facility=Y", stateCode: "new-jersey"),
     StateData(id: 33, state: "New Mexico", stateURL: "https://www.rld.nm.gov/about-us/public-information-hub/consumer-protection/verify-a-license/", stateCode: "new-mexico"),
     StateData(id: 34, state: "North Carolina", stateURL: "https://nclbgc.org/license-search/", stateCode: "north-carolina"),
-    StateData(id: 35, state: "North Dakota", stateURL: "https://firststop.sos.nd.gov/search/contractor", stateCode: "north-dakota")
+    StateData(id: 35, state: "North Dakota", stateURL: "https://firststop.sos.nd.gov/search/contractor", stateCode: "north-dakota"),
+    StateData(id: 36, state: "Ohio", stateURL: "https://elicense4.com.ohio.gov/Lookup/LicenseLookup.aspx", stateCode: "ohio"),
+    StateData(id: 37, state: "Oklahoma", stateURL: "http://cibverify.ok.gov/clients/okcib/public/licenseesearch/licenseesearch.aspx", stateCode: "oklahoma"),
+    StateData(id: 38, state: "Oregon", stateURL: "https://www.oregon.gov/ccb/Pages/index.aspx", stateCode: "oregon"),
+    StateData(id: 39, state: "Pennsylvania", stateURL: "https://hicsearch.attorneygeneral.gov/", stateCode: "pennsylvania"),
+    StateData(id: 40, state: "Rhode Island", stateURL: "https://crb.ri.gov/search/contractor-search", stateCode: "rhode-island"),
+    StateData(id: 41, state: "South Dakota", stateURL: "https://apps.sd.gov/ld17btp/licenseelist.aspx", stateCode: "south-dakota"),
+    StateData(id: 42, state: "Texas", stateURL: "https://www.tdlr.texas.gov/verify.htm", stateCode: "texas"),
+    StateData(id: 43, state: "Utah", stateURL: "https://secure.utah.gov/llv/search/index.html", stateCode: "utah"),
+    StateData(id: 44, state: "Vermont", stateURL: "https://sos.vermont.gov/opr/find-a-professional/", stateCode: "vermont"),
+    StateData(id: 45, state: "West Virginia", stateURL: "https://labor.wv.gov/Licensing/Contractor_License/Pages/contractor-search.aspx", stateCode: "west-virginia"),
+    StateData(id: 46, state: "Wisconsin", stateURL: "https://licensesearch.wi.gov/", stateCode: "wisconsin"),
+    StateData(id: 47, state: "Wyoming", stateURL: "https://wyoming.licensesearch.org/", stateCode: "wyoming"),
+    StateData(id: 48, state: "Illinois", stateURL: "https://online-dfpr.micropact.com/lookup/licenselookup.aspx", stateCode: "illinois"),
+    StateData(id: 49, state: "Maryland", stateURL: "https://www.dllr.state.md.us/cgi-bin/ElectronicLicensing/OP_search/OP_search.cgi?calling_app=HIC::HIC_qselect", stateCode: "maryland")
 ]
 
 
