@@ -13,19 +13,21 @@ struct LicenseVerificationView: View {
 
     @State var showSafari: Bool = false
     @State var indexValue: Int = 0
+    @State var selectedItem: StateData
 
     var body: some View {
         NavigationView {
             VStack {
                 List {
                     Section() {
-                        Text("Placeholder for text")
+                        Text("You should always confirm that a contractor has a valid license prior start a project. You can check your local state and confirm their license status.")
                     }
                     Section(header: Text("State")) {
                         ForEach(stateData.sorted(by: { $0.state < $1.state
                         })) { state in
                             Button(action: {
                                 playHaptic(style: "medium")
+                                selectedItem = state
                                 withAnimation {
                                     indexValue = state.id
                                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
@@ -36,19 +38,19 @@ struct LicenseVerificationView: View {
                             {
                                 StateRowView(state: state, index: state.id, showSafari: $showSafari)
                             }
-                            .safariView(isPresented: $showSafari) {
-                                SafariView(
-                                    url: URL(string: stateData[indexValue].stateURL)!,
-                                    configuration: SafariView.Configuration(
-                                        entersReaderIfAvailable: false,
-                                        barCollapsingEnabled: true
-                                    )
-                                )
-                            }
-                            .buttonStyle(.plain)
                         }
                     }
                 }
+                .safariView(isPresented: $showSafari) {
+                    SafariView(
+                        url: URL(string: selectedItem.stateURL)!,
+                        configuration: SafariView.Configuration(
+                            entersReaderIfAvailable: false,
+                            barCollapsingEnabled: true
+                        )
+                    )
+                }
+                .buttonStyle(.plain)
             }
             .navigationTitle("License Verification")
         }
@@ -88,13 +90,13 @@ struct StateData: Identifiable {
 var stateData = [
     StateData(id: 0, state: "Washington State", stateURL: "https://secure.lni.wa.gov/verify", stateCode: "washington"),
     StateData(id: 1, state: "Alaska", stateURL: "https://www.commerce.alaska.gov/web/cbpl/ProfessionalLicensing/ProfessionalLicenseSearch.aspx", stateCode: "alaska"),
-    StateData(id: 2, state: "Georgia", stateURL: "  ", stateCode: "georgia"),
+    StateData(id: 2, state: "Georgia", stateURL: "https://verify.sos.ga.gov/verification/", stateCode: "georgia"),
     StateData(id: 3, state: "South Carolina", stateURL: "https://verify.llronline.com/LicLookup/LookupMain.aspx", stateCode: "south-carolina"),
     StateData(id: 4, state: "Virginia", stateURL: "https://dhp.virginiainteractive.org/lookup/index", stateCode: "virginia"),
     StateData(id: 5, state: "Indiana", stateURL: "https://www.in.gov/pla/license/free-search-and-verify", stateCode: "indiana"),
     StateData(id: 6, state: "Tennessee", stateURL: "https://verify.tn.gov/", stateCode: "tennessee"),
     StateData(id: 7, state: "Florida", stateURL: "https://mqa-internet.doh.state.fl.us/MQASearchServices/HealthCareProviders", stateCode: "florida"),
-    StateData(id: 8, state: "Maine", stateURL: "https://www.pfr.maine.gov/almsonline/almsquery/searchindividual.aspx?AspxAutoDetectCookieSupport=1", stateCode: "maine"),
+    StateData(id: 8, state: "Maine", stateURL: "https://www.pfr.maine.gov/almsonline/almsquery/searchindividual.aspx", stateCode: "maine"),
     StateData(id: 9, state: "Arizona", stateURL: "https://btr.az.gov/public/registered-professional-search", stateCode: "arizona"),
     StateData(id: 10, state: "New York State", stateURL: "https://www.op.nysed.gov/opsearches.htm", stateCode: "new-york"),
     StateData(id: 11, state: "Michigan", stateURL: "https://www.lara.michigan.gov/colaLicVerify/", stateCode: "michigan"),
@@ -141,6 +143,6 @@ var stateData = [
 
 struct LicenseVerificationView_Previews: PreviewProvider {
     static var previews: some View {
-        LicenseVerificationView()
+        LicenseVerificationView(selectedItem: StateData(id: 3, state: "South Carolina", stateURL: "https://verify.llronline.com/LicLookup/LookupMain.aspx", stateCode: "south-carolina"))
     }
 }
