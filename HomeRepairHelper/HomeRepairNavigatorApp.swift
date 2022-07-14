@@ -10,7 +10,6 @@ import TelemetryClient
 
 @main
 struct HomeRepairNavigatorApp: App {
-    @StateObject var telemtryData = TelemetryData()
     let persistenceController = CoreDataManager()
 
     var body: some Scene {
@@ -27,7 +26,21 @@ struct HomeRepairNavigatorApp: App {
         //       occurring too late.
         let configuration = TelemetryManagerConfiguration(appID: "F04097E4-3ECD-42D8-A343-92F46D03EEC9")
         TelemetryManager.initialize(with: configuration)
-        telemtryData.sendLaunchTelemtry()
     }
 }
+
+//class AppDelegate: UIResponder, UIApplicationDelegate {
+//    let telemetryData = TelemetryData()
+//
+//    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+//
+//        let configuration = TelemetryManagerConfiguration(appID: "F04097E4-3ECD-42D8-A343-92F46D03EEC9")
+//        TelemetryManager.initialize(with: configuration)
+//        telemetryData.sendLaunchTelemtry()
+//
+//        return true
+//    }
+//
+//}
+
 

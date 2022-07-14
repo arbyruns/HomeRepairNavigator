@@ -14,7 +14,8 @@ struct LicenseVerificationView: View {
     @State var showSafari: Bool = false
     @State var indexValue: Int = 0
     @State var selectedItem: StateData
-
+    @StateObject var telemtryData = TelemetryData()
+    
     var body: some View {
         NavigationView {
             VStack {
@@ -28,6 +29,7 @@ struct LicenseVerificationView: View {
                             Button(action: {
                                 playHaptic(style: "medium")
                                 selectedItem = state
+                                telemtryData.sendScreen(screen: "LicVerify_\(state.state)")
                                 withAnimation {
                                     indexValue = state.id
                                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {

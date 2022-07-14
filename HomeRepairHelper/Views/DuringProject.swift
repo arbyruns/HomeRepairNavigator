@@ -14,6 +14,7 @@ struct DuringProject: View {
 
     @ObservedObject var infoOverLayInfo: OverLayInfo
     @ObservedObject var projectData: ProjectData
+    @StateObject var telemtryData = TelemetryData()
 
     @State var showPhotoAlbumView = false
     @State var showNotesView = false
@@ -86,6 +87,9 @@ struct DuringProject: View {
             }
         }
         .navigationViewStyle(StackNavigationViewStyle())
+        .onAppear {
+            telemtryData.sendScreen(screen: "AfterProjectView")
+        }
     }
 }
 

@@ -16,6 +16,8 @@ struct BeforeProject: View {
     @ObservedObject var infoOverLayInfo: OverLayInfo
     @ObservedObject var projectData: ProjectData
     @StateObject var coredataVM = CoreDataManager()
+    @StateObject var telemtryData = TelemetryData()
+
 
     @State var showPhotoAlbumView = false
     @State var showNotesView = false
@@ -95,6 +97,9 @@ struct BeforeProject: View {
             }
         }
         .navigationViewStyle(StackNavigationViewStyle())
+        .onAppear {
+            telemtryData.sendScreen(screen: "BeforeProjectView")
+        }
     }
 }
 

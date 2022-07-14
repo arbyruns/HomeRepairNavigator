@@ -18,6 +18,7 @@ struct PhotoAlbumView: View {
     @State private var fullScreenImage = false
     @StateObject var coredataVM = CoreDataManager()
     @StateObject var projectData = ProjectData()
+    @StateObject var telemtryData = TelemetryData()
 
     @Binding var showPhotoAlbumView: Bool
 
@@ -102,6 +103,7 @@ struct PhotoAlbumView: View {
                             playHaptic(style: "medium")
                             withAnimation {
                                 showImagePhotoPicker = true
+                                telemtryData.sendScreen(screen: "AddPhoto")
                             }
                         })
                         {
