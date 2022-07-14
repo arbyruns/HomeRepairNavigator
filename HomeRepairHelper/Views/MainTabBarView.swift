@@ -16,9 +16,9 @@ struct MainTabBarView: View {
                     Label("home", systemImage: "house")
                 }
                 .tag(Tab.home)
-            LicenseVerificationView()
+            LicenseVerificationView(selectedItem: .init(id: 3, state: "South Carolina", stateURL: "https://verify.llronline.com/LicLookup/LookupMain.aspx", stateCode: "south-carolina"))
                 .tabItem {
-                    Label("Verification", systemImage: "list.dash")
+                    Label("Verification", systemImage: "checkmark.seal")
                 }
                 .tag(Tab.verification)
         }
