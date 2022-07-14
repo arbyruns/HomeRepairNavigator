@@ -29,7 +29,7 @@ struct LicenseVerificationView: View {
                             Button(action: {
                                 playHaptic(style: "medium")
                                 selectedItem = state
-                                telemtryData.sendScreen(screen: "LicVerify_\(state.state)")
+                                telemtryData.sendLicVerifyState(state: state.state)
                                 withAnimation {
                                     indexValue = state.id
                                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {

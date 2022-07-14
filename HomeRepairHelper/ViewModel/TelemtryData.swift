@@ -35,8 +35,16 @@ class TelemetryData: ObservableObject {
         TelemetryManager.send("Completed Onboard Info")
     }
 
+    func sendLicVerifyState(state: String) {
+        TelemetryManager.send(
+        "licVerifyState",
+        for: "project & budget user",
+        with: [
+            "state": state])
+    }
+
     func sendProject(budget: String, project: String, zipCode: String){
-        TelemetryManager.initialize(with: configuration)
+//        TelemetryManager.initialize(with: configuration)
         TelemetryManager.send(
         "onboardInfoCompleted",
         for: "project & budget user",
