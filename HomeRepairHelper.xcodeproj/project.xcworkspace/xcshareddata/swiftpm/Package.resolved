@@ -1,4 +1,5 @@
 {
+<<<<<<< Updated upstream
   "object": {
     "pins": [
       {
@@ -27,6 +28,25 @@
           "revision": "c5fead346c79f64d3ad7e4e7f7b243647d8645f7",
           "version": "1.0.0"
         }
+=======
+  "pins" : [
+    {
+      "identity" : "bettersafariview",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/stleamist/BetterSafariView.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "9c051d20dbb50fa61d014d87b4ab6c5504408a73"
+      }
+    },
+    {
+      "identity" : "lottie-ios",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/airbnb/lottie-ios.git",
+      "state" : {
+        "branch" : "master",
+        "revision" : "e9c52fa3e2f962febb6fcc27a94eff15292130b2"
+>>>>>>> Stashed changes
       }
     ]
   },

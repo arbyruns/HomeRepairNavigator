@@ -23,6 +23,10 @@
 		54143B25274C220C0088C0A2 /* ConfirmationScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54143B24274C220C0088C0A2 /* ConfirmationScreen.swift */; };
 		54143B27274C22640088C0A2 /* 42564-thanks-button.json in Resources */ = {isa = PBXBuildFile; fileRef = 54143B26274C22640088C0A2 /* 42564-thanks-button.json */; };
 		54143B29274C287E0088C0A2 /* Haptics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54143B28274C287E0088C0A2 /* Haptics.swift */; };
+		5417A468287F61E000E6E229 /* LicenseVerificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5417A467287F61E000E6E229 /* LicenseVerificationView.swift */; };
+		5417A46A287F67DA00E6E229 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5417A469287F67DA00E6E229 /* TabBarView.swift */; };
+		5417A46C287F86BF00E6E229 /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5417A46B287F86BF00E6E229 /* SafariView.swift */; };
+		5417A46F287F936A00E6E229 /* BetterSafariView in Frameworks */ = {isa = PBXBuildFile; productRef = 5417A46E287F936A00E6E229 /* BetterSafariView */; };
 		543B55CD274ECD8A0068F804 /* FooterImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543B55CC274ECD8A0068F804 /* FooterImage.swift */; };
 		5474DBA12745436500A897AC /* CheckMarkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5474DBA02745436500A897AC /* CheckMarkView.swift */; };
 		5474DBA427456E5100A897AC /* SwiftUINavigationBarStyling in Frameworks */ = {isa = PBXBuildFile; productRef = 5474DBA327456E5100A897AC /* SwiftUINavigationBarStyling */; };
@@ -68,6 +72,9 @@
 		54143B24274C220C0088C0A2 /* ConfirmationScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationScreen.swift; sourceTree = "<group>"; };
 		54143B26274C22640088C0A2 /* 42564-thanks-button.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "42564-thanks-button.json"; sourceTree = "<group>"; };
 		54143B28274C287E0088C0A2 /* Haptics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Haptics.swift; sourceTree = "<group>"; };
+		5417A467287F61E000E6E229 /* LicenseVerificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicenseVerificationView.swift; sourceTree = "<group>"; };
+		5417A469287F67DA00E6E229 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
+		5417A46B287F86BF00E6E229 /* SafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
 		543B55CB274ECC6C0068F804 /* ReadMe.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = ReadMe.md; sourceTree = "<group>"; };
 		543B55CC274ECD8A0068F804 /* FooterImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterImage.swift; sourceTree = "<group>"; };
 		5474DBA02745436500A897AC /* CheckMarkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckMarkView.swift; sourceTree = "<group>"; };
@@ -108,6 +115,7 @@
 				540B80B2274430E200414BE6 /* Lottie in Frameworks */,
 				54143B1E274BED050088C0A2 /* TelemetryClient in Frameworks */,
 				5474DBA427456E5100A897AC /* SwiftUINavigationBarStyling in Frameworks */,
+				5417A46F287F936A00E6E229 /* BetterSafariView in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -126,6 +134,24 @@
 			isa = PBXGroup;
 			children = (
 				540B80AC2743E89700414BE6 /* AfterProject.swift */,
+<<<<<<< Updated upstream
+=======
+				54F9AE822742FBAB00F09248 /* BeforeProject.swift */,
+				540B80A92743E78200414BE6 /* DuringProject.swift */,
+				540B80B82744325100414BE6 /* TabBar.swift */,
+				540B80BA274439B300414BE6 /* Settings.swift */,
+				54F9AE7C2742F97500F09248 /* HelperViews */,
+				54F9AE7F2742F9F100F09248 /* LoadingScreens */,
+				54D923B6274D839A0051E83F /* CompletionScreens */,
+				54E7EE00278F819B005C164D /* Project */,
+				5487294F2747537C0070CC22 /* ProjectOnboard */,
+				54E7EE2D2791ADB6005C164D /* Notes */,
+				5498B0CE2837E7CE00FA814D /* PhotoAlbumView.swift */,
+				5498B0D02837E88900FA814D /* PhotoPicker.swift */,
+				5417A467287F61E000E6E229 /* LicenseVerificationView.swift */,
+				5417A469287F67DA00E6E229 /* TabBarView.swift */,
+				5417A46B287F86BF00E6E229 /* SafariView.swift */,
+>>>>>>> Stashed changes
 			);
 			path = AfterProject;
 			sourceTree = "<group>";
@@ -295,6 +321,11 @@
 				540B80B1274430E200414BE6 /* Lottie */,
 				5474DBA327456E5100A897AC /* SwiftUINavigationBarStyling */,
 				54143B1D274BED050088C0A2 /* TelemetryClient */,
+<<<<<<< Updated upstream
+=======
+				5498B0D32837F4B200FA814D /* SDWebImageSwiftUI */,
+				5417A46E287F936A00E6E229 /* BetterSafariView */,
+>>>>>>> Stashed changes
 			);
 			productName = HomeRepairNavigator;
 			productReference = 54F9AE692742F73C00F09248 /* HomeRepairHelper.app */;
@@ -329,6 +360,11 @@
 				540B80B0274430E200414BE6 /* XCRemoteSwiftPackageReference "lottie-ios" */,
 				5474DBA227456E5100A897AC /* XCRemoteSwiftPackageReference "swiftui-navigation-bar-styling" */,
 				54143B1C274BED050088C0A2 /* XCRemoteSwiftPackageReference "SwiftClient" */,
+<<<<<<< Updated upstream
+=======
+				5498B0D22837F4B200FA814D /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
+				5417A46D287F936A00E6E229 /* XCRemoteSwiftPackageReference "BetterSafariView" */,
+>>>>>>> Stashed changes
 			);
 			productRefGroup = 54F9AE6A2742F73C00F09248 /* Products */;
 			projectDirPath = "";
@@ -360,6 +396,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+<<<<<<< Updated upstream
+=======
+				5473CD362838FCD900F8B7C8 /* ZoomableScrollView.swift in Sources */,
+				5417A46C287F86BF00E6E229 /* SafariView.swift in Sources */,
+>>>>>>> Stashed changes
 				54E7EE04278F82EB005C164D /* AddProjectView.swift in Sources */,
 				54D923B8274D83C60051E83F /* CompletionView.swift in Sources */,
 				54CE3B1A2746DA5E00274254 /* ProfileScreenView.swift in Sources */,
@@ -374,8 +415,10 @@
 				54F9AE6F2742F73C00F09248 /* ContentView.swift in Sources */,
 				5487294E274753770070CC22 /* ProjectOnboardView.swift in Sources */,
 				540B80BB274439B300414BE6 /* Settings.swift in Sources */,
+				5417A468287F61E000E6E229 /* LicenseVerificationView.swift in Sources */,
 				5474DBA12745436500A897AC /* CheckMarkView.swift in Sources */,
 				54E7EE09278FAE8E005C164D /* CoreDataManager.swift in Sources */,
+				5417A46A287F67DA00E6E229 /* TabBarView.swift in Sources */,
 				54F9AE8827435BE400F09248 /* InfoOverLay.swift in Sources */,
 				540B80AD2743E89700414BE6 /* AfterProject.swift in Sources */,
 				54E7EE07278FAD0A005C164D /* homerepair.xcdatamodeld in Sources */,
@@ -641,6 +684,14 @@
 				minimumVersion = 1.0.0;
 			};
 		};
+		5417A46D287F936A00E6E229 /* XCRemoteSwiftPackageReference "BetterSafariView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/stleamist/BetterSafariView.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 		5474DBA227456E5100A897AC /* XCRemoteSwiftPackageReference "swiftui-navigation-bar-styling" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/globulus/swiftui-navigation-bar-styling.git";
@@ -661,6 +712,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 54143B1C274BED050088C0A2 /* XCRemoteSwiftPackageReference "SwiftClient" */;
 			productName = TelemetryClient;
+		};
+		5417A46E287F936A00E6E229 /* BetterSafariView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5417A46D287F936A00E6E229 /* XCRemoteSwiftPackageReference "BetterSafariView" */;
+			productName = BetterSafariView;
 		};
 		5474DBA327456E5100A897AC /* SwiftUINavigationBarStyling */ = {
 			isa = XCSwiftPackageProductDependency;
