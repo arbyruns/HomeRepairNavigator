@@ -15,9 +15,10 @@ struct HomeRepairNavigatorApp: App {
 
     var body: some Scene {
         WindowGroup {
-//            TabBar()
-            ProjectView(projectData: ProjectData())
+            MainTabBarView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
+//            ProjectView(projectData: ProjectData())
+//                .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
     init() {

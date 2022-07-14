@@ -23,6 +23,9 @@
 		54143B25274C220C0088C0A2 /* ConfirmationScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54143B24274C220C0088C0A2 /* ConfirmationScreen.swift */; };
 		54143B27274C22640088C0A2 /* 42564-thanks-button.json in Resources */ = {isa = PBXBuildFile; fileRef = 54143B26274C22640088C0A2 /* 42564-thanks-button.json */; };
 		54143B29274C287E0088C0A2 /* Haptics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54143B28274C287E0088C0A2 /* Haptics.swift */; };
+		5422C8E6287FA8E900F45AB4 /* LicenseVerificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5422C8E5287FA8E900F45AB4 /* LicenseVerificationView.swift */; };
+		5422C8E8287FA91B00F45AB4 /* MainTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5422C8E7287FA91B00F45AB4 /* MainTabBarView.swift */; };
+		5422C8EB287FA96600F45AB4 /* BetterSafariView in Frameworks */ = {isa = PBXBuildFile; productRef = 5422C8EA287FA96600F45AB4 /* BetterSafariView */; };
 		543B55CD274ECD8A0068F804 /* FooterImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543B55CC274ECD8A0068F804 /* FooterImage.swift */; };
 		5473CD362838FCD900F8B7C8 /* ZoomableScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5473CD352838FCD900F8B7C8 /* ZoomableScrollView.swift */; };
 		5474DBA12745436500A897AC /* CheckMarkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5474DBA02745436500A897AC /* CheckMarkView.swift */; };
@@ -72,6 +75,8 @@
 		54143B24274C220C0088C0A2 /* ConfirmationScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationScreen.swift; sourceTree = "<group>"; };
 		54143B26274C22640088C0A2 /* 42564-thanks-button.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "42564-thanks-button.json"; sourceTree = "<group>"; };
 		54143B28274C287E0088C0A2 /* Haptics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Haptics.swift; sourceTree = "<group>"; };
+		5422C8E5287FA8E900F45AB4 /* LicenseVerificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicenseVerificationView.swift; sourceTree = "<group>"; };
+		5422C8E7287FA91B00F45AB4 /* MainTabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarView.swift; sourceTree = "<group>"; };
 		543B55CB274ECC6C0068F804 /* ReadMe.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = ReadMe.md; sourceTree = "<group>"; };
 		543B55CC274ECD8A0068F804 /* FooterImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterImage.swift; sourceTree = "<group>"; };
 		5473CD352838FCD900F8B7C8 /* ZoomableScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomableScrollView.swift; sourceTree = "<group>"; };
@@ -116,6 +121,7 @@
 				540B80B2274430E200414BE6 /* Lottie in Frameworks */,
 				54143B1E274BED050088C0A2 /* TelemetryClient in Frameworks */,
 				5474DBA427456E5100A897AC /* SwiftUINavigationBarStyling in Frameworks */,
+				5422C8EB287FA96600F45AB4 /* BetterSafariView in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -160,6 +166,8 @@
 				54E7EE2D2791ADB6005C164D /* Notes */,
 				5498B0CE2837E7CE00FA814D /* PhotoAlbumView.swift */,
 				5498B0D02837E88900FA814D /* PhotoPicker.swift */,
+				5422C8E5287FA8E900F45AB4 /* LicenseVerificationView.swift */,
+				5422C8E7287FA91B00F45AB4 /* MainTabBarView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -307,6 +315,7 @@
 				5474DBA327456E5100A897AC /* SwiftUINavigationBarStyling */,
 				54143B1D274BED050088C0A2 /* TelemetryClient */,
 				5498B0D32837F4B200FA814D /* SDWebImageSwiftUI */,
+				5422C8EA287FA96600F45AB4 /* BetterSafariView */,
 			);
 			productName = HomeRepairNavigator;
 			productReference = 54F9AE692742F73C00F09248 /* HomeRepairHelper.app */;
@@ -342,6 +351,7 @@
 				5474DBA227456E5100A897AC /* XCRemoteSwiftPackageReference "swiftui-navigation-bar-styling" */,
 				54143B1C274BED050088C0A2 /* XCRemoteSwiftPackageReference "SwiftClient" */,
 				5498B0D22837F4B200FA814D /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
+				5422C8E9287FA96600F45AB4 /* XCRemoteSwiftPackageReference "BetterSafariView" */,
 			);
 			productRefGroup = 54F9AE6A2742F73C00F09248 /* Products */;
 			projectDirPath = "";
@@ -388,6 +398,7 @@
 				54F9AE6F2742F73C00F09248 /* ContentView.swift in Sources */,
 				5487294E274753770070CC22 /* ProjectOnboardView.swift in Sources */,
 				540B80BB274439B300414BE6 /* Settings.swift in Sources */,
+				5422C8E6287FA8E900F45AB4 /* LicenseVerificationView.swift in Sources */,
 				5474DBA12745436500A897AC /* CheckMarkView.swift in Sources */,
 				54E7EE09278FAE8E005C164D /* CoreDataManager.swift in Sources */,
 				54F9AE8827435BE400F09248 /* InfoOverLay.swift in Sources */,
@@ -407,6 +418,7 @@
 				54E7EE2C2791A9B6005C164D /* NotesView.swift in Sources */,
 				54143B25274C220C0088C0A2 /* ConfirmationScreen.swift in Sources */,
 				540B80C627444E8900414BE6 /* IconView.swift in Sources */,
+				5422C8E8287FA91B00F45AB4 /* MainTabBarView.swift in Sources */,
 				54143B29274C287E0088C0A2 /* Haptics.swift in Sources */,
 				540B80B5274430FD00414BE6 /* LottieView.swift in Sources */,
 				5498B0D12837E88900FA814D /* PhotoPicker.swift in Sources */,
@@ -657,6 +669,14 @@
 				minimumVersion = 1.0.0;
 			};
 		};
+		5422C8E9287FA96600F45AB4 /* XCRemoteSwiftPackageReference "BetterSafariView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/stleamist/BetterSafariView.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 		5474DBA227456E5100A897AC /* XCRemoteSwiftPackageReference "swiftui-navigation-bar-styling" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/globulus/swiftui-navigation-bar-styling.git";
@@ -685,6 +705,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 54143B1C274BED050088C0A2 /* XCRemoteSwiftPackageReference "SwiftClient" */;
 			productName = TelemetryClient;
+		};
+		5422C8EA287FA96600F45AB4 /* BetterSafariView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5422C8E9287FA96600F45AB4 /* XCRemoteSwiftPackageReference "BetterSafariView" */;
+			productName = BetterSafariView;
 		};
 		5474DBA327456E5100A897AC /* SwiftUINavigationBarStyling */ = {
 			isa = XCSwiftPackageProductDependency;
