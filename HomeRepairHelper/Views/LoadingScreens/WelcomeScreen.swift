@@ -9,15 +9,19 @@ import SwiftUI
 
 struct WelcomeScreen: View {
 
+    private enum Params {
+        static let logo = "naahrf_logo_2.0"
+    }
+
     var body: some View {
         ZStack {
             Color("Background")
                 .edgesIgnoringSafeArea(.all)
             VStack {
-                Image("naahrf-logo")
+                Image(Params.logo)
                     .resizable()
-                    .frame(width: 145, height: 145, alignment: .center)
-                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 200, height: 200, alignment: .center)
+                    .aspectRatio(contentMode: .fill)
                 Group {
                     Text("Home Repair Helper ™")
                         .font(.title)

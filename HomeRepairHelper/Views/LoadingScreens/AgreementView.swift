@@ -11,14 +11,18 @@ struct AgreementView: View {
     @AppStorage("UserDefault_FirstRun") var showFirstRun = true
     @AppStorage("UserDefault_ShowTerms") var showTerms = true
 
+    private enum Params {
+        static let logo = "naahrf_logo_2.0"
+    }
+
     var body: some View {
         ZStack {
             Color("Background")
                 .edgesIgnoringSafeArea(.all)
             VStack {
-                Image("naahrf-logo")
+                Image(Params.logo)
                     .resizable()
-                    .frame(width: 145, height: 145, alignment: .center)
+                    .frame(width: 200, height: 200, alignment: .center)
                     .aspectRatio(contentMode: .fit)
                 Text("Home Repair Helper ™")
                     .font(.title)
